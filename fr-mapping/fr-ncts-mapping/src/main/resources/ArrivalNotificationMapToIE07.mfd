@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties AppName="ArrivalNotification" SelectedLanguage="java"/>
+		<structure>
+			<children>
+				<component name="HouseNumber" library="moredata" blackbox="0" uid="32" kind="19" visible="0">
+					<view ltx="397" lty="422" rbx="539" rby="456"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="Street" inpkey="128" componentid="28"/>
+							<entry name="HouseNumber" inpkey="129" componentid="29"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="RUE" outkey="130" componentid="30"/>
+						</root>
+					</data>
+				</component>
+				<component name="MessageIE07" library="xml" uid="3" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="678" rbx="1027" rby="570"/>
+					<data>
+						<root scrollposition="147">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="MessageOperateur" inpkey="2" expanded="1">
+										<entry name="EnveloppeConnexion" expanded="1">
+											<entry name="DateTime" expanded="1"/>
+										</entry>
+										<entry name="Messages" expanded="1">
+											<entry name="Message" expanded="1">
+												<entry name="Notification" expanded="1">
+													<entry name="Entete" expanded="1">
+														<entry name="refdec" inpkey="4"/>
+													</entry>
+													<entry name="Gen" expanded="1">
+														<entry name="lieusousdouane" inpkey="134"/>
+														<entry name="lieunotif" inpkey="25"/>
+														<entry name="LieuAutorise" expanded="1">
+															<entry name="Code" inpkey="28"/>
+														</entry>
+														<entry name="lieuagree" inpkey="29"/>
+														<entry name="procsimpl" inpkey="30"/>
+														<entry name="date" inpkey="136"/>
+														<entry name="burpres" inpkey="100"/>
+														<entry name="Destinataire" inpkey="17" expanded="1">
+															<entry name="tin" inpkey="18"/>
+															<entry name="nomoperateur" inpkey="108"/>
+															<entry name="rueoperateur" inpkey="109"/>
+															<entry name="paysoperateur" inpkey="121"/>
+															<entry name="codepostaloperateur" inpkey="110"/>
+															<entry name="villeoperateur" inpkey="122"/>
+														</entry>
+													</entry>
+													<entry name="Evenements" inpkey="31" expanded="1">
+														<entry name="Evenement" expanded="1">
+															<entry name="lieu" inpkey="32"/>
+															<entry name="pays" inpkey="43"/>
+															<entry name="nsti" inpkey="97"/>
+															<entry name="Incident" inpkey="52" expanded="1">
+																<entry name="incident" inpkey="53"/>
+																<entry name="info" inpkey="54"/>
+																<entry name="date" inpkey="55"/>
+																<entry name="autorite" inpkey="56"/>
+																<entry name="lieu" inpkey="57"/>
+																<entry name="pays" inpkey="58"/>
+															</entry>
+															<entry name="Scelles" expanded="1">
+																<entry name="nb" inpkey="59"/>
+																<entry name="Scellesidentites" expanded="1">
+																	<entry name="scelleidentite" inpkey="60"/>
+																</entry>
+															</entry>
+															<entry name="Transbordement" inpkey="44" expanded="1">
+																<entry name="identite" inpkey="45"/>
+																<entry name="nationalite" inpkey="61"/>
+																<entry name="date" inpkey="62"/>
+																<entry name="autorite" inpkey="63"/>
+																<entry name="lieu" inpkey="64"/>
+																<entry name="pays" inpkey="65"/>
+															</entry>
+															<entry name="Conteneurs" expanded="1">
+																<entry name="conteneur" inpkey="66"/>
+															</entry>
+														</entry>
+													</entry>
+													<entry name="ReponseNotification" expanded="1">
+														<entry name="Entete" expanded="1"/>
+														<entry name="Gen" expanded="1">
+															<entry name="LieuAutorise" expanded="1"/>
+															<entry name="Transport" expanded="1"/>
+															<entry name="PO" expanded="1"/>
+															<entry name="Expediteur" expanded="1"/>
+															<entry name="Destinataire" expanded="1"/>
+															<entry name="DestinataireAgree" expanded="1"/>
+															<entry name="BureauxPassages" expanded="1">
+																<entry name="BureauPassage" expanded="1"/>
+															</entry>
+															<entry name="ControlResult" expanded="1"/>
+															<entry name="Scelles" expanded="1">
+																<entry name="Scellesidentites" expanded="1"/>
+															</entry>
+															<entry name="Itineraires" expanded="1"/>
+															<entry name="AnalysesRisques" expanded="1">
+																<entry name="AnalyseRisque" expanded="1"/>
+															</entry>
+															<entry name="Transporteur" expanded="1"/>
+															<entry name="ExpediteurSecurite" expanded="1"/>
+															<entry name="DestinataireSecurite" expanded="1"/>
+														</entry>
+														<entry name="Articles" expanded="1">
+															<entry name="Article" expanded="1">
+																<entry name="DocPrecedents" expanded="1">
+																	<entry name="DocPrecedent" expanded="1"/>
+																</entry>
+																<entry name="DocProduits" expanded="1">
+																	<entry name="DocProduit" expanded="1"/>
+																</entry>
+																<entry name="Menspecs" expanded="1">
+																	<entry name="menspec" expanded="1"/>
+																</entry>
+																<entry name="Expediteur" expanded="1"/>
+																<entry name="Destinataire" expanded="1"/>
+																<entry name="Conteneurs" expanded="1"/>
+																<entry name="Colisages" expanded="1">
+																	<entry name="Colisage" expanded="1"/>
+																</entry>
+																<entry name="MarchandisesSensibles" expanded="1">
+																	<entry name="marchandisesensible" expanded="1"/>
+																</entry>
+																<entry name="ExpediteurSecurite" expanded="1"/>
+																<entry name="DestinataireSecurite" expanded="1"/>
+															</entry>
+														</entry>
+														<entry name="ReponseDatas" expanded="1">
+															<entry name="ErreurIE08" expanded="1">
+																<entry name="ErreurGen" expanded="1"/>
+																<entry name="ErreurFct" expanded="1"/>
+															</entry>
+															<entry name="ErreurIE21" expanded="1">
+																<entry name="ErreurGen" expanded="1">
+																	<entry name="Destinataire" expanded="1"/>
+																</entry>
+															</entry>
+															<entry name="Notification" expanded="1">
+																<entry name="Etat" expanded="1"/>
+															</entry>
+														</entry>
+													</entry>
+												</entry>
+											</entry>
+										</entry>
+										<entry name="ELIT" expanded="1"/>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="MessageIE07.xsd" outputinstance="MessageIE07.xml" instanceroot="{}MessageOperateur"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="ArrivalNotification" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view rbx="293" rby="570"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ArrivalNotification" outkey="6" expanded="1">
+										<entry name="GoodsDeclaration" expanded="1">
+											<entry name="UCRNumber" outkey="8"/>
+											<entry name="CustomsSubPlace" outkey="19"/>
+											<entry name="AuthorisedConsigneeTIN" outkey="20" expanded="1">
+												<entry name="TIN" outkey="21"/>
+											</entry>
+											<entry name="ArrivalNotificationDate" outkey="137"/>
+											<entry name="PlaceOfUnloadingCode" outkey="26"/>
+											<entry name="AgreedLocationCode" outkey="33"/>
+											<entry name="AgreedLocationOfGoods" outkey="34"/>
+											<entry name="SimplifiedProcedure" outkey="35"/>
+											<entry name="EnRouteEvent" outkey="36" expanded="1">
+												<entry name="Place" outkey="37"/>
+												<entry name="CountryCode" outkey="46"/>
+												<entry name="TransShipment" outkey="47" expanded="1">
+													<entry name="NewTransportId" outkey="48"/>
+													<entry name="NewTransportCountry" outkey="67"/>
+													<entry name="EndorsementDate" outkey="68"/>
+													<entry name="EndorsementAuthority" outkey="69"/>
+													<entry name="EndorsementPlace" outkey="70"/>
+													<entry name="EndorsementCountry" outkey="71"/>
+													<entry name="ContainerNumber" outkey="72"/>
+												</entry>
+												<entry name="TotalNumberOfSeals" outkey="73"/>
+												<entry name="SealsIdentity" outkey="74"/>
+												<entry name="Incident" outkey="75" expanded="1">
+													<entry name="IncidentFlag" outkey="76"/>
+													<entry name="IncidentInfo" outkey="77" expanded="1"/>
+													<entry name="EndorsementDate" outkey="78"/>
+													<entry name="EndorsementAuthority" outkey="79" expanded="1"/>
+													<entry name="EndorsementPlace" outkey="80" expanded="1"/>
+													<entry name="EndorsementCountry" outkey="81" expanded="1"/>
+												</entry>
+												<entry name="AlreadyInNCTS" outkey="98"/>
+											</entry>
+											<entry name="PresentationOffice" outkey="101"/>
+											<entry name="ManifestCompletion" expanded="1">
+												<entry name="CompletionItem" expanded="1">
+													<entry name="NumberOfPieces" expanded="1"/>
+													<entry name="CustodianTIN" expanded="1"/>
+												</entry>
+											</entry>
+											<entry name="DestinationTrader" expanded="1">
+												<entry name="Address" expanded="1">
+													<entry name="Name" outkey="111"/>
+													<entry name="Street" outkey="112"/>
+													<entry name="HouseNumber" outkey="113"/>
+													<entry name="City" outkey="123"/>
+													<entry name="PostalCode" outkey="114"/>
+													<entry name="Country" outkey="124"/>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="ArrivalNotification.xsd" inputinstance="ArrivalNotificationMapToIE07.xml" outputinstance="ArrivalNotificationMapToIE07.xml" instanceroot="{}ArrivalNotification"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="6">
+						<edges>
+							<edge vertexkey="2" edgekey="10"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="8">
+						<edges>
+							<edge vertexkey="4" edgekey="12"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="19">
+						<edges>
+							<edge vertexkey="134" edgekey="135"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="20">
+						<edges>
+							<edge vertexkey="17" edgekey="23"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="21">
+						<edges>
+							<edge vertexkey="18" edgekey="24"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="26">
+						<edges>
+							<edge vertexkey="25" edgekey="27"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="33">
+						<edges>
+							<edge vertexkey="28" edgekey="38"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="34">
+						<edges>
+							<edge vertexkey="29" edgekey="39"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="35">
+						<edges>
+							<edge vertexkey="30" edgekey="40"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="36">
+						<edges>
+							<edge vertexkey="31" edgekey="41"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="37">
+						<edges>
+							<edge vertexkey="32" edgekey="42"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="46">
+						<edges>
+							<edge vertexkey="43" edgekey="49"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="47">
+						<edges>
+							<edge vertexkey="44" edgekey="50"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="48">
+						<edges>
+							<edge vertexkey="45" edgekey="51"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="67">
+						<edges>
+							<edge vertexkey="61" edgekey="82"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="68">
+						<edges>
+							<edge vertexkey="62" edgekey="83"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="69">
+						<edges>
+							<edge vertexkey="63" edgekey="84"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="70">
+						<edges>
+							<edge vertexkey="64" edgekey="85"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="71">
+						<edges>
+							<edge vertexkey="65" edgekey="86"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="72">
+						<edges>
+							<edge vertexkey="66" edgekey="87"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="73">
+						<edges>
+							<edge vertexkey="59" edgekey="88"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="74">
+						<edges>
+							<edge vertexkey="60" edgekey="89"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="75">
+						<edges>
+							<edge vertexkey="52" edgekey="90"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="76">
+						<edges>
+							<edge vertexkey="53" edgekey="91"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="77">
+						<edges>
+							<edge vertexkey="54" edgekey="92"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="78">
+						<edges>
+							<edge vertexkey="55" edgekey="93"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="79">
+						<edges>
+							<edge vertexkey="56" edgekey="94"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="80">
+						<edges>
+							<edge vertexkey="57" edgekey="95"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="81">
+						<edges>
+							<edge vertexkey="58" edgekey="96"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="98">
+						<edges>
+							<edge vertexkey="97" edgekey="99"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="101">
+						<edges>
+							<edge vertexkey="100" edgekey="102"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="111">
+						<edges>
+							<edge vertexkey="108" edgekey="117"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="112">
+						<edges>
+							<edge vertexkey="128" edgekey="131"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="113">
+						<edges>
+							<edge vertexkey="129" edgekey="132"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="114">
+						<edges>
+							<edge vertexkey="110" edgekey="120"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="123">
+						<edges>
+							<edge vertexkey="122" edgekey="125"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="124">
+						<edges>
+							<edge vertexkey="121" edgekey="126"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="130">
+						<edges>
+							<edge vertexkey="109" edgekey="133"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="137">
+						<edges>
+							<edge vertexkey="136" edgekey="138"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

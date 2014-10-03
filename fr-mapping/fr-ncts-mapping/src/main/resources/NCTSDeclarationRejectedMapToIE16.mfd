@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties AppName="NCTSDeclarationRejected" ShowSchemaTypes="1" ShowAnnotations="0" SelectedLanguage="java"/>
+		<structure>
+			<children>
+				<component name="IE16" library="xml" uid="3" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="626" rbx="863" rby="271"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="RESPONS" inpkey="1" expanded="1">
+										<entry name="LRN" inpkey="2"/>
+										<entry name="IE16" expanded="1">
+											<entry name="DREJET" expanded="1">
+												<entry name="DTVAL" inpkey="3"/>
+											</entry>
+											<entry name="CDERR" inpkey="4"/>
+											<entry name="LIBERR" expanded="1">
+												<entry name="TXTERR" inpkey="5"/>
+											</entry>
+											<entry name="VALOR" expanded="1">
+												<entry name="TXTVALOR" inpkey="6"/>
+											</entry>
+											<entry name="INDERR" expanded="1">
+												<entry name="TXTINDERR" inpkey="7"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="IE16.xsd" outputinstance="IE16.xml" instanceroot="{}RESPONS"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="NCTSDeclarationRejected" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="48" rbx="401" rby="345"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="NCTSDeclarationRejected" outkey="8" expanded="1">
+										<entry name="GoodsDeclaration" expanded="1">
+											<entry name="ReferenceNumber" outkey="9"/>
+											<entry name="ArrivalRejectionDate" outkey="10"/>
+											<entry name="Error" expanded="1">
+												<entry name="Code" outkey="11"/>
+												<entry name="Text" outkey="12"/>
+												<entry name="Pointer" outkey="13"/>
+												<entry name="Number" outkey="14"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="NCTSDeclarationRejected.xsd" inputinstance="NCTSDeclarationRejectedMapToIE16.xml" outputinstance="NCTSDeclarationRejectedMapToIE16.xml" instanceroot="{}NCTSDeclarationRejected"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="8">
+						<edges>
+							<edge vertexkey="1" edgekey="15"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="9">
+						<edges>
+							<edge vertexkey="2" edgekey="16"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="10">
+						<edges>
+							<edge vertexkey="3" edgekey="17"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="11">
+						<edges>
+							<edge vertexkey="4" edgekey="18"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="12">
+						<edges>
+							<edge vertexkey="5" edgekey="19"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="13">
+						<edges>
+							<edge vertexkey="7" edgekey="20"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="14">
+						<edges>
+							<edge vertexkey="6" edgekey="21"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

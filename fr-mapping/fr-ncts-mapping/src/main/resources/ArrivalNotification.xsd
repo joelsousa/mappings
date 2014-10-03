@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2011 sp1 (http://www.altova.com) von XMLSpy 2011 Professional Ed., Concurrent for 5 users (Kewill GmbH) bearbeitet -->
+<!-- 	Kewill Customs Exchange
+		Kids NCTS
+		Version 1.00 January 2010 
+Changes:		
+2013 January: new: DeclarationNumber
+2013 November: change Name and Type of WriteOffSumA in used in Kids ManifestCompletion
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="kids_ncts_types.xsd"/>
+	<xsd:element name="ArrivalNotification">
+		<xsd:annotation>
+			<xsd:documentation>ArrivalNotification IE07/ E_ARR_NOT</xsd:documentation>
+			<xsd:documentation xml:lang="de">Ankunftsanzeige</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="GoodsDeclaration">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="UCRNumber" minOccurs="0"/>
+							<xsd:element name="ReferenceNumber" minOccurs="0"/>
+							<xsd:element name="DeclarationNumber" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>unique number for the declaration needed in NL</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="ShipmentNumber" minOccurs="0"/>
+							<xsd:element name="CustomsSubPlace" minOccurs="0"/>
+							<xsd:element name="AuthorisedConsigneeTIN" type="CT_TINType" minOccurs="0"/>
+							<xsd:element name="ArrivalNotificationDate" type="ST_Date" minOccurs="0"/>
+							<xsd:element name="PlaceOfUnloadingCode" minOccurs="0"/>
+							<xsd:element name="PermitNumber" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>electronic signature</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="AgreedLocationCode" minOccurs="0"/>
+							<xsd:element name="AgreedLocationOfGoods" minOccurs="0"/>
+							<xsd:element name="AuthorisedLocationOfGoods" minOccurs="0"/>
+							<xsd:element name="SimplifiedProcedure" type="xsd:boolean" minOccurs="0"/>
+							<xsd:element name="DestLanguage" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="EnRouteEvent" type="CT_EnRouteEvent"/>
+							<xsd:element name="PresentationOffice" type="ST_CustomsOffice" minOccurs="0"/>
+							<xsd:element ref="ManifestCompletion" minOccurs="0" maxOccurs="9999"/>
+							<xsd:element name="DestinationTrader" type="CT_AddressType" minOccurs="0"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

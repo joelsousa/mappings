@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:fx="http://www.gefeg.com/fx/2007/01">
+  <xs:annotation>
+    <xs:documentation>
+      <fx:ModelProperties>
+        <fx:Property Name="Tag">MessageIE08</fx:Property>
+        <fx:Property Name="Version">1.0</fx:Property>
+        <fx:Property Name="Variant"></fx:Property>
+        <fx:Property Name="ModelType">XML Schema</fx:Property>
+        <fx:Property Name="Author">Andreas Giger</fx:Property>
+        <fx:Property Name="CreationDate">2013-08-28T14:20:30</fx:Property>
+        <fx:Property Name="NextFreeId">1</fx:Property>
+        <fx:Property Name="ConditionalsAreUnused">false</fx:Property>
+        <fx:NoteDef Tag="Name" Function="name" Flags="public|virtual|languageDependent"/>
+        <fx:NoteDef Tag="Desc" Function="desc" Flags="public|virtual|languageDependent"/>
+        <fx:NoteDef Tag="Remark" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="Id" Function="identification"/>
+        <fx:NoteDef Tag="Mapping" Function="mapping"/>
+        <fx:NoteDef Tag="Inbound" Function="mapping"/>
+        <fx:NoteDef Tag="Outbound" Function="mapping"/>
+        <fx:NoteDef Tag="??" Function="user defined" Flags="languageDependent"/>
+        <fx:NoteDef Tag="Example" Function="example"/>
+        <fx:NoteDef Tag="Note1" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="Note2" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="Note3" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="documentation" Function="desc" Flags="public|virtual|languageDependent"/>
+        <fx:SecurityToken></fx:SecurityToken>
+        <fx:Note Tag="LinkedObject" Internal="true">
+          <fx:Field Tag="Flags">ThesaurusMapped</fx:Field>
+          <fx:Field Tag="OtherType">mapping</fx:Field>
+          <fx:Field Tag="OtherTag">Mapping ArrivalRejection to IE08</fx:Field>
+          <fx:Field Tag="OtherVersion">1.0</fx:Field>
+          <fx:Field Tag="OtherVariant">France</fx:Field>
+          <fx:Field Tag="OtherRole">Unknown</fx:Field>
+        </fx:Note>
+        <fx:Note Tag="documentation">edited with XMLSpy v2007 (http://www.altova.com) by ROCHE_A (EMBRACE)</fx:Note>
+        <fx:Note Tag="documentation">edited with XMLSPY v5 rel. 3 U (http://www.xmlspy.com) by daniel (dgd)</fx:Note>
+        <fx:Note Tag="documentation">Version 2.0, 23 juin 2006</fx:Note>
+      </fx:ModelProperties>
+      <fx:Folder Name="Elements" Type="Element" Id="1"/>
+      <fx:Folder Name="Types" Type="Type" Id="2"/>
+      <fx:Folder Name="Groups" Type="Group" Id="3"/>
+      <fx:Folder Name="AttributeGroups" Type="AttrGroup" Id="4"/>
+      <fx:Folder Name="Attributes" Type="Attr" Id="5"/>
+      <fx:Folder Type="Guideline" Name="Guidelines"/>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:include schemaLocation="ParametresConnexionNSTI.xsd"/>
+  <xs:include schemaLocation="ParametresMessageNSTI.xsd"/>
+  <xs:include schemaLocation="ComposantsNSTI.xsd"/>
+  <xs:element name="MessageDouane" fx:FolderId="1">
+    <xs:complexType>
+      <xs:sequence fx:NextOrdinalNumber="2">
+        <xs:element name="EnveloppeConnexion" type="TEnveloppeConnexion" fx:OrdinalNumber="0"/>
+        <xs:element name="Messages" type="TMessages" fx:OrdinalNumber="1">
+          <xs:annotation>
+            <xs:documentation>
+              <fx:DocItem Type="TypeInstance" Name="TMessages">
+                <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                  <fx:DocItem Type="ElementLocal" Name="Message" OrdinalNumber="0">
+                    <fx:DocItem Type="TypeInstance" Name="TMessage">
+                      <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                        <fx:DocItem Type="ElementLocal" Name="EnveloppeMessage" OrdinalNumber="0">
+                          <fx:DocItem Type="TypeInstance" Name="TEnveloppeMessage">
+                            <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                              <fx:DocItem Type="ElementInstance" Name="schemaID" OrdinalNumber="0">
+                                <fx:Note Tag="Mapping">1</fx:Note>
+                              </fx:DocItem>
+                            </fx:DocItem>
+                          </fx:DocItem>
+                        </fx:DocItem>
+                        <fx:DocItem Type="ElementLocal" Name="ReponseNotification" OrdinalNumber="1">
+                          <fx:DocItem Type="TypeLocal" Name=":local:complexType">
+                            <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                              <fx:DocItem Type="ElementLocal" Name="Entete" OrdinalNumber="0">
+                                <fx:DocItem Type="TypeLocal" Name=":local:complexType">
+                                  <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                                    <fx:DocItem Type="ElementInstance" Name="refdec" OrdinalNumber="0">
+                                      <fx:Note Tag="Mapping">2</fx:Note>
+                                    </fx:DocItem>
+                                  </fx:DocItem>
+                                </fx:DocItem>
+                              </fx:DocItem>
+                              <fx:DocItem Type="ElementLocal" Name="ReponseDatas" OrdinalNumber="1">
+                                <fx:DocItem Type="TypeLocal" Name=":local:complexType">
+                                  <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                                    <fx:DocItem Type="ElementLocal" Name="Erreur" OrdinalNumber="0">
+                                      <fx:DocItem Type="TypeLocal" Name=":local:complexType">
+                                        <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                                          <fx:DocItem Type="ElementLocal" Name="ErreurGen" OrdinalNumber="0">
+                                            <fx:DocItem Type="TypeLocal" Name=":local:complexType">
+                                              <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                                                <fx:DocItem Type="ElementLocal" Name="date" OrdinalNumber="0">
+                                                  <fx:Note Tag="Mapping">3</fx:Note>
+                                                </fx:DocItem>
+                                                <fx:DocItem Type="ElementLocal" Name="action" OrdinalNumber="1">
+                                                  <fx:Note Tag="Mapping">4</fx:Note>
+                                                </fx:DocItem>
+                                                <fx:DocItem Type="ElementLocal" Name="raison" OrdinalNumber="2">
+                                                  <fx:Note Tag="Mapping">5</fx:Note>
+                                                </fx:DocItem>
+                                              </fx:DocItem>
+                                            </fx:DocItem>
+                                          </fx:DocItem>
+                                          <fx:DocItem Type="ElementLocal" Name="ErreurFct" OrdinalNumber="1">
+                                            <fx:DocItem Type="TypeLocal" Name=":local:complexType">
+                                              <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                                                <fx:DocItem Type="ElementLocal" Name="pointer" OrdinalNumber="1">
+                                                  <fx:Note Tag="Mapping">6</fx:Note>
+                                                </fx:DocItem>
+                                                <fx:DocItem Type="ElementLocal" Name="raison" OrdinalNumber="2">
+                                                  <fx:Note Tag="Mapping">7</fx:Note>
+                                                </fx:DocItem>
+                                                <fx:DocItem Type="ElementLocal" Name="type" OrdinalNumber="0">
+                                                  <fx:Note Tag="Mapping">8</fx:Note>
+                                                </fx:DocItem>
+                                                <fx:DocItem Type="ElementLocal" Name="valeurori" OrdinalNumber="3">
+                                                  <fx:Note Tag="Mapping">9</fx:Note>
+                                                </fx:DocItem>
+                                              </fx:DocItem>
+                                            </fx:DocItem>
+                                          </fx:DocItem>
+                                        </fx:DocItem>
+                                      </fx:DocItem>
+                                    </fx:DocItem>
+                                  </fx:DocItem>
+                                </fx:DocItem>
+                              </fx:DocItem>
+                            </fx:DocItem>
+                          </fx:DocItem>
+                        </fx:DocItem>
+                      </fx:DocItem>
+                    </fx:DocItem>
+                  </fx:DocItem>
+                </fx:DocItem>
+              </fx:DocItem>
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TMessage" fx:FolderId="2">
+    <xs:sequence fx:NextOrdinalNumber="2">
+      <xs:element name="EnveloppeMessage" type="TEnveloppeMessage" fx:OrdinalNumber="0"/>
+      <xs:element name="ReponseNotification" fx:OrdinalNumber="1">
+        <xs:complexType>
+          <xs:sequence fx:NextOrdinalNumber="2">
+            <xs:element name="Entete" fx:OrdinalNumber="0">
+              <xs:complexType>
+                <xs:sequence fx:NextOrdinalNumber="1">
+                  <xs:element ref="refdec" fx:OrdinalNumber="0"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ReponseDatas" fx:OrdinalNumber="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">HEADER</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence fx:NextOrdinalNumber="1">
+                  <xs:element name="Erreur" minOccurs="0" fx:OrdinalNumber="0">
+                    <xs:complexType>
+                      <xs:sequence fx:NextOrdinalNumber="2">
+                        <xs:element name="ErreurGen" fx:OrdinalNumber="0">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">HEADER</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:complexType>
+                            <xs:sequence fx:NextOrdinalNumber="3">
+                              <xs:element name="date" type="DateYYYYMMDD" fx:OrdinalNumber="0">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <fx:Note Tag="documentation">Arrival rejection date</fx:Note>
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                              <xs:element name="action" fx:OrdinalNumber="1">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <fx:Note Tag="documentation">Action to be taken</fx:Note>
+                                  </xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="350"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="raison" fx:OrdinalNumber="2">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <fx:Note Tag="documentation">Arrival rejection reason</fx:Note>
+                                  </xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="350"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="ErreurFct" minOccurs="0" maxOccurs="999" fx:OrdinalNumber="1">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">FUNCTIONAL ERROR</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:complexType>
+                            <xs:sequence fx:NextOrdinalNumber="4">
+                              <xs:element name="type" fx:OrdinalNumber="0">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <fx:Note Tag="documentation">Error type</fx:Note>
+                                  </xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:integer">
+                                    <xs:totalDigits value="2"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="pointer" fx:OrdinalNumber="1">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <fx:Note Tag="documentation">Error pointer</fx:Note>
+                                  </xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="210"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="raison" minOccurs="0" fx:OrdinalNumber="2">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <fx:Note Tag="documentation">Error reason</fx:Note>
+                                  </xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="6"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="valeurori" fx:OrdinalNumber="3">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <fx:Note Tag="documentation">Original attribute value</fx:Note>
+                                  </xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="140"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TMessages" fx:FolderId="2">
+    <xs:sequence fx:NextOrdinalNumber="1">
+      <xs:element name="Message" type="TMessage" fx:OrdinalNumber="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,3 @@
+<ApiMessageAcknowledgement xmlns="http://www.customsmatters.com/schemas/cab/declarationapi/ack">
+    <Status>SUCCESS</Status>
+</ApiMessageAcknowledgement>

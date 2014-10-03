@@ -1,0 +1,1537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:fx="http://www.gefeg.com/fx/2007/01">
+  <xs:annotation>
+    <xs:documentation>
+      <fx:ModelProperties>
+        <fx:Property Name="Tag">MessageIE07</fx:Property>
+        <fx:Property Name="Version">1.0</fx:Property>
+        <fx:Property Name="Variant"></fx:Property>
+        <fx:Property Name="ModelType">XML Schema</fx:Property>
+        <fx:Property Name="Author">Andreas Giger</fx:Property>
+        <fx:Property Name="CreationDate">2013-08-28T14:20:30</fx:Property>
+        <fx:Property Name="NextFreeId">1</fx:Property>
+        <fx:Property Name="ConditionalsAreUnused">false</fx:Property>
+        <fx:NoteDef Tag="Name" Function="name" Flags="public|virtual|languageDependent"/>
+        <fx:NoteDef Tag="Desc" Function="desc" Flags="public|virtual|languageDependent"/>
+        <fx:NoteDef Tag="Remark" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="Id" Function="identification"/>
+        <fx:NoteDef Tag="Mapping" Function="mapping"/>
+        <fx:NoteDef Tag="Inbound" Function="mapping"/>
+        <fx:NoteDef Tag="Outbound" Function="mapping"/>
+        <fx:NoteDef Tag="??" Function="user defined" Flags="languageDependent"/>
+        <fx:NoteDef Tag="Example" Function="example"/>
+        <fx:NoteDef Tag="Note1" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="Note2" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="Note3" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="documentation" Function="desc" Flags="public|virtual|languageDependent"/>
+        <fx:SecurityToken></fx:SecurityToken>
+        <fx:Note Tag="LinkedObject" Internal="true">
+          <fx:Field Tag="Flags">ThesaurusMapped</fx:Field>
+          <fx:Field Tag="OtherType">mapping</fx:Field>
+          <fx:Field Tag="OtherTag">IE07</fx:Field>
+          <fx:Field Tag="OtherVersion">1.0</fx:Field>
+          <fx:Field Tag="OtherVariant">FR</fx:Field>
+          <fx:Field Tag="OtherRole">Unknown</fx:Field>
+        </fx:Note>
+        <fx:Note Tag="LinkedObject" Internal="true">
+          <fx:Field Tag="Flags">ThesaurusMapped</fx:Field>
+          <fx:Field Tag="OtherType">mapping</fx:Field>
+          <fx:Field Tag="OtherTag">Mapping ArrivalNotification to IE07</fx:Field>
+          <fx:Field Tag="OtherVersion">1.0</fx:Field>
+          <fx:Field Tag="OtherVariant">France</fx:Field>
+          <fx:Field Tag="OtherRole">Unknown</fx:Field>
+        </fx:Note>
+        <fx:Note Tag="documentation">edited with XMLSpy v2007 (http://www.altova.com) by VS (VSAdd)</fx:Note>
+        <fx:Note Tag="documentation">edited with XMLSPY v5 rel. 3 U (http://www.xmlspy.com) by daniel (dgd)</fx:Note>
+        <fx:Note Tag="documentation">Version 2.0, 23 juin 2006</fx:Note>
+      </fx:ModelProperties>
+      <fx:Folder Name="Elements" Type="Element" Id="1"/>
+      <fx:Folder Name="Types" Type="Type" Id="2"/>
+      <fx:Folder Name="Groups" Type="Group" Id="3"/>
+      <fx:Folder Name="AttributeGroups" Type="AttrGroup" Id="4"/>
+      <fx:Folder Name="Attributes" Type="Attr" Id="5"/>
+      <fx:Folder Type="Guideline" Name="Guidelines"/>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:include schemaLocation="ParametresConnexionNSTI.xsd"/>
+  <xs:include schemaLocation="ParametresMessageNSTI.xsd"/>
+  <xs:include schemaLocation="ComposantsNSTI.xsd"/>
+  <xs:element name="MessageOperateur" fx:FolderId="1">
+    <xs:complexType>
+      <xs:sequence fx:NextOrdinalNumber="3">
+        <xs:element name="EnveloppeConnexion" type="TEnveloppeConnexion" fx:OrdinalNumber="0"/>
+        <xs:element name="Messages" type="TMessages" fx:OrdinalNumber="1">
+          <xs:annotation>
+            <xs:documentation>
+              <fx:DocItem Type="TypeInstance" Name="TMessages">
+                <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                  <fx:DocItem Type="ElementLocal" Name="Message" OrdinalNumber="0">
+                    <fx:DocItem Type="TypeInstance" Name="TMessage">
+                      <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                        <fx:DocItem Type="ElementLocal" Name="Notification" OrdinalNumber="1">
+                          <fx:DocItem Type="TypeLocal" Name=":local:complexType">
+                            <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                              <fx:DocItem Type="ElementLocal" Name="Entete" OrdinalNumber="0">
+                                <fx:DocItem Type="TypeLocal" Name=":local:complexType">
+                                  <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                                    <fx:DocItem Type="ElementInstance" Name="refdec" OrdinalNumber="0">
+                                      <fx:Note Tag="Mapping">1</fx:Note>
+                                    </fx:DocItem>
+                                  </fx:DocItem>
+                                </fx:DocItem>
+                              </fx:DocItem>
+                              <fx:DocItem Type="ElementLocal" Name="Gen" OrdinalNumber="1">
+                                <fx:DocItem Type="TypeLocal" Name=":local:complexType">
+                                  <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                                    <fx:DocItem Type="ElementInstance" Name="lieusousdouane" OrdinalNumber="0">
+                                      <fx:Note Tag="Mapping">3</fx:Note>
+                                    </fx:DocItem>
+                                    <fx:DocItem Type="ElementInstance" Name="lieunotif" OrdinalNumber="1">
+                                      <fx:Note Tag="Mapping">4</fx:Note>
+                                    </fx:DocItem>
+                                    <fx:DocItem Type="ElementLocal" Name="LieuAutorise" OrdinalNumber="2">
+                                      <fx:DocItem Type="TypeInstance" Name="TLieuBureau">
+                                        <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                                          <fx:DocItem Type="ElementLocal" Name="Code" OrdinalNumber="0">
+                                            <fx:Note Tag="Mapping">7</fx:Note>
+                                          </fx:DocItem>
+                                        </fx:DocItem>
+                                      </fx:DocItem>
+                                    </fx:DocItem>
+                                    <fx:DocItem Type="ElementInstance" Name="lieuagree" OrdinalNumber="3">
+                                      <fx:Note Tag="Mapping">6</fx:Note>
+                                    </fx:DocItem>
+                                    <fx:DocItem Type="ElementInstance" Name="procsimpl" OrdinalNumber="4">
+                                      <fx:Note Tag="Mapping">8</fx:Note>
+                                    </fx:DocItem>
+                                    <fx:DocItem Type="ElementLocal" Name="date" OrdinalNumber="5">
+                                      <fx:Note Tag="Mapping">9</fx:Note>
+                                      <fx:Note Tag="Mapping">10</fx:Note>
+                                      <fx:Note Tag="Mapping">11</fx:Note>
+                                    </fx:DocItem>
+                                    <fx:DocItem Type="ElementInstance" Name="burpres" OrdinalNumber="6">
+                                      <fx:Note Tag="Mapping">12</fx:Note>
+                                    </fx:DocItem>
+                                    <fx:DocItem Type="ElementLocal" Name="Destinataire" OrdinalNumber="7">
+                                      <fx:DocItem Type="TypeInstance" Name="TTrader">
+                                        <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                                          <fx:DocItem Type="ElementInstance" Name="tin" OrdinalNumber="0">
+                                            <fx:Note Tag="Mapping">13</fx:Note>
+                                          </fx:DocItem>
+                                          <fx:DocItem Type="ElementInstance" Name="nomoperateur" OrdinalNumber="1">
+                                            <fx:Note Tag="Mapping">14</fx:Note>
+                                          </fx:DocItem>
+                                          <fx:DocItem Type="ElementInstance" Name="rueoperateur" OrdinalNumber="2">
+                                            <fx:Note Tag="Mapping">15</fx:Note>
+                                            <fx:Note Tag="Mapping">16</fx:Note>
+                                          </fx:DocItem>
+                                          <fx:DocItem Type="ElementInstance" Name="paysoperateur" OrdinalNumber="3">
+                                            <fx:Note Tag="Mapping">17</fx:Note>
+                                          </fx:DocItem>
+                                          <fx:DocItem Type="ElementInstance" Name="codepostaloperateur" OrdinalNumber="4">
+                                            <fx:Note Tag="Mapping">18</fx:Note>
+                                          </fx:DocItem>
+                                          <fx:DocItem Type="ElementInstance" Name="villeoperateur" OrdinalNumber="5">
+                                            <fx:Note Tag="Mapping">19</fx:Note>
+                                          </fx:DocItem>
+                                        </fx:DocItem>
+                                      </fx:DocItem>
+                                    </fx:DocItem>
+                                  </fx:DocItem>
+                                </fx:DocItem>
+                              </fx:DocItem>
+                              <fx:DocItem Type="ElementLocal" Name="Evenements" OrdinalNumber="2">
+                                <fx:DocItem Type="TypeLocal" Name=":local:complexType">
+                                  <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                                    <fx:DocItem Type="ElementLocal" Name="Evenement" OrdinalNumber="0">
+                                      <fx:DocItem Type="TypeLocal" Name=":local:complexType">
+                                        <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                                          <fx:DocItem Type="ElementLocal" Name="lieu" OrdinalNumber="0">
+                                            <fx:Note Tag="Mapping">20</fx:Note>
+                                          </fx:DocItem>
+                                          <fx:DocItem Type="ElementLocal" Name="pays" OrdinalNumber="1">
+                                            <fx:Note Tag="Mapping">21</fx:Note>
+                                          </fx:DocItem>
+                                          <fx:DocItem Type="ElementLocal" Name="nsti" OrdinalNumber="2">
+                                            <fx:Note Tag="Mapping">22</fx:Note>
+                                          </fx:DocItem>
+                                          <fx:DocItem Type="ElementLocal" Name="Incident" OrdinalNumber="3">
+                                            <fx:DocItem Type="TypeLocal" Name=":local:complexType">
+                                              <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                                                <fx:DocItem Type="ElementLocal" Name="incident" OrdinalNumber="0">
+                                                  <fx:Note Tag="Mapping">23</fx:Note>
+                                                </fx:DocItem>
+                                                <fx:DocItem Type="ElementLocal" Name="info" OrdinalNumber="1">
+                                                  <fx:Note Tag="Mapping">24</fx:Note>
+                                                </fx:DocItem>
+                                                <fx:DocItem Type="ElementLocal" Name="date" OrdinalNumber="2">
+                                                  <fx:Note Tag="Mapping">25</fx:Note>
+                                                </fx:DocItem>
+                                                <fx:DocItem Type="ElementLocal" Name="autorite" OrdinalNumber="3">
+                                                  <fx:Note Tag="Mapping">26</fx:Note>
+                                                </fx:DocItem>
+                                                <fx:DocItem Type="ElementLocal" Name="lieu" OrdinalNumber="4">
+                                                  <fx:Note Tag="Mapping">27</fx:Note>
+                                                </fx:DocItem>
+                                                <fx:DocItem Type="ElementLocal" Name="pays" OrdinalNumber="5">
+                                                  <fx:Note Tag="Mapping">28</fx:Note>
+                                                </fx:DocItem>
+                                              </fx:DocItem>
+                                            </fx:DocItem>
+                                          </fx:DocItem>
+                                          <fx:DocItem Type="ElementLocal" Name="Scelles" OrdinalNumber="4">
+                                            <fx:DocItem Type="TypeLocal" Name=":local:complexType">
+                                              <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                                                <fx:DocItem Type="ElementLocal" Name="nb" OrdinalNumber="0">
+                                                  <fx:Note Tag="Mapping">29</fx:Note>
+                                                </fx:DocItem>
+                                                <fx:DocItem Type="ElementLocal" Name="Scellesidentites" OrdinalNumber="1">
+                                                  <fx:Note Tag="Mapping">30</fx:Note>
+                                                </fx:DocItem>
+                                              </fx:DocItem>
+                                            </fx:DocItem>
+                                          </fx:DocItem>
+                                          <fx:DocItem Type="ElementLocal" Name="Transbordement" OrdinalNumber="5">
+                                            <fx:DocItem Type="TypeLocal" Name=":local:complexType">
+                                              <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                                                <fx:DocItem Type="ElementLocal" Name="identite" OrdinalNumber="0">
+                                                  <fx:Note Tag="Mapping">31</fx:Note>
+                                                </fx:DocItem>
+                                                <fx:DocItem Type="ElementLocal" Name="nationalite" OrdinalNumber="1">
+                                                  <fx:Note Tag="Mapping">32</fx:Note>
+                                                </fx:DocItem>
+                                                <fx:DocItem Type="ElementLocal" Name="date" OrdinalNumber="2">
+                                                  <fx:Note Tag="Mapping">33</fx:Note>
+                                                </fx:DocItem>
+                                                <fx:DocItem Type="ElementLocal" Name="autorite" OrdinalNumber="3">
+                                                  <fx:Note Tag="Mapping">34</fx:Note>
+                                                </fx:DocItem>
+                                                <fx:DocItem Type="ElementLocal" Name="lieu" OrdinalNumber="4">
+                                                  <fx:Note Tag="Mapping">35</fx:Note>
+                                                </fx:DocItem>
+                                                <fx:DocItem Type="ElementLocal" Name="pays" OrdinalNumber="5">
+                                                  <fx:Note Tag="Mapping">36</fx:Note>
+                                                </fx:DocItem>
+                                              </fx:DocItem>
+                                            </fx:DocItem>
+                                          </fx:DocItem>
+                                          <fx:DocItem Type="ElementLocal" Name="Conteneurs" OrdinalNumber="6">
+                                            <fx:DocItem Type="TypeLocal" Name=":local:complexType">
+                                              <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                                                <fx:DocItem Type="ElementLocal" Name="conteneur" OrdinalNumber="0">
+                                                  <fx:Note Tag="Mapping">37</fx:Note>
+                                                </fx:DocItem>
+                                              </fx:DocItem>
+                                            </fx:DocItem>
+                                          </fx:DocItem>
+                                        </fx:DocItem>
+                                      </fx:DocItem>
+                                    </fx:DocItem>
+                                  </fx:DocItem>
+                                </fx:DocItem>
+                              </fx:DocItem>
+                            </fx:DocItem>
+                          </fx:DocItem>
+                        </fx:DocItem>
+                        <fx:DocItem Type="ElementLocal" Name="EnveloppeMessage" OrdinalNumber="0">
+                          <fx:DocItem Type="TypeInstance" Name="TEnveloppeMessage">
+                            <fx:DocItem Type="GroupSequence" Name="xs:sequence">
+                              <fx:DocItem Type="ElementInstance" Name="schemaID" OrdinalNumber="0">
+                                <fx:Note Tag="Mapping">2</fx:Note>
+                              </fx:DocItem>
+                            </fx:DocItem>
+                          </fx:DocItem>
+                        </fx:DocItem>
+                      </fx:DocItem>
+                    </fx:DocItem>
+                  </fx:DocItem>
+                </fx:DocItem>
+              </fx:DocItem>
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="ELIT" minOccurs="0" fx:OrdinalNumber="2">
+          <xs:complexType>
+            <xs:sequence fx:NextOrdinalNumber="7">
+              <xs:element name="RefIntDos" minOccurs="0" fx:OrdinalNumber="0">
+                <xs:annotation>
+                  <xs:documentation>
+                    <fx:Note Tag="documentation">Référence interne de la notification</fx:Note>
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserID" type="xs:string" minOccurs="0" fx:OrdinalNumber="1">
+                <xs:annotation>
+                  <xs:documentation>
+                    <fx:Note Tag="documentation">Identifiant interne de l'utilisateur SDD</fx:Note>
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Modif" type="xs:string" minOccurs="0" fx:OrdinalNumber="2">
+                <xs:annotation>
+                  <xs:documentation>
+                    <fx:Note Tag="documentation">1 = Modification 0 = Création</fx:Note>
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="UserGroupe" minOccurs="0" fx:OrdinalNumber="3">
+                <xs:annotation>
+                  <xs:documentation>
+                    <fx:Note Tag="documentation">Code groupe de l'utilisateur SDD</fx:Note>
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="17"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserCode" minOccurs="0" fx:OrdinalNumber="4">
+                <xs:annotation>
+                  <xs:documentation>
+                    <fx:Note Tag="documentation">Code utilisateur SDD</fx:Note>
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="17"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="A_Stocker" type="xs:string" minOccurs="0" fx:OrdinalNumber="5">
+                <xs:annotation>
+                  <xs:documentation>
+                    <fx:Note Tag="documentation">Pour stocker en BDD sans envoyer à la douane</fx:Note>
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="sender" type="xs:string" minOccurs="0" fx:OrdinalNumber="6">
+                <xs:annotation>
+                  <xs:documentation>
+                    <fx:Note Tag="documentation">N° EDIFACT</fx:Note>
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TMessage" fx:FolderId="2">
+    <xs:sequence fx:NextOrdinalNumber="2">
+      <xs:element name="EnveloppeMessage" type="TEnveloppeMessage" fx:OrdinalNumber="0"/>
+      <xs:element name="Notification" fx:OrdinalNumber="1">
+        <xs:complexType>
+          <xs:sequence fx:NextOrdinalNumber="4">
+            <xs:element name="Entete" fx:OrdinalNumber="0">
+              <xs:complexType>
+                <xs:sequence fx:NextOrdinalNumber="1">
+                  <xs:element ref="refdec" fx:OrdinalNumber="0"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Gen" fx:OrdinalNumber="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">HEADER</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence fx:NextOrdinalNumber="8">
+                  <xs:element ref="lieusousdouane" minOccurs="0" fx:OrdinalNumber="0"/>
+                  <xs:element ref="lieunotif" fx:OrdinalNumber="1"/>
+                  <xs:element name="LieuAutorise" type="TLieuBureau" minOccurs="0" fx:OrdinalNumber="2">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Agreed Location - Lieu autorisé</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element ref="lieuagree" minOccurs="0" fx:OrdinalNumber="3"/>
+                  <xs:element ref="procsimpl" fx:OrdinalNumber="4"/>
+                  <xs:element name="date" type="DateYYYYMMDD" fx:OrdinalNumber="5">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Arrival notification date - Date de notification d'arrivée</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element ref="burpres" fx:OrdinalNumber="6"/>
+                  <xs:element name="Destinataire" type="TTrader" fx:OrdinalNumber="7">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Opérateur à destination (DESTINATION) TRADER</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Evenements" minOccurs="0" fx:OrdinalNumber="2">
+              <xs:complexType>
+                <xs:sequence minOccurs="0" maxOccurs="9" fx:NextOrdinalNumber="1">
+                  <xs:element name="Evenement" fx:OrdinalNumber="0">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">EN ROUTE EVENT</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:sequence fx:NextOrdinalNumber="7">
+                        <xs:element name="lieu" type="RefLieu" fx:OrdinalNumber="0"/>
+                        <xs:element name="pays" type="RefPays" fx:OrdinalNumber="1"/>
+                        <xs:element name="nsti" type="Oui_Non" fx:OrdinalNumber="2">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">Déjà dans le NSTI (NCTS) CTL_CONTROL</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Incident" minOccurs="0" fx:OrdinalNumber="3">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">INCIDENT</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:complexType>
+                            <xs:sequence fx:NextOrdinalNumber="6">
+                              <xs:element name="incident" type="Oui_Non" minOccurs="0" fx:OrdinalNumber="0">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <fx:Note Tag="documentation">incident de parcours ?</fx:Note>
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                              <xs:element name="info" minOccurs="0" fx:OrdinalNumber="1">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <fx:Note Tag="documentation">description de l'incident</fx:Note>
+                                  </xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="350"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="date" type="DateYYYYMMDD" minOccurs="0" fx:OrdinalNumber="2">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <fx:Note Tag="documentation">date de l'incident</fx:Note>
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                              <xs:element name="autorite" type="TexteCourt" minOccurs="0" fx:OrdinalNumber="3"/>
+                              <xs:element name="lieu" type="RefLieu" minOccurs="0" fx:OrdinalNumber="4">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <fx:Note Tag="documentation">Lieu de l'incident</fx:Note>
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                              <xs:element name="pays" type="RefPays" minOccurs="0" fx:OrdinalNumber="5">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <fx:Note Tag="documentation">pays de l'incident</fx:Note>
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Scelles" minOccurs="0" fx:OrdinalNumber="4">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">SEALS INFOS</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:complexType>
+                            <xs:sequence fx:NextOrdinalNumber="2">
+                              <xs:element name="nb" fx:OrdinalNumber="0">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <fx:Note Tag="documentation">Nombre de scellés</fx:Note>
+                                  </xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:integer">
+                                    <xs:totalDigits value="4"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="Scellesidentites" fx:OrdinalNumber="1">
+                                <xs:complexType>
+                                  <xs:sequence fx:NextOrdinalNumber="1">
+                                    <xs:element name="scelleidentite" maxOccurs="99" fx:OrdinalNumber="0">
+                                      <xs:annotation>
+                                        <xs:documentation>
+                                          <fx:Note Tag="documentation">marque des scellés SEALS ID</fx:Note>
+                                        </xs:documentation>
+                                      </xs:annotation>
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:maxLength value="20"/>
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:element>
+                                  </xs:sequence>
+                                </xs:complexType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Transbordement" minOccurs="0" fx:OrdinalNumber="5">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">TRANSHIPMENT</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:complexType>
+                            <xs:sequence fx:NextOrdinalNumber="6">
+                              <xs:element name="identite" minOccurs="0" fx:OrdinalNumber="0">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <fx:Note Tag="documentation">Nouvelle identité</fx:Note>
+                                  </xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="27"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="nationalite" type="RefPays" minOccurs="0" fx:OrdinalNumber="1">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <fx:Note Tag="documentation">nouvelle nationalité</fx:Note>
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:element>
+                              <xs:element name="date" type="DateYYYYMMDD" minOccurs="0" fx:OrdinalNumber="2"/>
+                              <xs:element name="autorite" type="TexteCourt" minOccurs="0" fx:OrdinalNumber="3"/>
+                              <xs:element name="lieu" type="RefLieu" minOccurs="0" fx:OrdinalNumber="4"/>
+                              <xs:element name="pays" type="RefPays" minOccurs="0" fx:OrdinalNumber="5"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Conteneurs" minOccurs="0" fx:OrdinalNumber="6">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">CONTAINERS</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:complexType>
+                            <xs:sequence minOccurs="0" maxOccurs="99" fx:NextOrdinalNumber="1">
+                              <xs:element name="conteneur" fx:OrdinalNumber="0">
+                                <xs:annotation>
+                                  <xs:documentation>
+                                    <fx:Note Tag="documentation">numéro du conteneur</fx:Note>
+                                  </xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="17"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ReponseNotification" type="TReponseNotification" minOccurs="0" fx:OrdinalNumber="3"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TMessages" fx:FolderId="2">
+    <xs:sequence fx:NextOrdinalNumber="1">
+      <xs:element name="Message" type="TMessage" fx:OrdinalNumber="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TReponseNotification" fx:FolderId="2">
+    <xs:sequence fx:NextOrdinalNumber="4">
+      <xs:element name="Entete" fx:OrdinalNumber="0">
+        <xs:annotation>
+          <xs:documentation>
+            <fx:Note Tag="documentation">(FR3000 / IE08 / IE21 / FR2000)</fx:Note>
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence fx:NextOrdinalNumber="1">
+            <xs:element ref="refdec" fx:OrdinalNumber="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Gen" minOccurs="0" fx:OrdinalNumber="1">
+        <xs:annotation>
+          <xs:documentation>
+            <fx:Note Tag="documentation">(FR3000) HEADER</fx:Note>
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence fx:NextOrdinalNumber="35">
+            <xs:element ref="typedec" minOccurs="0" fx:OrdinalNumber="0"/>
+            <xs:element name="paysdest" type="RefPays" minOccurs="0" fx:OrdinalNumber="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Country of destination code -  Pays de destination du transit</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="LieuAutorise" type="TLieuBureau" minOccurs="0" fx:OrdinalNumber="2">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Agreed location of goods - Lieu authorisé</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element ref="lieuagree" minOccurs="0" fx:OrdinalNumber="3"/>
+            <xs:element name="lieucharg" type="RefLieu17AN" minOccurs="0" fx:OrdinalNumber="4">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Place of loading, code - Lieu de chargement</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="pro" type="RefPays" minOccurs="0" fx:OrdinalNumber="5">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Country of dispatch / export code -  Pays d'expédition du transit</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element ref="lieusousdouane" minOccurs="0" fx:OrdinalNumber="6"/>
+            <xs:element name="Transport" minOccurs="0" fx:OrdinalNumber="7">
+              <xs:complexType>
+                <xs:sequence fx:NextOrdinalNumber="6">
+                  <xs:element ref="modfrotra" minOccurs="0" fx:OrdinalNumber="0"/>
+                  <xs:element name="iddeptra" type="IdTransport" minOccurs="0" fx:OrdinalNumber="1">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Identity of means of transport at departure - Identité du moyen de transport au départ</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="natdeptra" type="RefPays" minOccurs="0" fx:OrdinalNumber="2">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Nationality of means of transport at departure - Nationalité du moyen de transport au départ</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="idfrotra" type="IdTransport" minOccurs="0" fx:OrdinalNumber="3">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Identity of means of transport crossing border - Identité du moyen de transport frontière</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="natfrotra" type="RefPays" minOccurs="0" fx:OrdinalNumber="4">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Nationality of means of transport crossing border - Nationalité du moyen de transport frontière</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element ref="conteneurtra" fx:OrdinalNumber="5"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dateaccept" type="DateYYYYMMDD" minOccurs="0" fx:OrdinalNumber="8">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Acceptance date - Date d'acceptation</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="dateemis" type="DateYYYYMMDD" minOccurs="0" fx:OrdinalNumber="9">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Issuing date  - Date d'emission</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="lgdocacc" type="RefPays" minOccurs="0" fx:OrdinalNumber="10">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">NCTS accompanying document language code</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element ref="nbrart" minOccurs="0" fx:OrdinalNumber="11"/>
+            <xs:element ref="nbrcol" minOccurs="0" fx:OrdinalNumber="12"/>
+            <xs:element ref="msb" minOccurs="0" fx:OrdinalNumber="13"/>
+            <xs:element name="circspecif" minOccurs="0" fx:OrdinalNumber="14">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Specific Circumstance Indicator</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="1"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="modpaiement" minOccurs="0" fx:OrdinalNumber="15">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Transport charges / Method of Payment</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="1"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="refnum" minOccurs="0" fx:OrdinalNumber="16">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Commercial Reference Number</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="70"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="securite" minOccurs="0" fx:OrdinalNumber="17">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Security</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:totalDigits value="1"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="transfertrefnum" minOccurs="0" fx:OrdinalNumber="18">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Conveyance reference number</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="35"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="lieudecharg" type="RefLieu" minOccurs="0" fx:OrdinalNumber="19">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Place of unloading - lieu de déchargement</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="PO" minOccurs="0" fx:OrdinalNumber="20">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">(PRINCIPAL) TRADER</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence fx:NextOrdinalNumber="7">
+                  <xs:element ref="tin" minOccurs="0" fx:OrdinalNumber="0"/>
+                  <xs:element ref="nomoperateur" fx:OrdinalNumber="1"/>
+                  <xs:element ref="rueoperateur" fx:OrdinalNumber="2"/>
+                  <xs:element ref="paysoperateur" fx:OrdinalNumber="3"/>
+                  <xs:element ref="codepostaloperateur" fx:OrdinalNumber="4"/>
+                  <xs:element ref="villeoperateur" fx:OrdinalNumber="5"/>
+                  <xs:element name="tirid" minOccurs="0" fx:OrdinalNumber="6">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="17"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Expediteur" type="TTrader" minOccurs="0" fx:OrdinalNumber="21">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Consignor trader</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Destinataire" type="TTrader" minOccurs="0" fx:OrdinalNumber="22">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Consignee TRADER</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="DestinataireAgree" minOccurs="0" fx:OrdinalNumber="23">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Authorised consignee trader</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence fx:NextOrdinalNumber="1">
+                  <xs:element ref="tin" fx:OrdinalNumber="0"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="burdep" type="RefBureau" minOccurs="0" fx:OrdinalNumber="24">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Departure customs office</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element ref="burpres" minOccurs="0" fx:OrdinalNumber="25"/>
+            <xs:element name="BureauxPassages" minOccurs="0" fx:OrdinalNumber="26">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Transit customs office</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence minOccurs="0" maxOccurs="9" fx:NextOrdinalNumber="1">
+                  <xs:element name="BureauPassage" fx:OrdinalNumber="0">
+                    <xs:complexType>
+                      <xs:sequence fx:NextOrdinalNumber="2">
+                        <xs:element name="burpas" type="RefBureau" fx:OrdinalNumber="0"/>
+                        <xs:element name="heure" type="DateHeureYYYYMMDDHHMI" fx:OrdinalNumber="1"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="burdest" type="RefBureau" minOccurs="0" fx:OrdinalNumber="27">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Destination customs office</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="ControlResult" minOccurs="0" fx:OrdinalNumber="28">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Control result</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence fx:NextOrdinalNumber="2">
+                  <xs:element name="code" fx:OrdinalNumber="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="datelim" type="DateYYYYMMDD" fx:OrdinalNumber="1"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Scelles" minOccurs="0" fx:OrdinalNumber="29">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">SEALS INFOS</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence fx:NextOrdinalNumber="2">
+                  <xs:element name="nb" fx:OrdinalNumber="0">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Nombre de scellés</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:integer">
+                        <xs:totalDigits value="4"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Scellesidentites" fx:OrdinalNumber="1">
+                    <xs:complexType>
+                      <xs:sequence fx:NextOrdinalNumber="1">
+                        <xs:element name="scelleidentite" maxOccurs="99" fx:OrdinalNumber="0">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">marque des scellés SEALS ID</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="20"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Itineraires" minOccurs="0" fx:OrdinalNumber="30">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Itinerary</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence minOccurs="0" maxOccurs="99" fx:NextOrdinalNumber="1">
+                  <xs:element name="pays" type="RefPays" fx:OrdinalNumber="0">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Country of routing code</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="AnalysesRisques" minOccurs="0" fx:OrdinalNumber="31">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Risk analysis</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence minOccurs="0" maxOccurs="999" fx:NextOrdinalNumber="1">
+                  <xs:element name="AnalyseRisque" fx:OrdinalNumber="0">
+                    <xs:complexType>
+                      <xs:sequence fx:NextOrdinalNumber="3">
+                        <xs:element name="nbr" minOccurs="0" fx:OrdinalNumber="0">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">Item Number involved</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:integer">
+                              <xs:totalDigits value="5"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="code" fx:OrdinalNumber="1">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">Risk Analysis result code</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="5"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="text" minOccurs="0" fx:OrdinalNumber="2">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">Risk Analysis text</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="350"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Transporteur" type="TTrader" minOccurs="0" fx:OrdinalNumber="32">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Carrier Trader</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="ExpediteurSecurite" type="TTrader" minOccurs="0" fx:OrdinalNumber="33">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Consignor-security Trader</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="DestinataireSecurite" type="TTrader" minOccurs="0" fx:OrdinalNumber="34">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">Consignee-security Trader</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Articles" minOccurs="0" fx:OrdinalNumber="2">
+        <xs:annotation>
+          <xs:documentation>
+            <fx:Note Tag="documentation">(FR3000)</fx:Note>
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence fx:NextOrdinalNumber="1">
+            <xs:element name="Article" maxOccurs="999" fx:OrdinalNumber="0">
+              <xs:complexType>
+                <xs:sequence fx:NextOrdinalNumber="21">
+                  <xs:element ref="numart" fx:OrdinalNumber="0"/>
+                  <xs:element name="nomenc" minOccurs="0" fx:OrdinalNumber="1">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Commodity code</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="22"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element ref="typedec" minOccurs="0" fx:OrdinalNumber="2"/>
+                  <xs:element name="descom" minOccurs="0" fx:OrdinalNumber="3">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Goods description</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="280"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element ref="msb" minOccurs="0" fx:OrdinalNumber="4"/>
+                  <xs:element name="msn" minOccurs="0" fx:OrdinalNumber="5">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Masse nette exprimée en kg</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:decimal">
+                        <xs:totalDigits value="14"/>
+                        <xs:fractionDigits value="3"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="pro" type="RefPays" minOccurs="0" fx:OrdinalNumber="6">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Country of dispatch / export code -  Pays d'expédition du transit</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="dest" type="RefPays" minOccurs="0" fx:OrdinalNumber="7">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Country of destination code -  Pays de destination du transit</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="modpaiement" minOccurs="0" fx:OrdinalNumber="8">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Transport charges / Method of Payment</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="refnum" minOccurs="0" fx:OrdinalNumber="9">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Commercial Reference Number</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="70"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="codematdan" minOccurs="0" fx:OrdinalNumber="10">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">UN dangerous goods code</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="4"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DocPrecedents" minOccurs="0" fx:OrdinalNumber="11">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Previous administrative references</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:sequence minOccurs="0" maxOccurs="9" fx:NextOrdinalNumber="1">
+                        <xs:element name="DocPrecedent" fx:OrdinalNumber="0">
+                          <xs:complexType>
+                            <xs:sequence fx:NextOrdinalNumber="3">
+                              <xs:element name="type" fx:OrdinalNumber="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="6"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="refdoc" fx:OrdinalNumber="1">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="35"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="infocompl" minOccurs="0" fx:OrdinalNumber="2">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="26"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="DocProduits" minOccurs="0" fx:OrdinalNumber="12">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Produced documents/certificates</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:sequence minOccurs="0" maxOccurs="99" fx:NextOrdinalNumber="1">
+                        <xs:element name="DocProduit" fx:OrdinalNumber="0">
+                          <xs:complexType>
+                            <xs:sequence fx:NextOrdinalNumber="3">
+                              <xs:element name="type" fx:OrdinalNumber="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="4"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="refdoc" minOccurs="0" fx:OrdinalNumber="1">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="35"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="infocompl" minOccurs="0" fx:OrdinalNumber="2">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="26"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Menspecs" minOccurs="0" fx:OrdinalNumber="13">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Special mentions</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:sequence minOccurs="0" maxOccurs="99" fx:NextOrdinalNumber="1">
+                        <xs:element name="menspec" fx:OrdinalNumber="0">
+                          <xs:complexType>
+                            <xs:sequence fx:NextOrdinalNumber="3">
+                              <xs:element name="code" fx:OrdinalNumber="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="5"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="ceexport" minOccurs="0" fx:OrdinalNumber="1">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="1"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="paysexport" type="RefPays" minOccurs="0" fx:OrdinalNumber="2"/>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Expediteur" type="TTrader" minOccurs="0" fx:OrdinalNumber="14">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Consignor trader</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="Destinataire" type="TTrader" minOccurs="0" fx:OrdinalNumber="15">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Consignee TRADER</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="Conteneurs" minOccurs="0" fx:OrdinalNumber="16">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">CONTAINERS</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:sequence minOccurs="0" maxOccurs="99" fx:NextOrdinalNumber="1">
+                        <xs:element name="conteneur" fx:OrdinalNumber="0">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">numéro du conteneur</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="17"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Colisages" minOccurs="0" fx:OrdinalNumber="17">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Packages</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:sequence fx:NextOrdinalNumber="1">
+                        <xs:element name="Colisage" type="TColisage" maxOccurs="99" fx:OrdinalNumber="0"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="MarchandisesSensibles" minOccurs="0" fx:OrdinalNumber="18">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">SGI CODES</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:sequence minOccurs="0" maxOccurs="9" fx:NextOrdinalNumber="1">
+                        <xs:element name="marchandisesensible" fx:OrdinalNumber="0">
+                          <xs:complexType>
+                            <xs:sequence fx:NextOrdinalNumber="2">
+                              <xs:element name="code" minOccurs="0" fx:OrdinalNumber="0">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:maxLength value="2"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                              <xs:element name="quantite" fx:OrdinalNumber="1">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="14"/>
+                                    <xs:fractionDigits value="3"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:element>
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ExpediteurSecurite" type="TTrader" minOccurs="0" fx:OrdinalNumber="19">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Consignor-security Trader</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="DestinataireSecurite" type="TTrader" minOccurs="0" fx:OrdinalNumber="20">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">Consignee-security Trader</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReponseDatas" minOccurs="0" fx:OrdinalNumber="3">
+        <xs:annotation>
+          <xs:documentation>
+            <fx:Note Tag="documentation">(IE08 / IE21 / FR2000) HEADER</fx:Note>
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence fx:NextOrdinalNumber="3">
+            <xs:element name="ErreurIE08" minOccurs="0" fx:OrdinalNumber="0">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">(IE08)</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence fx:NextOrdinalNumber="2">
+                  <xs:element name="ErreurGen" fx:OrdinalNumber="0">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">HEADER</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:sequence fx:NextOrdinalNumber="3">
+                        <xs:element name="date" type="DateYYYYMMDD" fx:OrdinalNumber="0">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">Arrival rejection date</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                        <xs:element name="action" fx:OrdinalNumber="1">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">Action to be taken</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="350"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="raison" fx:OrdinalNumber="2">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">Arrival rejection reason</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="350"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ErreurFct" minOccurs="0" maxOccurs="999" fx:OrdinalNumber="1">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">FUNCTIONAL ERROR</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:sequence fx:NextOrdinalNumber="4">
+                        <xs:element name="type" fx:OrdinalNumber="0">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">Error type</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:integer">
+                              <xs:totalDigits value="2"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="pointer" fx:OrdinalNumber="1">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">Error pointer</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="210"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="raison" minOccurs="0" fx:OrdinalNumber="2">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">Error reason</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="6"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="valeurori" fx:OrdinalNumber="3">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">Original attribute value</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="140"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ErreurIE21" minOccurs="0" fx:OrdinalNumber="1">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">(IE21)</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence fx:NextOrdinalNumber="1">
+                  <xs:element name="ErreurGen" fx:OrdinalNumber="0">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">HEADER</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:sequence fx:NextOrdinalNumber="4">
+                        <xs:element name="code" fx:OrdinalNumber="0">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">Diversion rejection code</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:integer">
+                              <xs:totalDigits value="2"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="raison" minOccurs="0" fx:OrdinalNumber="1">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">Diversion rejection text</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="350"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="Destinataire" type="TTrader" fx:OrdinalNumber="2">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">Destination TRADER</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                        <xs:element ref="burpres" fx:OrdinalNumber="3"/>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Notification" minOccurs="0" fx:OrdinalNumber="2">
+              <xs:annotation>
+                <xs:documentation>
+                  <fx:Note Tag="documentation">(FR2000)</fx:Note>
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence fx:NextOrdinalNumber="1">
+                  <xs:element name="Etat" fx:OrdinalNumber="0">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <fx:Note Tag="documentation">HEADER</fx:Note>
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:sequence fx:NextOrdinalNumber="4">
+                        <xs:element name="date" type="DateYYYYMMDD" fx:OrdinalNumber="0">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">DTVAL</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                        <xs:element name="statut" fx:OrdinalNumber="1">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">EVENT</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="3"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="raison" fx:OrdinalNumber="2">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">STATUT</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="4"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="texte" minOccurs="0" fx:OrdinalNumber="3">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <fx:Note Tag="documentation">TXT</fx:Note>
+                            </xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:maxLength value="350"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

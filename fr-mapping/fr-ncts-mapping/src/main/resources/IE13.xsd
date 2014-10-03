@@ -1,0 +1,1872 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--edited with XMLSpy v2007 (http://www.altova.com) by VS (VSAdd)-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ENV" type="TEnveloppe">
+    <xs:annotation>
+      <xs:documentation source="documentation">Enveloppe (Noeud principal)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="TAdemar">
+    <xs:sequence>
+      <xs:element name="RCA" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">RCA</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="13"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DPM" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Droits de port</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="8"/>
+            <xs:fractionDigits value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CDC" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code créditaire</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="7"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="MAG" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Magasin</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PORT" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Port de perception des droits de port</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="5"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DOSSIER" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro de dossier ADEMAR</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="9"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TBureauPassage">
+    <xs:sequence maxOccurs="9">
+      <xs:element name="COD">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code bureau de douanes</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="8"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TCarrier">
+    <xs:sequence>
+      <xs:element name="CARRIER_TIN" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro d'identification (EORI/TIN)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CARRIER_NOM" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nom de la société</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CARRIER_RUE" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro et nom de la rue</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CARRIER_CDP" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code postal</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="9"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CARRIER_VIL" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nom de la ville</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CARRIER_PAY" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Pays</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CARRIER_LNG" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Langue</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TCaution">
+    <xs:sequence>
+      <xs:element name="MARCH_VAL" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Prix facturé (en euros)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="16"/>
+            <xs:fractionDigits value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TCodesProduitsSensibles">
+    <xs:sequence>
+      <xs:element name="COD" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code marchandises sensibles</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="QTE" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Quantité de marchandises sensibles</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="11"/>
+            <xs:fractionDigits value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TColis">
+    <xs:sequence>
+      <xs:element name="TCO" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Type de conditionnement</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NBC" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nombre de conditionnement (Nombre de colis)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="5"/>
+            <xs:fractionDigits value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NBP" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nombre de pièces (Quantité)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="5"/>
+            <xs:fractionDigits value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="TXT" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Marquage et numéros des conditionnements</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="42"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TConsignee">
+    <xs:sequence>
+      <xs:element name="CONSIGNEE_TIN" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro d'identification (EORI/TIN)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CONSIGNEE_NOM" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nom de la société</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CONSIGNEE_RUE" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro et nom de la rue</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CONSIGNEE_CDP" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code postal</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="9"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CONSIGNEE_VIL" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nom de la ville</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CONSIGNEE_PAY" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Pays</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CONSIGNEE_LNG" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Langue</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TConsignor">
+    <xs:sequence>
+      <xs:element name="CONSIGNOR_TIN" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro d'identification (EORI/TIN)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CONSIGNOR_NOM" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nom de la société</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CONSIGNOR_RUE" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro et nom de la rue</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CONSIGNOR_CDP" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code postal</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="9"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CONSIGNOR_VIL" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nom de la ville</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CONSIGNOR_PAY" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Pays</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CONSIGNOR_LNG" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Langue</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TConteneur">
+    <xs:sequence>
+      <xs:element name="NCT">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro de conteneur</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TDescriptionIE13">
+    <xs:sequence>
+      <xs:element name="ADEMAR" type="TAdemar" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">ADEMAR</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TYD" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Type de déclaration</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="9"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="LRN" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro de référence du document</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="22"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="TIR_ID" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">
+N° titulaire 
+carnet TIR
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="22"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="LOC" type="TLocalisationMarchandise" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Localisation des marchandises</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LID" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Lieu de la déclaration</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PAE" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Pays d'expédition</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PAD" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Pays de destination</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="BUD" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code bureau de destination</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="8"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="GBP" type="TBureauPassage" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Bureaux de passage</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BUE" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code bureau de départ</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="8"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DTP" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Date limite de présentation au bureau de douane de destination (AAAAMMJJ)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="8"/>
+            <xs:fractionDigits value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DTD" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Date de déclaration (AAAAMMJJ)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="8"/>
+            <xs:fractionDigits value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CTN" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Indicateur de marchandises conteneurisées (0 ou 1)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="1"/>
+            <xs:fractionDigits value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CTL" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code de résultat du Contrôle</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="GAR" type="TGarantie" minOccurs="0" maxOccurs="9">
+        <xs:annotation>
+          <xs:documentation source="documentation">Garantie</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ITD" type="TInfoTransportDepart" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Information sur le transport au départ</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ITF" type="TInfoTransportFrontiere" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Information sur le transport frontière</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IEXP" type="TExpediteur" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Opérateur Expéditeur</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IDES" type="TDestinataire" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Opérateur Destinataire</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DESA" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">N° d'identification du destinataire agréé</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="IPO" type="TPrincipalOblige" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Opérateur Principal obligé</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IRE" type="TRepresentant" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Représentant</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ITOT" type="TInformationsTotalisation" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Informations de totalisation</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SCL" type="TScelles" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Scellés apposés</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SECURITY" type="TSecurity" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Gestion des nouvelles zones de sécurité de l'entête du transit</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LIG" type="TLigne" maxOccurs="999">
+        <xs:annotation>
+          <xs:documentation source="documentation">Lignes : Article de marchandises</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TDescriptionIE29">
+    <xs:sequence>
+      <xs:element name="CTR2" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code traitement</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IE13" type="TDescriptionIE13">
+        <xs:annotation>
+          <xs:documentation source="documentation">Description IE13</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MRN" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro du transit MRN</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TDescriptionMarchandise">
+    <xs:sequence>
+      <xs:element name="LI1" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Ligne de description 1</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="70"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="LI2" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Ligne de description 2</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="70"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="LI3" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Ligne de description 3</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="70"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="LI4" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Ligne de description 4</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TDestinataire">
+    <xs:sequence>
+      <xs:element name="SIR" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro d'identification (SIRET)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NOM" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nom de la société</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="RUE" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro et nom de la rue</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="VIL" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nom de la ville</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CDP" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code postal</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="9"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PAY" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Pays</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TDestinataireLigne">
+    <xs:sequence>
+      <xs:element name="SIR" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro d'identification (SIRET)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NOM" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nom de la société</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="RUE" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro et nom de la rue</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="VIL" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nom de la ville</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CDP" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code postal</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="9"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PAY" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Pays</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TDocCertificationsProduits">
+    <xs:sequence>
+      <xs:element name="TYD" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Type de document produit/certificat</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="REF" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Référence du document produit/certificat</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CPL" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Complément d'informations sur le document produit/certificat</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TEnveloppe">
+    <xs:sequence>
+      <xs:element name="IABO" type="TInfosAbonne" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Informations sur l'abonné NSTI</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DATESYS" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Date système (AAAAMMJJ)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="8"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="SENDER" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Coordonnées de l'envoyeur (Adresse EDI)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="RECIEPENT" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nom du receveur</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="TYPEMESS" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Type de message</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="LG" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code langue</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="MES" type="TMessage">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code message</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TExpediteur">
+    <xs:sequence>
+      <xs:element name="SIR" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro d'identification (SIRET)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NOM" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nom de société</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="RUE" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro et nom de la rue</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="VIL" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nom de la ville</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CDP" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code postal</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="9"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PAY" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Pays</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TExpediteurLigne">
+    <xs:sequence>
+      <xs:element name="SIR" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro d'identification (SIRET)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NOM" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nom de la société</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="RUE" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro et nom de la rue</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="VIL" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nom de la ville</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CDP" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code postal</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="9"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PAY" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Pays</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TGarantie">
+    <xs:sequence>
+      <xs:element name="TYP" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Type de garantie</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="1"/>
+            <xs:fractionDigits value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="IGA" type="TReferenceGarantie" minOccurs="0" maxOccurs="99">
+        <xs:annotation>
+          <xs:documentation source="documentation">Référence de la garantie</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TInformationsTotalisation">
+    <xs:sequence>
+      <xs:element name="NBC" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nombre total de conditionnement</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="7"/>
+            <xs:fractionDigits value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NBL" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nombre total de listes de chargement</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="5"/>
+            <xs:fractionDigits value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NBU" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nombre total d'unités logistiques</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="5"/>
+            <xs:fractionDigits value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PDB" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Poids brut total</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="11"/>
+            <xs:fractionDigits value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CAUTION_MT" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Libellé caution totale déclarée pour le transit</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TInfosAbonne">
+    <xs:sequence>
+      <xs:element name="UTI" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code utilisateur</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="MTP" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Mot de passe</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TInfosColisage">
+    <xs:sequence>
+      <xs:element name="NDP" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code de marchandises (NDP)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DM" type="TDescriptionMarchandise" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Description de la marchandise</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PDB" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Poids brut</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="11"/>
+            <xs:fractionDigits value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PDN" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Poids net</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="11"/>
+            <xs:fractionDigits value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TInfoTransportDepart">
+    <xs:sequence>
+      <xs:element name="MOD" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Mode de transport terrestre</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="2"/>
+            <xs:fractionDigits value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="IDT" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Identité du moyen de transport au départ</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="27"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NAT" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nationalité du moyen de transport au départ</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TInfoTransportFrontiere">
+    <xs:sequence>
+      <xs:element name="MOD" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Mode de transport à la frontière</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="2"/>
+            <xs:fractionDigits value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="TYP" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Type de moyen de transport à la frontière</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="2"/>
+            <xs:fractionDigits value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="IDT" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Identité du moyen de transport traversant la frontière</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="27"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NAT" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nationalité du moyen de transport traversant la frontière</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TItinerary">
+    <xs:sequence>
+      <xs:element name="ROUT_COUNTRY">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code pays</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TLigne">
+    <xs:sequence>
+      <xs:element name="NOA">
+        <xs:annotation>
+          <xs:documentation source="documentation">N° article</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="5"/>
+            <xs:fractionDigits value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="TYD" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Type de déclaration</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="9"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PEX" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code pays de départ</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PDE" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code pays de destination</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="IEXP" type="TExpediteurLigne" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Opérateur Expéditeur (Ligne)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IDES" type="TDestinataireLigne" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Opérateur Destinataire (Ligne)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ICO" type="TInfosColisage" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Informations colisage</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CDT" type="TColis" minOccurs="0" maxOccurs="99">
+        <xs:annotation>
+          <xs:documentation source="documentation">Colis</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CTR" type="TConteneur" minOccurs="0" maxOccurs="99">
+        <xs:annotation>
+          <xs:documentation source="documentation">Conteneurs</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CAUTION" type="TCaution" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Cautions</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IDAN" type="TReferencesAdministratives" minOccurs="0" maxOccurs="9">
+        <xs:annotation>
+          <xs:documentation source="documentation">Références administratives antérieures</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IDPR" type="TDocCertificationsProduits" minOccurs="0" maxOccurs="99">
+        <xs:annotation>
+          <xs:documentation source="documentation">Documents/Certifications Produits</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CPS" type="TCodesProduitsSensibles" minOccurs="0" maxOccurs="9">
+        <xs:annotation>
+          <xs:documentation source="documentation">Codes produits sensibles</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MSP" type="TMentionsSpeciales" minOccurs="0" maxOccurs="99">
+        <xs:annotation>
+          <xs:documentation source="documentation">Mentions spéciales</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SECURITY" type="TSecurityLigne" minOccurs="0" maxOccurs="99">
+        <xs:annotation>
+          <xs:documentation source="documentation">Mentions spéciales</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TLimiteValiditeNonCE">
+    <xs:sequence maxOccurs="7">
+      <xs:element name="CPA">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code pays non autorisé</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TLocalisationMarchandise">
+    <xs:sequence>
+      <xs:element name="CHGT" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Lieu de chargement</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="COD" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code localisation agréé</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="MCON" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Localisation des marchandises convenues</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="MAUT" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Localisation des marchandises autorisée</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="BUAN" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Bureau de douane annexe</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TMarqueScelles">
+    <xs:sequence>
+      <xs:element name="NUM">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TMentionsSpeciales">
+    <xs:sequence>
+      <xs:element name="EUE" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Export de la Communauté Européenne</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="1"/>
+            <xs:fractionDigits value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="EAP" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Export d'autres pays</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="COD" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code information additionnelle</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="INF" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Informations additionnelles</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="70"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TMessage">
+    <xs:sequence>
+      <xs:element name="IE29" type="TDescriptionIE29">
+        <xs:annotation>
+          <xs:documentation source="documentation">Description IE29</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TPrincipalOblige">
+    <xs:sequence>
+      <xs:element name="SIR" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">N° d'identification du principal obligé</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NOM" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nom de la société</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="RUE" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro et nom de la rue</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="VIL" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nom de la ville</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CDP" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code postal</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="9"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PAY" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Pays du principal obligé</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TReferenceGarantie">
+    <xs:sequence>
+      <xs:element name="NUM" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Numéro de référence de la garantie (GRN)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="24"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="COD" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code d'accès</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="AUT" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Autre référence de garantie</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="LUE" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Limitation de la validité de la garantie (Non valide pour la Communauté européenne)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="1"/>
+            <xs:fractionDigits value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CAUTION_MT" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Montant de la caution</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="11"/>
+            <xs:fractionDigits value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CAUTION_DEV" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Devise de la caution</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="LAP" type="TLimiteValiditeNonCE" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Limite de validité non CE</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TReferencesAdministratives">
+    <xs:sequence>
+      <xs:element name="TYD" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Type de document antérieur</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="6"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="REF" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Référence du document antérieur</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CPL" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Complément d'informations sur le document antérieur</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="26"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TRepresentant">
+    <xs:sequence>
+      <xs:element name="REP" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nom du représentant</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PVR" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Pouvoirs du représentant</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TScelles">
+    <xs:sequence>
+      <xs:element name="NBS" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Nombre de scellés</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="4"/>
+            <xs:fractionDigits value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NUS" type="TMarqueScelles" minOccurs="0" maxOccurs="99">
+        <xs:annotation>
+          <xs:documentation source="documentation">Marques des scellés</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TSecurity">
+    <xs:sequence>
+      <xs:element name="ENABLE" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">1=sécurité activée, 0=non activée</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CIRC_SPEC_IND" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Indicateur de circonstances spécifiques</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="MOD_PAI_TRP" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Mode de paiement du transport</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CONV_REF" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Référence du transport</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="COM_REF" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Référence commerciale</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="70"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="UNLOAD_CODE" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">code lieu de déchargement, à renseigner si circonstances spécifiques = B ou E</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="UNLOAD_LNG" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code langue du lieu de déchargement</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DATE_ARR" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Date et heure d'arrivée (yyyymmddhhmm)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="12"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ITINERARY" type="TItinerary" minOccurs="0" maxOccurs="99">
+        <xs:annotation>
+          <xs:documentation source="documentation">Itinéraire - Liste des pays</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CARRIER" type="TCarrier" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Transporteur sécurité</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CONSIGNOR" type="TConsignor" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Expéditeur sécurité</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CONSIGNEE" type="TConsignee" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Destinataire sécurité</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TSecurityLigne">
+    <xs:sequence>
+      <xs:element name="MOD_PAI_TRP" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Mode de paiement du transport</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="COM_REF" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Référence commerciale</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="70"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DANG_CODE" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Code matière dangereuse ONU selon table MAR_DANGER_ONU</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CONSIGNOR" type="TConsignor" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Expéditeur sécurité</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CONSIGNEE" type="TConsignee" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="documentation">Destinataire sécurité</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

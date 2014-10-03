@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.customsmatters.com/schemas/cab/declarationapi/ack" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.customsmatters.com/schemas/cab/declarationapi/ack" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:element name="ApiMessageAcknowledgement">
+		<xsd:annotation>
+			<xsd:documentation>myCustoms API Web Service Acknowledgment</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Status" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Status">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="ACCEPTED"/>
+				<xsd:enumeration value="REJECTED"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Develop (Kewill GmbH) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!-- 	Kewill Customs Exchange
+		KIDS types used general
+		Version 2.0.00 July 2011 -->
+	<!--
+		Complex types (ST)
+	-->
+	<xsd:complexType name="CTG_PositionError">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Position Error</xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type Fehler pro Position</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!-- xsd:element name="KindOfError" type="xsd:int"-->
+			<xsd:element name="KindOfError" type="STG_KindOfError">
+				<xsd:annotation>
+					<xsd:documentation>Indicator if PositionError list warnings (WRG), information (INF) or errors (ERR)</xsd:documentation>
+					<xsd:documentation>the original message referred to is not sent to customs because of errors if there is at least one appearance of the code "ERR" in the tag ErrorCode
+INF / WRG can be used in case of "confirm" and also in case of "failure" 
+
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="OriginOfError" type="xsd:int" minOccurs="0"/>
+			<xsd:element name="Modul" type="xsd:int" minOccurs="0"/>
+			<xsd:element name="ErrorCode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ErrorText" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="DateOfErrorMessage" type="STG_Date" minOccurs="0"/>
+			<xsd:element name="TimeOfErrorMessage" type="STG_Time" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_ErrorType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Fehler</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="UniqueNumber" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Unique number</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Code" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>Number and kind of the error (Warnung, Error, Information)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Text" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Description of the error</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Pointer" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Pointer to the part of the message with the error</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Number" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Type of the error (for CH)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_Information">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Type" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Text" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_DocumentType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Produced Documents</xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type Unterlagen</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Qualifier" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Qualifier, addition to the code of the document</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Type" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>Code for the document</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Reference" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Number for AEO or Authorisation number for outward processing or licence of the BAFA (Federal Office of Economics and Export Controls)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AdditionalInformation" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Additional information to the document</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Detail" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Details to a document</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="IssueDate" type="STG_Date" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Date the document was issued</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ExpirationDate" type="STG_Date" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Date the document will expire</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Value" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Amount to write down the export licence (in Euros without decimal places)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Reason" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="WritedownAmount" type="CT_WriteDownAmount" minOccurs="0"/>
+			<xsd:element name="WritedownQuantity" type="CT_WriteDownAmount" minOccurs="0"/>
+			<xsd:element name="Office" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>(new in V 1.01)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Present" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Type of presentation e.g. electronical or paper mould (new in V 1.01)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PresentLocation" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>(new in V 1.01)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_WriteDownAmount">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type </xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Qualifier" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Qualifier for the unit of measurement</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="UnitOfMeasurement" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Unit of measurement</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Value" type="xsd:decimal">
+				<xsd:annotation>
+					<xsd:documentation>Value to write down the export licence</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="ST_KindOfError">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="ERR">
+				<xsd:annotation>
+					<xsd:documentation>Error</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WRG">
+				<xsd:annotation>
+					<xsd:documentation>Warning</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="INF">
+				<xsd:annotation>
+					<xsd:documentation>Information</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="CT_PositionError">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Position Error</xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type Fehler pro Position</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="KindOfError" type="ST_KindOfError">
+				<xsd:annotation>
+					<xsd:documentation>Indicator if PositionError list warnings (WRG), information (INF) or errors (ERR)</xsd:documentation>
+					<xsd:documentation>the original message referred to is not sent to customs because of errors if there is at least one appearance of the code "ERR" in the tag ErrorCode
+INF / WRG can be used in case of "confirm" and also in case of "failure" 
+
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="OriginOfError" type="xsd:int" minOccurs="0"/>
+			<xsd:element name="Modul" type="xsd:int" minOccurs="0"/>
+			<xsd:element name="ErrorCode" type="xsd:string"/>
+			<xsd:element name="ErrorText" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="DateOfErrorMessage" type="STG_Date" minOccurs="0"/>
+			<xsd:element name="TimeOfErrorMessage" type="STG_Time" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--
+		Simple types (ST)
+	-->
+	<xsd:simpleType name="STG_KindOfError">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="ERR">
+				<xsd:annotation>
+					<xsd:documentation>Error</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WRG">
+				<xsd:annotation>
+					<xsd:documentation>Warning</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="INF">
+				<xsd:annotation>
+					<xsd:documentation>Information</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="STG_DateFormatted">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{4}[\-][0-9]{2}[\-][0-9]{2}">
+				<xsd:annotation>
+					<xsd:documentation>
+						format:		YYYY-MM-DD 
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="STG_Date">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="8"/>
+			<xsd:maxLength value="8"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="STG_TimeFormatted">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{2}[:][0-9]{2}([:][0-9]{2}([.][0-9]{3}))">
+				<xsd:annotation>
+					<xsd:documentation>
+							format:		HH:MM[:SS[.sss]] 
+						</xsd:documentation>
+				</xsd:annotation>
+			</xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="STG_Time">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="6"/>
+			<xsd:maxLength value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="STG_DateTimeFormatted">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{4}[\-][0-9]{2}[\-][0-9]{2}(T)[0-9]{2}[:][0-9]{2}[:][0-9]{2}([+\-][0-9]{2}[:][0-9]{2}|(Z))">
+				<xsd:annotation>
+					<xsd:documentation>
+						format:		YYYY-MM-DDTHH:MM:SS(+HH:MM|Z)
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="STG_DateTime">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="12"/>
+			<xsd:maxLength value="12"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="STG_CountryCodeISO">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="2"/>
+			<xsd:maxLength value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- bla-->
+	<!--
+		Fields  used in the <MessageName>.xsd with "ref"-assignment to have the documentation once in this xsd
+	-->
+	<xsd:element name="UCRNumber" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation>Unique Consignment Reference Number</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ReferenceNumber" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation>Reference number, unique identifier for the declaration, created by the person who has created the declaration</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CorrectionNumber" type="xsd:int">
+		<xsd:annotation>
+			<xsd:documentation>Number of the correction</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Language" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation>Code for the language</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TemporaryUCR" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation>Temporarily UCR number</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FileName" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation>Filename</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ProcedureType" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation>Type of the procedure the error messages comes from (export, exit)</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DateNewStatus" type="STG_Date">
+		<xsd:annotation>
+			<xsd:documentation>Date at which the status changed</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TimeNewStatus" type="STG_Time">
+		<xsd:annotation>
+			<xsd:documentation>Time at which the status changed</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="OrderNumber" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation>External customer reference number</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NewStatus" type="xsd:int">
+		<xsd:annotation>
+			<xsd:documentation>New status of the declaration</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DeclarationTime" type="STG_DateTime">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Time of the declaration</xsd:documentation>
+			<xsd:documentation xml:lang="de">Zeitpunkt der Anmeldung</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ReceiveTime" type="STG_DateTime">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Receive time</xsd:documentation>
+			<xsd:documentation xml:lang="de">Zeitpunkt der Entgegennahme</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="UCROtherSystem" type="xsd:string">
+		<xsd:annotation>
+			<xsd:documentation>UCR of another system like AWB or Harbor-system-number</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>

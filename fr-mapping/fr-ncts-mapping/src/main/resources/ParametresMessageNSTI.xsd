@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:fx="http://www.gefeg.com/fx/2007/01">
+  <xs:annotation>
+    <xs:documentation>
+      <fx:ModelProperties>
+        <fx:Property Name="Tag">ParametresMessageNSTI</fx:Property>
+        <fx:Property Name="Version">1.0</fx:Property>
+        <fx:Property Name="Variant">3</fx:Property>
+        <fx:Property Name="ModelType">XML Schema</fx:Property>
+        <fx:Property Name="Author">Andreas Giger</fx:Property>
+        <fx:Property Name="CreationDate">2013-08-28T14:20:30</fx:Property>
+        <fx:Property Name="NextFreeId">1</fx:Property>
+        <fx:Property Name="ConditionalsAreUnused">false</fx:Property>
+        <fx:NoteDef Tag="Name" Function="name" Flags="public|virtual|languageDependent"/>
+        <fx:NoteDef Tag="Desc" Function="desc" Flags="public|virtual|languageDependent"/>
+        <fx:NoteDef Tag="Remark" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="Id" Function="identification"/>
+        <fx:NoteDef Tag="Mapping" Function="mapping"/>
+        <fx:NoteDef Tag="Inbound" Function="mapping"/>
+        <fx:NoteDef Tag="Outbound" Function="mapping"/>
+        <fx:NoteDef Tag="??" Function="user defined" Flags="languageDependent"/>
+        <fx:NoteDef Tag="Example" Function="example"/>
+        <fx:NoteDef Tag="Note1" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="Note2" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="Note3" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="documentation" Function="desc" Flags="public|virtual|languageDependent"/>
+        <fx:SecurityToken></fx:SecurityToken>
+        <fx:Note Tag="documentation">edited with XMLSpy v2007 (http://www.altova.com) by ROCHE_A (EMBRACE)</fx:Note>
+        <fx:Note Tag="documentation">edited with XMLSPY v5 rel. 3 U (http://www.xmlspy.com) by daniel (dgd)</fx:Note>
+        <fx:Note Tag="documentation">Version 1.2, 3 mars 2006</fx:Note>
+      </fx:ModelProperties>
+      <fx:Folder Name="Elements" Type="Element" Id="1"/>
+      <fx:Folder Name="Types" Type="Type" Id="2"/>
+      <fx:Folder Name="Groups" Type="Group" Id="3"/>
+      <fx:Folder Name="AttributeGroups" Type="AttrGroup" Id="4"/>
+      <fx:Folder Name="Attributes" Type="Attr" Id="5"/>
+      <fx:Folder Type="Guideline" Name="Guidelines"/>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:element name="numseq" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Numéro de séquence du message applicatif pour la transaction opérateur</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:minInclusive value="0"/>
+        <xs:totalDigits value="4"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="partyId" type="xs:string" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Identifiant du partenaire (numéro SIRET).</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="schemaID" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Identifiant du schéma XML décrivant le message fonctionnel, par exemple messageDsi ou reponseDsi</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="schemaVersion" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">version du schéma identifié précédemment (date de publication sous la forme jjmmaaaa)</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="transactionId" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Identifiant de la transaction opérateur</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+  </xs:element>
+  <xs:complexType name="TEnveloppeMessage" fx:FolderId="2">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">L'enveloppe de niveau "message" comprend les informations nécessaires à l'identification de l'opérateur et au suivi de ses messages fonctionnels au sens « contenu ».</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence fx:NextOrdinalNumber="2">
+      <xs:element ref="schemaID" fx:OrdinalNumber="0">
+        <xs:annotation>
+          <xs:documentation>
+            <fx:Note Tag="documentation">Identifiant du schéma XML décrivant le message fonctionnel, par exemple IE07. Correspond à TYPMES</fx:Note>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element ref="partyId" fx:OrdinalNumber="1">
+        <xs:annotation>
+          <xs:documentation>
+            <fx:Note Tag="documentation">Identifiant du partenaire (numéro SIRET)</fx:Note>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

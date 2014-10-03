@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.w3.org/2003/05/soap-envelope" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<xsd:import schemaLocation="kids_header_1_3.xsd"/>
+	<xsd:import schemaLocation="NCTSDeclaration.xsd"/>
+	<xsd:attribute name="mustUnderstand" type="xsd:boolean"/>
+	<xsd:element name="Header">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Header"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Envelope">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="soap:Header"/>
+				<xsd:element ref="soap:Body"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Body">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="NCTSDeclaration"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

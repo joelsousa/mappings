@@ -1,0 +1,79 @@
+apply plugin: 'base'
+
+allprojects { group = 'com.kewill' }
+
+subprojects {
+apply plugin: 'java'
+apply plugin: 'maven-publish' // run 'gradle publish' to publish artifacts to nexus
+apply plugin: 'application' // run 'gradle distZip' to create distribution archive in build/distributions
+
+	sourceCompatibility = 1.6
+	targetCompatibility = 1.6
+
+	repositories { maven { url 'http://172.16.1.112:8088/nexus/content/groups/public' } }
+
+  sourceSets {
+      main {
+          java {
+              srcDir 'src'
+              exclude '**/com/altova/**'
+         }
+     }
+  }
+
+
+	// --- maven-publish configuration start ---
+	// Publish jar file and sources to Nexus (SNAPSHOTs only so far)
+	task sourceJar(type: Jar) { from sourceSets.main.allJava }
+
+	publishing {
+		publications {
+			mavenJava(MavenPublication) {
+				from components.java
+
+				artifact sourceJar { classifier "sources" }
+			}
+		}
+		repositories {
+			maven {
+				credentials {
+					username "deployment"
+					password "deploy"
+				}
+				url 'http://172.16.1.112:8088/nexus/content/repositories/snapshots'
+			}
+		}
+	}
+	// --- maven-publish configuration end ---
+
+
+	dependencies {
+	  compile 'junit:junit:4.10'
+	  compile 'com.altova:MapForce2014Common:1.0'
+	}
+
+
+	jar {
+		archiveName = baseName + '.' + extension
+	}
+
+	task distribution(type: Copy) {
+		from subprojects.jar
+		into 'distribution'
+	}
+
+	processResources {
+		def buildNumber = (System.properties['BUILD_NUMBER']) ? System.properties['BUILD_NUMBER']: 'development'
+
+		filter (org.apache.tools.ant.filters.ReplaceTokens, tokens: [
+			version: project.version,
+			name: project.name,
+			build: buildNumber,
+			timestamp: new Date ().format ('dd-MM-yyyy')
+		])
+	}
+
+	clean {  delete 'distribution'  }
+}
+
+

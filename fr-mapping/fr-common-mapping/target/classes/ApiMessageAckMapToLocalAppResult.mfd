@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties AppName="ApiMessageAcknowledgement" SelectedLanguage="java"/>
+		<structure>
+			<children>
+				<component name="if-else" library="core" uid="4" kind="4">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="3"/>
+						<datapoint/>
+						<datapoint pos="2" key="4"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="499" lty="176" rbx="596" rby="252"/>
+				</component>
+				<component name="equal" library="core" uid="6" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="6"/>
+						<datapoint pos="1" key="7"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="8"/>
+					</targets>
+					<view ltx="443" lty="69" rbx="496" rby="125"/>
+				</component>
+				<component name="localAppResult" library="xml" uid="3" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="643" lty="-66" rbx="1076" rby="301"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="localAppResult" inpkey="1" expanded="1">
+										<entry name="GoodsDeclaration" expanded="1">
+											<entry name="GoodsItem" expanded="1">
+												<entry name="PositionError" expanded="1">
+													<entry name="ErrorText" inpkey="2"/>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="localAppResult.xsd" outputinstance="localAppResult.xml" instanceroot="{}localAppResult"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="7" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="9"/>
+					</targets>
+					<view ltx="354" lty="107" rbx="442" rby="125"/>
+					<data>
+						<constant value="SUCCESS" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="ApiMessageAcknowledgement" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="-34" lty="9" rbx="266" rby="209"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace uid="http://www.customsmatters.com/schemas/cab/declarationapi/ack"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ApiMessageAcknowledgement" outkey="10" expanded="1">
+										<entry name="Status" outkey="11"/>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="ApiMessageAcknowledgement.xsd" inputinstance="ApiMessageAcknowledgmentRejected.xml" instanceroot="{http://www.customsmatters.com/schemas/cab/declarationapi/ack}ApiMessageAcknowledgement"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="5">
+						<edges>
+							<edge vertexkey="2" edgekey="12"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="8">
+						<edges>
+							<edge vertexkey="3" edgekey="13"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="9">
+						<edges>
+							<edge vertexkey="7" edgekey="14"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="10">
+						<edges>
+							<edge vertexkey="1" edgekey="15"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="11">
+						<edges>
+							<edge vertexkey="6" edgekey="16"/>
+							<edge vertexkey="4" edgekey="17"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

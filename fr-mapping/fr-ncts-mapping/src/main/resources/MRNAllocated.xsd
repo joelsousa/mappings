@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 	Kewill Customs Exchange
+		Kids NCTS
+		Version 1.00 January 2010
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="kids_ncts_types.xsd"/>
+	<xsd:element name="MRNAllocated">
+		<xsd:annotation>
+			<xsd:documentation>NCTS MRN Allocated E_MRN_ALL / IE28</xsd:documentation>
+			<xsd:documentation xml:lang="de">Rückgabe der MRN</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="GoodsDeclaration">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="ReferenceNumber" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Unique identification of this declaration.
+Mandatory in DE.
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="UCRNumber" minOccurs="0"/>
+							<xsd:element name="AcceptanceDate" type="ST_Date" minOccurs="0"/>
+							<xsd:element name="PrincipalTIN" type="CT_TINType" minOccurs="0"/>
+							<xsd:element name="Principal" type="CT_AddressType" minOccurs="0"/>
+							<xsd:element name="OfficeOfDeparture" type="ST_CustomsOffice" minOccurs="0"/>
+							<xsd:element name="PDFInformation" type="CT_PDFInformation" minOccurs="0"/>
+							<xsd:element name="TydenSealNumber" minOccurs="0" maxOccurs="unbounded">
+								<xsd:annotation>
+									<xsd:documentation>Used in DE</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

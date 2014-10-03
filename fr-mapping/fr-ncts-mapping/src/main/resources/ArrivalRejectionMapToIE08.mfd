@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties AppName="ArrivalRejection" SelectedLanguage="java"/>
+		<structure>
+			<children>
+				<component name="MessageIE08" library="xml" uid="3" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="487" rbx="809" rby="372"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="MessageDouane" inpkey="12" expanded="1">
+										<entry name="Messages" expanded="1">
+											<entry name="Message" expanded="1">
+												<entry name="ReponseNotification" inpkey="34" expanded="1">
+													<entry name="Entete" expanded="1">
+														<entry name="refdec" inpkey="14"/>
+													</entry>
+													<entry name="ReponseDatas" expanded="1">
+														<entry name="Erreur" expanded="1">
+															<entry name="ErreurGen" expanded="1">
+																<entry name="date" inpkey="15"/>
+																<entry name="action" inpkey="16"/>
+																<entry name="raison" inpkey="17"/>
+															</entry>
+															<entry name="ErreurFct" inpkey="18" expanded="1">
+																<entry name="type" inpkey="19"/>
+																<entry name="pointer" inpkey="20"/>
+																<entry name="raison" inpkey="21"/>
+																<entry name="valeurori" inpkey="22"/>
+															</entry>
+														</entry>
+													</entry>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="MessageIE08.xsd" outputinstance="MessageIE08.xml" instanceroot="{}MessageDouane"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="ArrivalRejection" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="28" rbx="342" rby="372"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ArrivalRejection" outkey="1" expanded="1">
+										<entry name="GoodsDeclaration" outkey="2" expanded="1">
+											<entry name="UCRNumber" outkey="3"/>
+											<entry name="ArrivalRejectionDate" outkey="4"/>
+											<entry name="Action" outkey="5"/>
+											<entry name="Reason" outkey="6"/>
+											<entry name="Error" outkey="7" expanded="1">
+												<entry name="Code" outkey="8"/>
+												<entry name="Text" outkey="9"/>
+												<entry name="Pointer" outkey="10"/>
+												<entry name="Number" outkey="11"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="ArrivalRejection.xsd" inputinstance="ArrivalRejectionMapToIE08.xml" outputinstance="ArrivalRejectionMapToIE08.xml" instanceroot="{}ArrivalRejection"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="1">
+						<edges>
+							<edge vertexkey="12" edgekey="23"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="2">
+						<edges>
+							<edge vertexkey="34" edgekey="35"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="3">
+						<edges>
+							<edge vertexkey="14" edgekey="25"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="4">
+						<edges>
+							<edge vertexkey="15" edgekey="26"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="5">
+						<edges>
+							<edge vertexkey="16" edgekey="27"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="6">
+						<edges>
+							<edge vertexkey="17" edgekey="28"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="7">
+						<edges>
+							<edge vertexkey="18" edgekey="29"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="8">
+						<edges>
+							<edge vertexkey="19" edgekey="30"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="9">
+						<edges>
+							<edge vertexkey="21" edgekey="31"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="10">
+						<edges>
+							<edge vertexkey="20" edgekey="32"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="11">
+						<edges>
+							<edge vertexkey="22" edgekey="33"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties AppName="IM509" ShowSchemaTypes="1" ShowAnnotations="0" SelectedLanguage="java"/>
+		<structure>
+			<children>
+				<component name="CancellationResponse" library="xml" uid="3" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="457" rbx="914" rby="662"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="CancellationResponse" inpkey="1" expanded="1">
+										<entry name="GoodsDeclaration" inpkey="4" expanded="1">
+											<entry name="DeclarationKind" inpkey="31"/>
+											<entry name="DeclarationTime" inpkey="32"/>
+											<entry name="DeclarationNumberCustoms" inpkey="33"/>
+											<entry name="ReceiveTime" inpkey="34"/>
+											<entry name="Reason" inpkey="35"/>
+											<entry name="CancellationAcceptance" inpkey="36"/>
+											<entry name="ReferenceNumber" inpkey="37"/>
+											<entry name="CustomsOffice" inpkey="5" expanded="1">
+												<entry name="VATNumber" inpkey="38"/>
+												<entry name="ETNAdress" inpkey="39"/>
+												<entry name="Address" inpkey="6">
+													<entry name="Name" inpkey="40"/>
+													<entry name="City" inpkey="7"/>
+													<entry name="PostalCode" inpkey="8"/>
+													<entry name="Country" inpkey="9"/>
+												</entry>
+											</entry>
+											<entry name="CustomsOfficeContactPerson" inpkey="10" expanded="1">
+												<entry name="Clerk" inpkey="11"/>
+												<entry name="Name" inpkey="12" expanded="1"/>
+												<entry name="Identity" inpkey="41" expanded="1"/>
+											</entry>
+											<entry name="Information" expanded="1"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="CancellationResponse.xsd" outputinstance="CancellationResponse.xml" instanceroot="{}CancellationResponse"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="IM509" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view rbx="346" rby="662"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace uid="http://www.ros.ie/schemas/customs/IM509/v1"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ImportCancellationDecision" outkey="2" expanded="1">
+										<entry name="CustomsReferenceIdentifier" outkey="42"/>
+										<entry name="DeclarationOfficeIdentifier" outkey="43"/>
+										<entry name="Cancellation" outkey="44" expanded="1">
+											<entry name="CancellationRequestDate" outkey="45"/>
+											<entry name="CancellationDecisionDate" outkey="46"/>
+											<entry name="CancellationInitiated" outkey="47"/>
+											<entry name="CancellationDecision" outkey="48"/>
+											<entry name="CancellationJustification" outkey="49"/>
+										</entry>
+										<entry name="GoodsShipment" outkey="13" expanded="1">
+											<entry name="Consignee" expanded="1">
+												<entry name="IdentityIdentifier" outkey="50"/>
+												<entry name="NameText" outkey="51"/>
+												<entry name="Address" outkey="15" expanded="1">
+													<entry name="LineText" outkey="52"/>
+													<entry name="CityName" outkey="16"/>
+													<entry name="PostcodeIdentifier" outkey="17"/>
+													<entry name="CountryCode" outkey="18"/>
+												</entry>
+											</entry>
+										</entry>
+										<entry name="Agent" outkey="19" expanded="1">
+											<entry name="StatusCode" outkey="53"/>
+											<entry name="IdentityIdentifier" outkey="20"/>
+											<entry name="NameText" outkey="21"/>
+											<entry name="Address" expanded="1"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="IM509.xsd" inputinstance="IM509_ImportCancellationDecision.xml" outputinstance="IM509_ImportCancellationDecision.xml" instanceroot="{http://www.ros.ie/schemas/customs/IM509/v1}ImportCancellationDecision"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="2">
+						<edges>
+							<edge vertexkey="1" edgekey="3"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="13">
+						<edges>
+							<edge vertexkey="5" edgekey="54"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="15">
+						<edges>
+							<edge vertexkey="6" edgekey="24"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="16">
+						<edges>
+							<edge vertexkey="7" edgekey="25"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="17">
+						<edges>
+							<edge vertexkey="8" edgekey="26"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="18">
+						<edges>
+							<edge vertexkey="9" edgekey="27"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="19">
+						<edges>
+							<edge vertexkey="10" edgekey="28"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="20">
+						<edges>
+							<edge vertexkey="11" edgekey="29"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="21">
+						<edges>
+							<edge vertexkey="12" edgekey="30"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="42">
+						<edges>
+							<edge vertexkey="37" edgekey="55"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="43">
+						<edges>
+							<edge vertexkey="33" edgekey="56"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="44">
+						<edges>
+							<edge vertexkey="4" edgekey="57"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="45">
+						<edges>
+							<edge vertexkey="31" edgekey="58"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="46">
+						<edges>
+							<edge vertexkey="32" edgekey="59"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="47">
+						<edges>
+							<edge vertexkey="34" edgekey="60"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="48">
+						<edges>
+							<edge vertexkey="36" edgekey="61"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="49">
+						<edges>
+							<edge vertexkey="35" edgekey="62"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="50">
+						<edges>
+							<edge vertexkey="38" edgekey="63"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="51">
+						<edges>
+							<edge vertexkey="39" edgekey="64"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="52">
+						<edges>
+							<edge vertexkey="40" edgekey="65"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="53">
+						<edges>
+							<edge vertexkey="41" edgekey="66"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

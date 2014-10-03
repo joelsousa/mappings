@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2011 sp1 (http://www.altova.com) von XMLSpy 2011 Professional Ed., Concurrent for 5 users (Kewill GmbH) bearbeitet -->
+<!-- 	Kewill Customs Exchange
+		Kids NCTS
+		Version 1.00 January 2010
+Changes:
+2013 January :  new: DeclarationNumber
+2013 August  :  renamed Clerk in Contact
+2013 November:  ManifestCompletion, BondedWarehouseCompletion, InwardProcessingCompletion are now Lists with max 999 Elements
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="kids_ncts_types.xsd"/>
+	<xsd:element name="NCTSDeclaration">
+		<xsd:annotation>
+			<xsd:documentation>NCTS Declaration E_DEC_DAT / IE15</xsd:documentation>
+			<xsd:documentation xml:lang="de">Versandantrag</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="GoodsDeclaration">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="ReferenceNumber" type="xsd:string" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Unique identification of this declaration.
+Mandatory in DE.
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="DeclarationNumber" type="xsd:string" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>unique number for the declaration needed in NL</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="ShipmentNumber" type="xsd:string" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Box 7</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="AuthorisationNumber" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="TypeOfDeclaration" type="xsd:string" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>CL 31</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element ref="PlaceOfLoading" minOccurs="0"/>
+							<xsd:element ref="DestinationCountry" minOccurs="0"/>
+							<xsd:element ref="DispatchCountry" minOccurs="0"/>
+							<xsd:element name="CustomsSubPlace" type="xsd:string" minOccurs="0"/>
+							<xsd:element ref="MeansOfTransportInland" minOccurs="0"/>
+							<xsd:element ref="MeansOfTransportBorder" minOccurs="0"/>
+							<xsd:element ref="MeansOfTransportDeparture" minOccurs="0"/>
+							<xsd:element ref="MeansOfTransportCrossingBorder" minOccurs="0"/>
+							<xsd:element ref="TransportInContainer" minOccurs="0"/>
+							<xsd:element name="NCTSDocumentLanguage" type="xsd:string" minOccurs="0"/>
+							<xsd:element ref="TotalNumberPositions" minOccurs="0"/>
+							<xsd:element ref="TotalNumberPackages" minOccurs="0"/>
+							<xsd:element name="TotalGrossMass" type="xsd:decimal" minOccurs="0"/>
+							<xsd:element name="DeclarationDate" type="ST_Date" minOccurs="0"/>
+							<xsd:element name="DeclarationPlace" type="xsd:string" minOccurs="0"/>
+							<xsd:element ref="SituationCode" minOccurs="0"/>
+							<xsd:element ref="PaymentType" minOccurs="0"/>
+							<xsd:element name="SecurityIndicator" type="ST_Indicator" minOccurs="0"/>
+							<xsd:element name="ConveyanceNumber" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="PlaceOfUnLoading" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="ConsignorTIN" type="CT_TINType" minOccurs="0"/>
+							<xsd:element name="Consignor" type="CT_AddressType" minOccurs="0"/>
+							<xsd:element name="ConsignorContactPerson" type="CT_ContactPerson" minOccurs="0"/>
+							<xsd:element name="ConsigneeTIN" type="CT_TINType" minOccurs="0"/>
+							<xsd:element name="Consignee" type="CT_AddressType" minOccurs="0"/>
+							<xsd:element name="ConsigneeContactPerson" type="CT_ContactPerson" minOccurs="0"/>
+							<xsd:element name="AuthorisedConsigneeTIN" type="CT_TINType" minOccurs="0"/>
+							<xsd:element name="AuthorisedConsignee" type="CT_AddressType" minOccurs="0"/>
+							<xsd:element name="PrincipalTIN" type="CT_TINType" minOccurs="0"/>
+							<xsd:element name="Principal" type="CT_AddressType" minOccurs="0"/>
+							<xsd:element name="PrincipalContactPerson" type="CT_ContactPerson" minOccurs="0"/>
+							<xsd:element name="CarnetID" type="xsd:string" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="en">CarnetID of Principal if TypeOfDeclaration = "TIR"</xsd:documentation>
+									<xsd:documentation xml:lang="de">Carnet-ID des Hauptverpflichteten bei Anmeldeart "TIR"</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="PrincipalIsCarrier" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>0=No, 1=Yes</xsd:documentation>
+								</xsd:annotation>
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:length value="1"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="Contact" type="CT_ContactPerson" minOccurs="0"/>
+							<xsd:element name="OfficeOfDeparture" type="ST_CustomsOffice" minOccurs="0"/>
+							<xsd:element name="OfficeOfTransit" minOccurs="0" maxOccurs="9">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="Code" type="ST_CustomsOffice" minOccurs="0"/>
+										<xsd:element name="ArrivalDateAndTime" type="xsd:dateTime" minOccurs="0"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="OfficeOfDestination" type="ST_CustomsOffice" minOccurs="0"/>
+							<xsd:element name="ControlResultCode" minOccurs="0"/>
+							<xsd:element name="ControlResultDateLimit" type="ST_Date" minOccurs="0"/>
+							<xsd:element name="SimplifiedProcedureIndicator" type="xsd:boolean" minOccurs="0"/>
+							<xsd:element name="RepresentativeName" minOccurs="0"/>
+							<xsd:element name="RepresentativeCapacity" minOccurs="0"/>
+							<xsd:element name="TotalNumberOfSeals" minOccurs="0"/>
+							<xsd:element name="Seals" type="CT_Seal" minOccurs="0"/>
+							<xsd:element name="Guarantee" type="CT_Guarantee" minOccurs="0" maxOccurs="9"/>
+							<xsd:element ref="TransportationRoute" minOccurs="0"/>
+							<xsd:element name="CarrierTIN" type="CT_TINType" minOccurs="0"/>
+							<xsd:element name="Carrier" type="CT_AddressType" minOccurs="0"/>
+							<xsd:element name="Security" minOccurs="0">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element ref="ShipmentNumber" minOccurs="0"/>
+										<xsd:element name="PlaceOfLoading" minOccurs="0"/>
+										<xsd:element name="PlaceOfUnloading" minOccurs="0"/>
+										<xsd:element name="Itinerary" minOccurs="0" maxOccurs="99">
+											<xsd:annotation>
+												<xsd:documentation>DE: Used for Manifest</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="ConsignorSecurityTIN" type="CT_TINType" minOccurs="0"/>
+							<xsd:element name="ConsignorSecurity" type="CT_AddressType" minOccurs="0"/>
+							<xsd:element name="ConsigneeSecurityTIN" type="CT_TINType" minOccurs="0"/>
+							<xsd:element name="ConsigneeSecurity" type="CT_AddressType" minOccurs="0"/>
+							<xsd:element name="GoodsItem" maxOccurs="999">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="ItemNumber" type="xsd:integer"/>
+										<xsd:element name="TypeOfDeclaration" minOccurs="0"/>
+										<xsd:element name="CommodityCode" type="CT_CommodityCodeType" minOccurs="0"/>
+										<xsd:element ref="Description" minOccurs="0"/>
+										<xsd:element ref="ArticleNumber" minOccurs="0"/>
+										<xsd:element ref="DestinationCountry" minOccurs="0"/>
+										<xsd:element ref="DispatchCountry" minOccurs="0"/>
+										<xsd:element name="NetMass" type="xsd:decimal" minOccurs="0"/>
+										<xsd:element name="GrossMass" type="xsd:decimal" minOccurs="0"/>
+										<xsd:element ref="DangerousGoodsNumber" minOccurs="0"/>
+										<xsd:element name="IdentificationCode" minOccurs="0"/>
+										<xsd:element name="BondedWarehouseRefNum" minOccurs="0"/>
+										<xsd:element name="BondedWarehouseAuthorisationID" minOccurs="0"/>
+										<xsd:element name="PreviousDocument" type="CT_PreviousDocumentType" minOccurs="0" maxOccurs="9"/>
+										<xsd:element name="Document" type="CT_DocumentType" minOccurs="0" maxOccurs="99"/>
+										<xsd:element name="SpecialMention" type="CT_SpecialMentionType" minOccurs="0" maxOccurs="99"/>
+										<xsd:element name="Containers" type="CT_Container" minOccurs="0"/>
+										<xsd:element name="Package" type="CT_PackagingType" minOccurs="0"/>
+										<xsd:element ref="SensitiveGoods" minOccurs="0" maxOccurs="9"/>
+										<xsd:element name="Guarantee" type="CT_Guarantee" minOccurs="0"/>
+										<xsd:element ref="ConsignorTIN" minOccurs="0"/>
+										<xsd:element ref="Consignor" minOccurs="0"/>
+										<xsd:element ref="ConsigneeTIN" minOccurs="0"/>
+										<xsd:element ref="Consignee" minOccurs="0"/>
+										<xsd:element name="ConsignorSecurityTIN" type="CT_TINType" minOccurs="0"/>
+										<xsd:element name="ConsignorSecurity" type="CT_AddressType" minOccurs="0"/>
+										<xsd:element name="ConsigneeSecurityTIN" type="CT_TINType" minOccurs="0"/>
+										<xsd:element name="ConsigneeSecurity" type="CT_AddressType" minOccurs="0"/>
+										<xsd:element ref="BondedWarehouseCompletion" minOccurs="0" maxOccurs="999"/>
+										<xsd:element ref="InwardProcessingCompletion" minOccurs="0" maxOccurs="999"/>
+										<xsd:element ref="ManifestCompletion" minOccurs="0" maxOccurs="999"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

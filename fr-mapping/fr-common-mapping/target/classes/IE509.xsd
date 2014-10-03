@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Acknowledgement - This scheme is based on the World Custom Organisation (WCO) Data Model Version 2.-->
+<!-- Box 14/1: Declarant Status is in this message as it is part of the Agent group. But Revenue will not populate this field, in this message returned to Trade.-->
+<!-- 
+	
+Current Version: 1.0
+
+Document History:
+		
+1.0 
+=========	
+		16/09/2008:			Document Created
+
+=============================
+
+22/04/09
+
+update address to make CityName, PostcodeIdentifier and CountryCode optional.
+				
+		
+-->
+<xsd:schema xmlns="http://www.ros.ie/schemas/ecs/IE509/v1" xmlns:cus="http://www.ros.ie/schemas/customs/customstypes/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ros.ie/schemas/ecs/IE509/v1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.ros.ie/schemas/customs/customstypes/v1" schemaLocation="types.xsd"/>
+	<xsd:annotation>
+		<xsd:documentation>Export Cancellation Decision (IE509) Message</xsd:documentation>
+	</xsd:annotation>
+	<xsd:element name="ExportCancellationDecision">
+		<xsd:annotation>
+			<xsd:documentation>Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="CustomsReferenceIdentifier">
+					<xsd:annotation>
+						<xsd:documentation>Customs Declaration (SAD) Number Assigned by Customs - ECS MRN</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element ref="DeclarationOfficeIdentifier"/>
+				<xsd:element name="Cancellation" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="CancellationRequestDate" type="cus:IEDate" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Date of Cancellation Request</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="CancellationDecisionDate" type="cus:IEDate">
+								<xsd:annotation>
+									<xsd:documentation>Date of Cancellation Decision</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="CancellationInitiated" type="cus:EUFlag">
+								<xsd:annotation>
+									<xsd:documentation>Cancellation initiated by Customs</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="CancellationDecision" type="cus:EUFlag" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Cancellation Decision</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="CancellationJustification" type="cus:EUJustificationText" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Cancellation Justification</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element ref="GoodsShipment"/>
+				<xsd:element ref="Agent"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="GoodsShipment">
+		<xsd:annotation>
+			<xsd:documentation>Goods Shipment</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Consignor"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Agent">
+		<xsd:annotation>
+			<xsd:documentation>Agent / Declarant</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="StatusCode" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 14/1: Declarant Status</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="IdentityIdentifier" type="cus:Wco061">
+					<xsd:annotation>
+						<xsd:documentation>Box 14/2: Declarant Id</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="NameText" type="cus:Wco060">
+					<xsd:annotation>
+						<xsd:documentation>Box 14/3: Declarant Name</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element ref="Address"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Consignor">
+		<xsd:annotation>
+			<xsd:documentation>Consignor</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="IdentityIdentifier" type="cus:Wco072">
+					<xsd:annotation>
+						<xsd:documentation>Box 2/1: Consignor ID</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="NameText" type="cus:Wco071" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 2/2: Consignor Name</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element ref="Address" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Address">
+		<xsd:annotation>
+			<xsd:documentation>Address</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="LineText"/>
+				<xsd:element ref="CityName" minOccurs="0"/>
+				<xsd:element ref="PostcodeIdentifier" minOccurs="0"/>
+				<xsd:element ref="CountryCode" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="CustomsReferenceIdentifier" type="cus:Wco020">
+		<xsd:annotation>
+			<xsd:documentation>Customs Declaration (SAD) Number Assigned by Customs</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DeclarationOfficeIdentifier" type="cus:Wco065">
+		<xsd:annotation>
+			<xsd:documentation>Box A: Office of Export</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="StatusCode" type="cus:Wco102">
+		<xsd:annotation>
+			<xsd:documentation>Box 14a: Declarant Status</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CityName" type="cus:Wco241">
+		<xsd:annotation>
+			<xsd:documentation>Address Line 2</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CountryCode" type="cus:Wco242">
+		<xsd:annotation>
+			<xsd:documentation>Country Code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LineText" type="cus:Wco239">
+		<xsd:annotation>
+			<xsd:documentation>Address Line 1</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PostcodeIdentifier" type="cus:Wco245">
+		<xsd:annotation>
+			<xsd:documentation>Post Code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>

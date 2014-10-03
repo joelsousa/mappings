@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:fx="http://www.gefeg.com/fx/2007/01">
+  <xs:annotation>
+    <xs:documentation>
+      <fx:ModelProperties>
+        <fx:Property Name="Tag">ParametresConnexionNSTI</fx:Property>
+        <fx:Property Name="Version">1.0</fx:Property>
+        <fx:Property Name="Variant">3</fx:Property>
+        <fx:Property Name="ModelType">XML Schema</fx:Property>
+        <fx:Property Name="Author">Andreas Giger</fx:Property>
+        <fx:Property Name="CreationDate">2013-08-28T14:20:30</fx:Property>
+        <fx:Property Name="NextFreeId">1</fx:Property>
+        <fx:Property Name="ConditionalsAreUnused">false</fx:Property>
+        <fx:NoteDef Tag="Name" Function="name" Flags="public|virtual|languageDependent"/>
+        <fx:NoteDef Tag="Desc" Function="desc" Flags="public|virtual|languageDependent"/>
+        <fx:NoteDef Tag="Remark" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="Id" Function="identification"/>
+        <fx:NoteDef Tag="Mapping" Function="mapping"/>
+        <fx:NoteDef Tag="Inbound" Function="mapping"/>
+        <fx:NoteDef Tag="Outbound" Function="mapping"/>
+        <fx:NoteDef Tag="??" Function="user defined" Flags="languageDependent"/>
+        <fx:NoteDef Tag="Example" Function="example"/>
+        <fx:NoteDef Tag="Note1" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="Note2" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="Note3" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="documentation" Function="desc" Flags="public|virtual|languageDependent"/>
+        <fx:SecurityToken></fx:SecurityToken>
+        <fx:Note Tag="documentation">edited with XMLSpy v2007 (http://www.altova.com) by sge (EMBRACE)</fx:Note>
+        <fx:Note Tag="documentation">edited with XMLSPY v5 rel. 3 U (http://www.xmlspy.com) by daniel (dgd)</fx:Note>
+        <fx:Note Tag="documentation">Version 1.2, 3 mars 2006</fx:Note>
+      </fx:ModelProperties>
+      <fx:Folder Name="Elements" Type="Element" Id="1"/>
+      <fx:Folder Name="Types" Type="Type" Id="2"/>
+      <fx:Folder Name="Groups" Type="Group" Id="3"/>
+      <fx:Folder Name="AttributeGroups" Type="AttrGroup" Id="4"/>
+      <fx:Folder Name="Attributes" Type="Attr" Id="5"/>
+      <fx:Folder Type="Guideline" Name="Guidelines"/>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:element name="applicationId" type="xs:string" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Référence de l'application (DELTA-D)</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="connexionId" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">SIRET du prestataire ou DGDDI</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="date" fx:FolderId="1">
+    <xs:simpleType>
+      <xs:annotation>
+        <xs:documentation>
+          <fx:Note Tag="documentation">Date au format courant</fx:Note>
+        </xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+        <xs:length value="8"/>
+        <xs:pattern value="[0-3][0-9]/[0-1][0-9]/[0-9]{2}"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="DateTime" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Date de création de l'enveloppe</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence fx:NextOrdinalNumber="2">
+        <xs:element ref="date" fx:OrdinalNumber="0"/>
+        <xs:element ref="time" fx:OrdinalNumber="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="interchangeAgreementId" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Identifiant de l'accord d'interchange EDI du prestataire</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="numEnveloppe" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Numéro généré par l'expéditeur du message</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="time" fx:FolderId="1">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:length value="8"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:complexType name="TEnveloppeConnexion" fx:FolderId="2">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">L'enveloppe de niveau connexion comprend  les informations nécessaires à  l'identification du prestataire de connexion et au suivi de ses messages techniques au sens contenant.</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence fx:NextOrdinalNumber="5">
+      <xs:element ref="connexionId" fx:OrdinalNumber="0"/>
+      <xs:element ref="interchangeAgreementId" minOccurs="0" fx:OrdinalNumber="1"/>
+      <xs:element ref="numEnveloppe" minOccurs="0" fx:OrdinalNumber="2"/>
+      <xs:element ref="DateTime" fx:OrdinalNumber="3"/>
+      <xs:element ref="applicationId" fx:OrdinalNumber="4">
+        <xs:annotation>
+          <xs:documentation>
+            <fx:Note Tag="documentation">Nom de l'application</fx:Note>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

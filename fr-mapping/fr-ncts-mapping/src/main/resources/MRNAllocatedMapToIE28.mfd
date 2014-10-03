@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties AppName="MRNAllocated" SelectedLanguage="java"/>
+		<structure>
+			<children>
+				<component name="IE28" library="xml" uid="4" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="517" rbx="749" rby="185"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="RESPONS" inpkey="16" expanded="1">
+										<entry name="LRN" inpkey="17"/>
+										<entry name="MRN" inpkey="20"/>
+										<entry name="IE28" expanded="1">
+											<entry name="DACCEP" expanded="1">
+												<entry name="DTVAL" inpkey="21"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="IE28.xsd" outputinstance="IE28.xml" instanceroot="{}RESPONS"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="MRNAllocated" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="54" rbx="365" rby="355"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="MRNAllocated" outkey="2" expanded="1">
+										<entry name="GoodsDeclaration" expanded="1">
+											<entry name="ReferenceNumber" outkey="9" expanded="1"/>
+											<entry name="UCRNumber" outkey="10" expanded="1"/>
+											<entry name="AcceptanceDate" outkey="11"/>
+											<entry name="PrincipalTIN" expanded="1"/>
+											<entry name="Principal" expanded="1">
+												<entry name="Address" expanded="1"/>
+											</entry>
+											<entry name="PDFInformation" expanded="1"/>
+											<entry name="TydenSealNumber" expanded="1"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="MRNAllocated.xsd" inputinstance="MRNAllocatedMapToIE28.xml" outputinstance="MRNAllocatedMapToIE28.xml" instanceroot="{}MRNAllocated"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="2">
+						<edges>
+							<edge vertexkey="16" edgekey="18"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="9">
+						<edges>
+							<edge vertexkey="17" edgekey="19"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="10">
+						<edges>
+							<edge vertexkey="20" edgekey="22"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="11">
+						<edges>
+							<edge vertexkey="21" edgekey="23"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

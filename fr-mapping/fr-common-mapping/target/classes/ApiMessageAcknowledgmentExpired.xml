@@ -1,0 +1,10 @@
+<!-- substitute-missing-with-xsi-nil -->
+		 <MessageAcknowledgement 
+		xmlns="http://www.ros.ie/schemas/customs/messageacknowledgement/v1" 
+		xmlns:ns1="http://www.ros.ie/schemas/customs/messageacknowledgement/v1"> 
+			 <TransactionId>a4621a38-ff5a-4d3a-94e9-0661357c7c70</TransactionId> 
+			 <Status> 
+				 <MessageStatus>REJECTED</MessageStatus> 
+				 <TransactionIdStatus>EXPIRED</TransactionIdStatus> 
+			 </Status> 
+		 </MessageAcknowledgement> 

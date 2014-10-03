@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 	Kewill Customs Exchange
+		Kids NCTS
+		Version 1.00 January 2010 
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="kids_ncts_types.xsd"/>
+	<xsd:element name="ArrivalRejection">
+		<xsd:annotation>
+			<xsd:documentation>NCTS Arrival Rejection E_ARR_REJ / IE08</xsd:documentation>
+			<xsd:documentation xml:lang="de">R�ckgabe Zollfehler</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="GoodsDeclaration">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="ReferenceNumber" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Unique identification of this declaration.
+Mandatory in DE.
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="UCRNumber" minOccurs="0"/>
+							<xsd:element name="ArrivalRejectionDate" type="ST_Date" minOccurs="0"/>
+							<xsd:element name="Action" minOccurs="0"/>
+							<xsd:element name="Reason" minOccurs="0"/>
+							<xsd:element name="Error" type="CT_ErrorType" minOccurs="0" maxOccurs="999"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

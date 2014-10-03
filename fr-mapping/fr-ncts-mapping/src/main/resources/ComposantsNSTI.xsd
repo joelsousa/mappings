@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:fx="http://www.gefeg.com/fx/2007/01">
+  <xs:annotation>
+    <xs:documentation>
+      <fx:ModelProperties>
+        <fx:Property Name="Tag">ComposantsNSTI</fx:Property>
+        <fx:Property Name="Version">1.0</fx:Property>
+        <fx:Property Name="Variant">3</fx:Property>
+        <fx:Property Name="ModelType">XML Schema</fx:Property>
+        <fx:Property Name="Author">Andreas Giger</fx:Property>
+        <fx:Property Name="CreationDate">2013-08-28T14:20:30</fx:Property>
+        <fx:Property Name="NextFreeId">1</fx:Property>
+        <fx:Property Name="ConditionalsAreUnused">false</fx:Property>
+        <fx:NoteDef Tag="Name" Function="name" Flags="public|virtual|languageDependent"/>
+        <fx:NoteDef Tag="Desc" Function="desc" Flags="public|virtual|languageDependent"/>
+        <fx:NoteDef Tag="Remark" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="Id" Function="identification"/>
+        <fx:NoteDef Tag="Mapping" Function="mapping"/>
+        <fx:NoteDef Tag="Inbound" Function="mapping"/>
+        <fx:NoteDef Tag="Outbound" Function="mapping"/>
+        <fx:NoteDef Tag="??" Function="user defined" Flags="languageDependent"/>
+        <fx:NoteDef Tag="Example" Function="example"/>
+        <fx:NoteDef Tag="Note1" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="Note2" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="Note3" Function="user defined" Flags="public|languageDependent"/>
+        <fx:NoteDef Tag="documentation" Function="desc" Flags="public|virtual|languageDependent"/>
+        <fx:SecurityToken></fx:SecurityToken>
+        <fx:Note Tag="documentation">edited with XMLSpy v2007 (http://www.altova.com) by ROCHE_A (EMBRACE)</fx:Note>
+        <fx:Note Tag="documentation">edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by CID (DIRECTION GENERALE DOUANES)</fx:Note>
+        <fx:Note Tag="documentation">Version 2.0, 23  juin 2006</fx:Note>
+        <fx:Note Tag="documentation">Version 2.0, 3 juillet, remarques du CID</fx:Note>
+        <fx:Note Tag="documentation">18 septembre 2006 suite à conversation avec le CID, alignement de la structure TRegimeEco</fx:Note>
+      </fx:ModelProperties>
+      <fx:Folder Name="Elements" Type="Element" Id="1"/>
+      <fx:Folder Name="Types" Type="Type" Id="2"/>
+      <fx:Folder Name="Groups" Type="Group" Id="3"/>
+      <fx:Folder Name="AttributeGroups" Type="AttrGroup" Id="4"/>
+      <fx:Folder Name="Attributes" Type="Attr" Id="5"/>
+      <fx:Folder Type="Guideline" Name="Guidelines"/>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:element name="burpres" type="RefBureau" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Bureau de présentation, code. (PRESENTATION OFFICE)</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="codepostaloperateur" fx:FolderId="1">
+    <xs:simpleType>
+      <xs:annotation>
+        <xs:documentation>
+          <fx:Note Tag="documentation">Code postal de l'opérateur</fx:Note>
+        </xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+        <xs:maxLength value="9"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="conteneurtra" type="RefConteneurtra" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Information sur le  mode de transport en conteneur</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="lieuagree" type="RefLieu17AN" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Arrival authorised location of goods - Lieu agréé</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="lieunotif" type="RefLieu" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Notification place - Lieu</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="lieusousdouane" type="RefLieu17AN" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Customs sub place - Lieu rattaché au bureau de douane</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="marquecolis" fx:FolderId="1">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:maxLength value="42"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="modfrotra" type="RefTra2" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Code mode de transport à la frontière</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="msb" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Masse brute exprimée en kg</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:decimal">
+        <xs:totalDigits value="14"/>
+        <xs:fractionDigits value="3"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="natcol" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Nature des colis, code</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="2"/>
+        <xs:maxLength value="3"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="nbrart" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Nombre d'articles</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="Mesure">
+        <xs:minInclusive value="1"/>
+        <xs:totalDigits value="4"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="nbrcol" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Nombre total de colis</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="Quantite">
+        <xs:minInclusive value="0"/>
+        <xs:totalDigits value="7"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="nbrpieces" fx:FolderId="1">
+    <xs:simpleType>
+      <xs:annotation>
+        <xs:documentation>
+          <fx:Note Tag="documentation">Nombre de piéces</fx:Note>
+        </xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="Quantite">
+        <xs:totalDigits value="5"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="nomoperateur" fx:FolderId="1">
+    <xs:simpleType>
+      <xs:annotation>
+        <xs:documentation>
+          <fx:Note Tag="documentation">Nom de l'opérateur</fx:Note>
+        </xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="TexteCourt"/>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="numart" fx:FolderId="1">
+    <xs:simpleType>
+      <xs:annotation>
+        <xs:documentation>
+          <fx:Note Tag="documentation">nombre ou numéro d'article d'une déclaration</fx:Note>
+        </xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="Mesure">
+        <xs:minInclusive value="1"/>
+        <xs:totalDigits value="4"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="paysoperateur" fx:FolderId="1">
+    <xs:simpleType>
+      <xs:annotation>
+        <xs:documentation>
+          <fx:Note Tag="documentation">Pays de l'opérateur</fx:Note>
+        </xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="RefPays"/>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="procsimpl" type="Oui_Non" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">simplified procedure flag - Procédure simplifiée ?</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="refdec" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Document / reference number                       Identifiant d'une déclaration attribué par le système douanier (= MRN)</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="IdentifiantDec">
+        <xs:maxLength value="21"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="rueoperateur" fx:FolderId="1">
+    <xs:simpleType>
+      <xs:annotation>
+        <xs:documentation>
+          <fx:Note Tag="documentation">numéro et rue de l'opérateur</fx:Note>
+        </xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="TexteCourt"/>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="tin" fx:FolderId="1">
+    <xs:simpleType>
+      <xs:annotation>
+        <xs:documentation>
+          <fx:Note Tag="documentation">Référence de l'opérateur (SIRET ou autre numéro EORI)</fx:Note>
+        </xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+        <xs:maxLength value="17"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="typedec" fx:FolderId="1">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Type of déclaration (T1, T2, ...)</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:maxLength value="9"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="villeoperateur" fx:FolderId="1">
+    <xs:simpleType>
+      <xs:annotation>
+        <xs:documentation>
+          <fx:Note Tag="documentation">Ville de l'opérateur</fx:Note>
+        </xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="TexteCourt"/>
+    </xs:simpleType>
+  </xs:element>
+  <xs:simpleType name="DateHeureYYYYMMDDHHMI" fx:FolderId="2">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Date au format yyyymmddhhmi</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="12"/>
+      <xs:maxLength value="12"/>
+      <xs:pattern value="[0-9]{4}[0-1][0-9][0-3][0-9][0-2][0-9][0-5][0-9]"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DateYYYYMMDD" fx:FolderId="2">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Date au format yyyymmdd</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="8"/>
+      <xs:maxLength value="8"/>
+      <xs:pattern value="[0-9]{4}[0-1][0-9][0-3][0-9]"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="IdentifiantDec" fx:FolderId="2">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">MRN d'une déclaration NSTI</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="35"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="IdTransport" fx:FolderId="2">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Identité du moyen de transport</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="27"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Mesure" fx:FolderId="2">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Information numérique déterminée par calcul ou comptage, associée à une unité de mesure.</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer"/>
+  </xs:simpleType>
+  <xs:simpleType name="Oui_Non" fx:FolderId="2">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">0 = Non, 1 = Oui</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Quantite" fx:FolderId="2">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Nombre d'unités non monétaires.</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer"/>
+  </xs:simpleType>
+  <xs:simpleType name="RefBureau" fx:FolderId="2">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">identifiant d'un bureau de douane</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="8"/>
+      <xs:maxLength value="8"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RefConteneurtra" fx:FolderId="2">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Information sur le mode de transport en conteneur</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RefLieu" fx:FolderId="2">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">identifiant d'un lieu</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="35"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RefLieu17AN" fx:FolderId="2">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">identifiant d'un lieu</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="17"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RefPays" fx:FolderId="2">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Code pays</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:length value="2"/>
+      <xs:pattern value="[A-Z]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RefTra2" fx:FolderId="2">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">Code mode de transport, NCTS</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="2"/>
+      <xs:maxLength value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TColisage" fx:FolderId="2">
+    <xs:sequence fx:NextOrdinalNumber="4">
+      <xs:element ref="nbrcol" minOccurs="0" fx:OrdinalNumber="0">
+        <xs:annotation>
+          <xs:documentation>
+            <fx:Note Tag="documentation">nombre des colis</fx:Note>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element ref="nbrpieces" minOccurs="0" fx:OrdinalNumber="1">
+        <xs:annotation>
+          <xs:documentation>
+            <fx:Note Tag="documentation">nombre des pieces</fx:Note>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element ref="natcol" fx:OrdinalNumber="2">
+        <xs:annotation>
+          <xs:documentation>
+            <fx:Note Tag="documentation">nature des colis</fx:Note>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element ref="marquecolis" minOccurs="0" fx:OrdinalNumber="3"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TexteCourt" fx:FolderId="2">
+    <xs:annotation>
+      <xs:documentation>
+        <fx:Note Tag="documentation">information textuelle courte</fx:Note>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="35"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TLieuBureau" fx:FolderId="2">
+    <xs:sequence fx:NextOrdinalNumber="2">
+      <xs:element name="Code" type="RefLieu17AN" minOccurs="0" fx:OrdinalNumber="0">
+        <xs:annotation>
+          <xs:documentation>
+            <fx:Note Tag="documentation">Code lieu associé au lieu</fx:Note>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Lieu" type="RefLieu" minOccurs="0" fx:OrdinalNumber="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TTrader" fx:FolderId="2">
+    <xs:sequence fx:NextOrdinalNumber="6">
+      <xs:element ref="tin" minOccurs="0" fx:OrdinalNumber="0"/>
+      <xs:element ref="nomoperateur" minOccurs="0" fx:OrdinalNumber="1"/>
+      <xs:element ref="rueoperateur" minOccurs="0" fx:OrdinalNumber="2"/>
+      <xs:element ref="paysoperateur" minOccurs="0" fx:OrdinalNumber="3"/>
+      <xs:element ref="codepostaloperateur" minOccurs="0" fx:OrdinalNumber="4"/>
+      <xs:element ref="villeoperateur" minOccurs="0" fx:OrdinalNumber="5"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2011 sp1 (http://www.altova.com) von CK (Kewill GmbH) bearbeitet -->
+<!-- 	Kewill Customs Exchange
+		Kids NCTS
+		VVersion 1.00 January 2010
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="kids_ncts_types.xsd"/>
+	<xsd:element name="NCTSWriteOffNotification">
+		<xsd:annotation>
+			<xsd:documentation>IE45 / E_WRT_NOT this is the write off of the NCTS Declaration
+from customs
+						</xsd:documentation>
+			<xsd:documentation xml:lang="de">Rückgabe der MRN</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="GoodsDeclaration">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="ReferenceNumber" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Unique identification of this declaration.
+Mandatory in DE.
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element ref="TemporaryUCR" minOccurs="0"/>
+							<xsd:element ref="UCRNumber" minOccurs="0"/>
+							<xsd:element name="StatusOfControl" minOccurs="0"/>
+							<xsd:element ref="ReceiveTime" minOccurs="0"/>
+							<xsd:element ref="AcceptanceTime" minOccurs="0"/>
+							<xsd:element ref="ReleaseTime" minOccurs="0"/>
+							<xsd:element ref="CancellationTime" minOccurs="0"/>
+							<xsd:element ref="BeginTimeOfProcessing" minOccurs="0"/>
+							<xsd:element ref="StatusInformation" minOccurs="0"/>
+							<xsd:element ref="CompletionTime" minOccurs="0"/>
+							<xsd:element name="WriteOffType" type="xsd:string" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="en"/>
+									<xsd:documentation xml:lang="de">Erledigungsart: A = Automatisch, M = manuell</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="WriteOffText" minOccurs="0"/>
+							<xsd:element ref="ReferencedAmountsCharging" minOccurs="0"/>
+							<xsd:element name="PrincipalTIN" type="CT_TINType" minOccurs="0"/>
+							<xsd:element name="Principal" type="CT_AddressType" minOccurs="0"/>
+							<xsd:element name="GuarantorTIN" type="CT_TINType" minOccurs="0"/>
+							<xsd:element name="Guarantor" type="CT_AddressType" minOccurs="0"/>
+							<xsd:element name="OfficeOfDeparture" type="ST_CustomsOffice" minOccurs="0"/>
+							<xsd:element name="UseOfTydenSeals" type="ST_ConfirmationCode" minOccurs="0"/>
+							<xsd:element name="RepresentativeName" minOccurs="0"/>
+							<xsd:element name="GRNError" minOccurs="0" maxOccurs="99">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="GRN" minOccurs="0"/>
+										<xsd:element name="Code" minOccurs="0"/>
+										<xsd:element name="Text" minOccurs="0"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="FunctionalError" type="CT_ErrorType" minOccurs="0" maxOccurs="99"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

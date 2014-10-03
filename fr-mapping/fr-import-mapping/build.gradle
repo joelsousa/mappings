@@ -1,0 +1,8 @@
+apply plugin: 'application'
+
+description = 'MapForce generated mapping for FR Import'
+version = '0.5-SNAPSHOT'
+
+mainClassName = "com.mapforce.MappingConsole"
+
+

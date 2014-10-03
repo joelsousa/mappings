@@ -1,0 +1,6 @@
+include 'fr-common-mapping'
+include 'fr-export-mapping'
+include 'fr-import-mapping'
+include 'fr-ncts-mapping'
+
+rootProject.name = 'fr-mapping'
