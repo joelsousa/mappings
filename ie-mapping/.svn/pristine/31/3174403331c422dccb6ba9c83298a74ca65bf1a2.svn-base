@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Develop (Kewill GmbH) -->
+<!-- 	Kewill Customs Exchange
+		KIDS General
+		Version 2.0.00 July 2011 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="kids_general_types.xsd"/>
+	<xsd:element name="localAppResult">
+		<xsd:annotation>
+			<xsd:documentation>local application result message</xsd:documentation>
+			<xsd:documentation xml:lang="de">Einarbeitungsprotokoll</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="GoodsDeclaration">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="UCRNumber" minOccurs="0"/>
+							<xsd:element ref="ReferenceNumber"/>
+							<xsd:element ref="CorrectionNumber" minOccurs="0"/>
+							<xsd:element ref="Language" minOccurs="0"/>
+							<xsd:element ref="TemporaryUCR" minOccurs="0"/>
+							<xsd:element ref="FileName" minOccurs="0"/>
+							<xsd:element ref="ProcedureType" minOccurs="0"/>
+							<xsd:element name="GoodsItem" minOccurs="0" maxOccurs="9999">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="ItemNumber" type="xsd:integer"/>
+										<xsd:element name="PositionError" type="CTG_PositionError">
+											<xsd:annotation>
+												<xsd:documentation>PositionError provides a list of error texts; 
+This tag has to be created if the message referred to could not be processed correctly into the application.
+</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties AppName="IE509" SelectedLanguage="java"/>
+		<structure>
+			<children>
+				<component name="IE509" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view rbx="418" rby="728"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace uid="http://www.ros.ie/schemas/ecs/IE509/v1"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ExportCancellationDecision" outkey="1" expanded="1">
+										<entry name="CustomsReferenceIdentifier" outkey="27"/>
+										<entry name="DeclarationOfficeIdentifier" outkey="9"/>
+										<entry name="Cancellation" outkey="2" expanded="1">
+											<entry name="CancellationRequestDate" outkey="28"/>
+											<entry name="CancellationJustification" outkey="10"/>
+										</entry>
+										<entry name="GoodsShipment" expanded="1">
+											<entry name="Consignor" outkey="29" expanded="1">
+												<entry name="IdentityIdentifier" outkey="30"/>
+												<entry name="NameText" outkey="31"/>
+												<entry name="Address" outkey="32" expanded="1">
+													<entry name="LineText" outkey="33"/>
+													<entry name="CityName" outkey="34"/>
+													<entry name="PostcodeIdentifier" outkey="35"/>
+													<entry name="CountryCode" outkey="36"/>
+												</entry>
+											</entry>
+										</entry>
+										<entry name="Agent" outkey="37" expanded="1">
+											<entry name="StatusCode" outkey="38"/>
+											<entry name="IdentityIdentifier" outkey="39"/>
+											<entry name="NameText" outkey="40"/>
+											<entry name="Address" expanded="1"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="IE509.xsd" inputinstance="IE509_ExportCancellationDecision.xml" outputinstance="IE509_ExportCancellationDecision.xml" instanceroot="{http://www.ros.ie/schemas/ecs/IE509/v1}ExportCancellationDecision"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="CancellationResponse" library="xml" uid="3" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="544" rbx="964" rby="714"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="CancellationResponse" inpkey="3" expanded="1">
+										<entry name="GoodsDeclaration" inpkey="4" expanded="1">
+											<entry name="DeclarationTime" inpkey="13"/>
+											<entry name="DeclarationNumberCustoms" inpkey="7"/>
+											<entry name="Reason" inpkey="8"/>
+											<entry name="ReferenceNumber" inpkey="14"/>
+											<entry name="CustomsOffice" inpkey="15" expanded="1">
+												<entry name="VATNumber" inpkey="16"/>
+												<entry name="ETNAdress" inpkey="17"/>
+												<entry name="Address" inpkey="18" expanded="1">
+													<entry name="Name" inpkey="19"/>
+													<entry name="City" inpkey="20"/>
+													<entry name="PostalCode" inpkey="21"/>
+													<entry name="Country" inpkey="22"/>
+												</entry>
+											</entry>
+											<entry name="CustomsOfficeContactPerson" inpkey="23" expanded="1">
+												<entry name="Clerk" inpkey="24"/>
+												<entry name="Name" inpkey="25" expanded="1"/>
+												<entry name="Identity" inpkey="55" expanded="1"/>
+											</entry>
+											<entry name="Information" expanded="1"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="CancellationResponse.xsd" outputinstance="CancellationResponse.xml" instanceroot="{}CancellationResponse"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="1">
+						<edges>
+							<edge vertexkey="3" edgekey="5"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="2">
+						<edges>
+							<edge vertexkey="4" edgekey="6"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="9">
+						<edges>
+							<edge vertexkey="7" edgekey="11"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="10">
+						<edges>
+							<edge vertexkey="8" edgekey="12"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="27">
+						<edges>
+							<edge vertexkey="14" edgekey="41"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="28">
+						<edges>
+							<edge vertexkey="13" edgekey="42"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="29">
+						<edges>
+							<edge vertexkey="15" edgekey="43"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="30">
+						<edges>
+							<edge vertexkey="16" edgekey="44"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="31">
+						<edges>
+							<edge vertexkey="17" edgekey="45"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="32">
+						<edges>
+							<edge vertexkey="18" edgekey="46"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="33">
+						<edges>
+							<edge vertexkey="19" edgekey="47"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="34">
+						<edges>
+							<edge vertexkey="20" edgekey="48"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="35">
+						<edges>
+							<edge vertexkey="21" edgekey="49"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="36">
+						<edges>
+							<edge vertexkey="22" edgekey="50"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="37">
+						<edges>
+							<edge vertexkey="23" edgekey="51"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="38">
+						<edges>
+							<edge vertexkey="55" edgekey="56"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="39">
+						<edges>
+							<edge vertexkey="24" edgekey="53"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="40">
+						<edges>
+							<edge vertexkey="25" edgekey="54"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

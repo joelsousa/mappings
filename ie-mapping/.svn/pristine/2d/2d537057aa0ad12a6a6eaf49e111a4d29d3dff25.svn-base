@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties AppName="IE551" SelectedLanguage="java"/>
+		<structure>
+			<children>
+				<component name="InternalStatusInformation" library="xml" uid="3" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="580" rbx="920" rby="210"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="InternalStatusInformation" inpkey="1" expanded="1">
+										<entry name="GoodsDeclaration" inpkey="12" expanded="1">
+											<entry name="ReferenceNumber" inpkey="7"/>
+											<entry name="UCRNumber" inpkey="2"/>
+											<entry name="OrderNumber" inpkey="18"/>
+											<entry name="DateNewStatus" inpkey="19"/>
+											<entry name="NewStatus" inpkey="15"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="InternalStatusInformation.xsd" outputinstance="InternalStatusInformation.xml" instanceroot="{}InternalStatusInformation"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="IE551" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view rbx="463" rby="451"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace uid="http://www.ros.ie/schemas/ecs/IE551/v1"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ExportNoRelease" outkey="3" expanded="1">
+										<entry name="ExportCustomsDeclaration" expanded="1">
+											<entry name="Declaration" outkey="13" expanded="1">
+												<entry name="Issuing" expanded="1"/>
+												<entry name="GoodsShipment" expanded="1">
+													<entry name="Warehouse" expanded="1"/>
+													<entry name="Ucr" expanded="1">
+														<entry name="IdentificationIdentifier" outkey="10"/>
+														<entry name="TraderReferenceIdentifier" outkey="8"/>
+													</entry>
+													<entry name="TradeTerm" expanded="1"/>
+													<entry name="ExitCustomsOffice" expanded="1"/>
+													<entry name="DeliveryDestination" expanded="1"/>
+													<entry name="CustomsGoodsItem" expanded="1">
+														<entry name="GoodsPackaging" expanded="1"/>
+														<entry name="Commodity" expanded="1">
+															<entry name="DutyTaxFee" expanded="1">
+																<entry name="Payment" expanded="1"/>
+															</entry>
+														</entry>
+														<entry name="Origin" expanded="1"/>
+														<entry name="GoodsMeasure" expanded="1"/>
+														<entry name="CustomsProcedure" expanded="1"/>
+														<entry name="PreviousCustomsDocument" expanded="1"/>
+														<entry name="AdditionalDocument" expanded="1"/>
+														<entry name="TransportEquipment" expanded="1">
+															<entry name="EquipmentIdentification" expanded="1"/>
+														</entry>
+													</entry>
+													<entry name="Consignor" expanded="1">
+														<entry name="Address" expanded="1"/>
+													</entry>
+													<entry name="Consignment" expanded="1">
+														<entry name="DepartureTransportMeans" expanded="1"/>
+														<entry name="BorderTransportMeans" expanded="1">
+															<entry name="Itinerary" expanded="1"/>
+														</entry>
+														<entry name="GoodsLocation" expanded="1"/>
+														<entry name="TransportEquipment" expanded="1"/>
+														<entry name="IESummaryDeclarationIdentifier" outkey="20"/>
+													</entry>
+													<entry name="Consignee" expanded="1">
+														<entry name="Address" expanded="1"/>
+													</entry>
+													<entry name="IEPayer" expanded="1"/>
+													<entry name="AdditionalInformation" expanded="1"/>
+													<entry name="AdditionalDocument" expanded="1"/>
+												</entry>
+												<entry name="DeclarationPackaging" expanded="1"/>
+												<entry name="CurrencyExchange" expanded="1"/>
+												<entry name="Agent" expanded="1">
+													<entry name="StatusCode" outkey="16"/>
+													<entry name="Address" expanded="1"/>
+												</entry>
+												<entry name="NumberOfSeals" expanded="1"/>
+												<entry name="ControlResult" expanded="1">
+													<entry name="DateLimit" outkey="21"/>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="IE551.xsd" inputinstance="IE551_ExportNoRelease.xml" outputinstance="IE551_ExportNoRelease.xml" instanceroot="{http://www.ros.ie/schemas/ecs/IE551/v1}ExportNoRelease"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="3">
+						<edges>
+							<edge vertexkey="1" edgekey="5"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="8">
+						<edges>
+							<edge vertexkey="7" edgekey="9"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="10">
+						<edges>
+							<edge vertexkey="2" edgekey="11"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="13">
+						<edges>
+							<edge vertexkey="12" edgekey="14"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="16">
+						<edges>
+							<edge vertexkey="15" edgekey="17"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="20">
+						<edges>
+							<edge vertexkey="18" edgekey="22"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="21">
+						<edges>
+							<edge vertexkey="19" edgekey="23"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties AppName="IE516" SelectedLanguage="java"/>
+		<structure>
+			<children>
+				<component name="is-not-null" library="db" uid="6" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="32"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="33"/>
+					</targets>
+					<view ltx="382" lty="312" rbx="456" rby="351"/>
+				</component>
+				<component name="AdditionalDocument" library="core" uid="7" kind="3">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="34"/>
+						<datapoint pos="1" key="35"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="36"/>
+						<datapoint/>
+					</targets>
+					<view ltx="492" lty="312" rbx="614" rby="368"/>
+				</component>
+				<component name="constant" library="core" uid="4" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="25"/>
+					</targets>
+					<view ltx="418" rbx="456" rby="18"/>
+					<data>
+						<constant value="1" datatype="decimal"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="DeclarationResponse" library="xml" uid="3" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="686" rbx="1092" rby="432"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="DeclarationResponse" inpkey="7" expanded="1">
+										<entry name="GoodsDeclaration" expanded="1">
+											<entry name="DeclarationTime" inpkey="52"/>
+											<entry name="Reason" inpkey="8"/>
+											<entry name="StatusOfCompletion" inpkey="21"/>
+											<entry name="ReferenceNumber" inpkey="9"/>
+											<entry name="Error" inpkey="10" expanded="1">
+												<entry name="UniqueNumber" inpkey="23"/>
+												<entry name="Code" inpkey="11"/>
+												<entry name="Text" inpkey="12"/>
+											</entry>
+											<entry name="Error" inpkey="40" expanded="1" clone="1">
+												<entry name="Code" inpkey="41"/>
+												<entry name="Text" inpkey="42"/>
+											</entry>
+											<entry name="CustomsOfficeExport" inpkey="24"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="DeclarationResponse.xsd" outputinstance="DeclarationResponse.xml" instanceroot="{}DeclarationResponse"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="IE516" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="18" rbx="350" rby="287"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace uid="http://www.ros.ie/schemas/ecs/IE516/v1"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ExportDeclarationRejected" outkey="1" expanded="1">
+										<entry name="CustomsReferenceIdentifier" outkey="2"/>
+										<entry name="Ucr" expanded="1">
+											<entry name="TraderReferenceIdentifier" outkey="77"/>
+										</entry>
+										<entry name="IEMessageSendingDate" outkey="49"/>
+										<entry name="CommentsText" outkey="3"/>
+										<entry name="AdditionalDocument" outkey="37" expanded="1">
+											<entry name="TypeCode" outkey="38"/>
+											<entry name="ReferenceIdentifier" outkey="39"/>
+										</entry>
+										<entry name="ErrorReference" outkey="4" expanded="1">
+											<entry name="ErrorCode" outkey="5"/>
+											<entry name="SequenceIdentifier" outkey="20"/>
+											<entry name="FieldIdentifier" outkey="6"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="IE516.xsd" inputinstance="IE516_ExportDeclarationRejected.xml" outputinstance="IE516_ExportDeclarationRejected.xml" instanceroot="{http://www.ros.ie/schemas/ecs/IE516/v1}ExportDeclarationRejected"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="1">
+						<edges>
+							<edge vertexkey="7" edgekey="13"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="2">
+						<edges>
+							<edge vertexkey="24" edgekey="27"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="3">
+						<edges>
+							<edge vertexkey="8" edgekey="28"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="4">
+						<edges>
+							<edge vertexkey="10" edgekey="16"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="5">
+						<edges>
+							<edge vertexkey="11" edgekey="17"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="6">
+						<edges>
+							<edge vertexkey="12" edgekey="18"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="20">
+						<edges>
+							<edge vertexkey="23" edgekey="30"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="25">
+						<edges>
+							<edge vertexkey="21" edgekey="31"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="33">
+						<edges>
+							<edge vertexkey="35" edgekey="43"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="36">
+						<edges>
+							<edge vertexkey="40" edgekey="44"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="37">
+						<edges>
+							<edge vertexkey="32" edgekey="45"/>
+							<edge vertexkey="34" edgekey="46"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="38">
+						<edges>
+							<edge vertexkey="41" edgekey="47"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="39">
+						<edges>
+							<edge vertexkey="42" edgekey="48"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="49">
+						<edges>
+							<edge vertexkey="52" edgekey="53"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="77">
+						<edges>
+							<edge vertexkey="9" edgekey="78"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

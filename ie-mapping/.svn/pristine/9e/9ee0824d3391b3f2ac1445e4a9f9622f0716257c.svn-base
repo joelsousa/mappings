@@ -1,0 +1,6 @@
+include 'ie-common-mapping'
+include 'ie-export-mapping'
+include 'ie-import-mapping'
+include 'ie-ncts-mapping'
+
+rootProject.name = 'ie-mapping'

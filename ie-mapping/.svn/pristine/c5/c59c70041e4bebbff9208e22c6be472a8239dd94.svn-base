@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImportDeclaration xsi:noNamespaceSchemaLocation="C:\Users\moredata8\Desktop\ImportDeclarationMapToIM515\ImportDeclaration.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<GoodsDeclaration>
+				<ReferenceNumber>86085329</ReferenceNumber>
+				<DeclarationTime>201408060600</DeclarationTime>
+				<AgentRepresentationCode>1</AgentRepresentationCode>
+				<Business>
+					<BusinessTypeCode>11</BusinessTypeCode>
+				</Business>
+				<CustomsOfficeOfDeclaration>IEORK400</CustomsOfficeOfDeclaration>
+				<Traders>
+					<DeclarantTIN>
+						<TIN>IE9507146I</TIN>
+						<BO>0000</BO>
+					</DeclarantTIN>
+					<DeclarantAddress>
+						<Name>Federal Express Europe Inc.</Name>
+						<Street>Unit 3 Constellation Road, Airw</Street>
+						<City>Dublin 17</City>
+						<PostalCode>C04001</PostalCode>
+						<Country>IE</Country>
+					</DeclarantAddress>
+					<ConsignorTIN>
+						<TIN>NR</TIN>
+						<BO>0000</BO>
+					</ConsignorTIN>
+					<ConsignorAddress>
+						<Name>MSSL MIDEAST FZE</Name>
+						<Street>H3 PLOT NO16</Street>
+						<City>SHARJAH AIRPORT FREE ZONE SAIF</City>
+						<PostalCode>8510</PostalCode>
+						<Country>AE</Country>
+						<CountrySubEntity>SH</CountrySubEntity>
+					</ConsignorAddress>
+					<ConsigneeTIN>
+						<TIN>9953025L</TIN>
+						<BO>0000</BO>
+					</ConsigneeTIN>
+					<ConsigneeAddress>
+						<Name>MSSL MIDEAST FTG ICELAND</Name>
+						<Street>MOYAN LOWER OLD DUBLIN</Street>
+						<City>CO WEXFORD</City>
+						<PostalCode>x</PostalCode>
+						<Country>IE</Country>
+					</ConsigneeAddress>
+				</Traders>
+				<DispatchCountry>US</DispatchCountry>
+				<CustomsOfficeEntry>IEORK400</CustomsOfficeEntry>
+				<GoodsLocation>IEORK400</GoodsLocation>
+				<DestinationCountry>IE</DestinationCountry>
+				<CustomsStatus>IMD</CustomsStatus>
+				<TotalNumberPositions>1</TotalNumberPositions>
+				<PreviousDocument>
+					<Number>Y-CLE-140806</Number>
+				</PreviousDocument>
+				<MeansOfTransportBorder>
+					<TransportationType>4</TransportationType>
+					<TransportationNumber>CD8030</TransportationNumber>
+					<TransportationCountry>US</TransportationCountry>
+				</MeansOfTransportBorder>
+				<MeansOfTransportArrival>
+					<TransportationType>4</TransportationType>
+				</MeansOfTransportArrival>
+				<IncoTerms>
+					<Code>FOB</Code>
+					<Place>SHARJAH AIRPORT FREE ZONE SAIF</Place>
+					<LocationCode>1</LocationCode>
+				</IncoTerms>
+				<Invoice>
+					<Amount>5712</Amount>
+					<Currency>EUR</Currency>
+				</Invoice>
+				<CustomerOrderNumber>153915146</CustomerOrderNumber>
+				<Document>
+					<Type>N380</Type>
+					<Number>612700173258</Number>
+					<IssueDate>20140804</IssueDate>
+				</Document>
+				<Document>
+					<Type>N740</Type>
+					<Number>612700173258</Number>
+					<IssueDate>20140804</IssueDate>
+				</Document>
+				<AdditionalInformation>
+					<StatementCode>1D24</StatementCode>
+					<StatementText>06/08/20140600</StatementText>
+				</AdditionalInformation>
+				<DV1>
+					<BuyerSellerRelationship>A</BuyerSellerRelationship>
+				</DV1>
+				<GoodsItem>
+					<ItemNumber>1</ItemNumber>
+					<CommodityCode>
+						<TarifCode>8428399090</TarifCode>
+					</CommodityCode>
+					<ProcedureCode>4000000</ProcedureCode>
+					<Description>OTHER LIFTING HANDLING LOADING OR UNLOADING MACHINERY
+						FOR EXAMPLE LIFTS ESCALATORS CONVEYORS TELEFERICSOther
+						continuousaction elevators and conveyors for goods or
+						materialsOther
+					</Description>
+					<CountryOfOrigin>AE</CountryOfOrigin>
+					<NetMass>208.62</NetMass>
+					<GrossMass>231.8</GrossMass>
+					<Package>
+						<Quantity>2</Quantity>
+						<Type>CT</Type>
+						<Marks>612700173258</Marks>
+					</Package>
+					<Invoice>
+						<Amount>5712</Amount>
+					</Invoice>
+					<Preference>
+						<PreferenceCertificate>100</PreferenceCertificate>
+					</Preference>
+				</GoodsItem>
+			</GoodsDeclaration>
+		</ImportDeclaration>

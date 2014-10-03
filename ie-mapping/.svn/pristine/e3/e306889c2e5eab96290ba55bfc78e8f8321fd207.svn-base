@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 	Kewill Customs Exchange
+		Kids Export
+		Version 1.0 February 2012 
+
+Changes:
+February 2012 Introduced (KCXSM-18)		
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="kids_export_types.xsd"/>
+	<xsd:element name="DeclarationResponse">
+		<xsd:annotation>
+			<xsd:documentation>IE516	=	EXPort STAtus	(E_EXP_STA)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="GoodsDeclaration">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="CancellationTime" minOccurs="0"/>
+							<xsd:element ref="DeclarationTime" minOccurs="0"/>
+							<xsd:element ref="ExitTime" minOccurs="0"/>
+							<xsd:element ref="ReleaseTime" minOccurs="0"/>
+							<xsd:element ref="AcceptanceTime" minOccurs="0"/>
+							<xsd:element ref="ReceiveTime" minOccurs="0"/>
+							<xsd:element ref="TimeOfRejection" minOccurs="0"/>
+							<xsd:element ref="BeginTimeOfProcessing" minOccurs="0"/>
+							<xsd:element ref="TimeOfRejectionOfPreannouncement" minOccurs="0"/>
+							<xsd:element ref="TimeOfCompletion" minOccurs="0"/>
+							<xsd:element ref="Reason" minOccurs="0"/>
+							<xsd:element ref="StatusOfCompletion"/>
+							<xsd:element ref="StatusOfCompletion2" minOccurs="0"/>
+							<xsd:element ref="StatusOfCompletion3" minOccurs="0"/>
+							<xsd:element ref="ReferenceNumber"/>
+							<xsd:element ref="OrderNumber" minOccurs="0"/>
+							<xsd:element name="EPUNumber" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>used in UK: Export Processing Unit) - This value is available when the MRN for the PSA is sent by customs</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="EntryNumber" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>used in UK: This value is available when the MRN for the PSA is sent by customs</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element ref="CustomsOffice" minOccurs="0"/>
+							<xsd:element ref="LoadingTime" minOccurs="0"/>
+							<xsd:element ref="Error" minOccurs="0" maxOccurs="99"/>
+							<!--  added 2012-03-01 Atlas 8.4 Start -->
+							<xsd:element ref="CustomsOfficeExport" minOccurs="0"/>
+							<xsd:element ref="CustomsOfficeForCompletion" minOccurs="0"/>
+							<xsd:element ref="DeclarantTIN" minOccurs="0"/>
+							<xsd:element ref="Declarant" minOccurs="0"/>
+							<xsd:element ref="AgentTIN" minOccurs="0"/>
+							<xsd:element ref="Agent" minOccurs="0"/>
+							<!--  added 2012-03-01 Atlas 8.4 End -->
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

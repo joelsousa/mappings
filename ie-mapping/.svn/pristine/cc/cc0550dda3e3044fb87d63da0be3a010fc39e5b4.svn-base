@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExportDeclaration xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<GoodsDeclaration>
+		<AreaCode>EUD</AreaCode>
+		<TypeOfPermit>A</TypeOfPermit>
+		<DeclarationTime>201408110000</DeclarationTime>
+		<DispatchCountry>IE</DispatchCountry>
+		<DestinationCountry>US</DestinationCountry>
+		<TransportInContainer>0</TransportInContainer>
+		<ShipmentNumber>EA7030</ShipmentNumber>
+		<ReferenceNumber>86087826</ReferenceNumber>
+		<TotalNumberPositions>1</TotalNumberPositions>
+		<TotalNumberOfPackages>1</TotalNumberOfPackages>
+		<TypeOfRepresentation>3</TypeOfRepresentation>
+		<MeansOfTransportInland>
+			<TransportMode>03</TransportMode>
+			<TransportationNumber>EA7030</TransportationNumber>
+			<PlaceOfLoadingCode>IESNN400</PlaceOfLoadingCode>
+		</MeansOfTransportInland>
+		<MeansOfTransportBorder>
+			<TransportMode>4</TransportMode>
+			<TransportationNumber>EA7030</TransportationNumber>
+		</MeansOfTransportBorder>
+		<PlaceOfLoading>
+			<Code>IESNN400</Code>
+		</PlaceOfLoading>
+		<CustomsOfficeExport>IESNN400</CustomsOfficeExport>
+		<IntendedOfficeOfExit>IESNN400</IntendedOfficeOfExit>
+		<Business>
+			<BusinessTypeCode>11</BusinessTypeCode>
+			<InvoicePrice>3100.00</InvoicePrice>
+			<Currency>EUR</Currency>
+		</Business>
+		<ConsignorTIN>
+			<TIN>IE8273384R</TIN>
+		</ConsignorTIN>
+		<Consignor>
+			<Address>
+				<Street>RAHEEN INDUSTRIAL ESTATE</Street>
+				<City>LIMERICK</City>
+				<PostalCode>249</PostalCode>
+				<Country>IE</Country>
+			</Address>
+		</Consignor>
+		<ConsignorContactPerson>
+			<Clerk>ANALOG DEVICES</Clerk>
+		</ConsignorContactPerson>
+		<AgentTIN>
+			<TIN>IE9507146I</TIN>
+		</AgentTIN>
+		<Agent>
+			<VATNumber>IE9507146I</VATNumber>
+			<Address>
+				<Street>Unit 3 Constellation Road, Airw</Street>
+				<City>Dublin 17</City>
+				<PostalCode>CE03083</PostalCode>
+				<Country>IE</Country>
+			</Address>
+		</Agent>
+		<AgentContactPerson>
+			<Clerk>Federal Express Europe Inc.</Clerk>
+		</AgentContactPerson>
+		<ConsigneeTIN>
+			<TIN>NR</TIN>
+		</ConsigneeTIN>
+		<Consignee>
+			<Address>
+				<Street>I IA SC PI 3 R D HW</Street>
+				<City>NORDBORG</City>
+				<PostalCode>6430</PostalCode>
+				<Country>US</Country>
+			</Address>
+		</Consignee>
+		<ConsigneeContactPerson>
+			<Clerk>FLOW INSTRUMENTS</Clerk>
+		</ConsigneeContactPerson>
+		<Document>
+			<Type>N740</Type>
+			<Reference>555911552600</Reference>
+			<IssueDate>20140817</IssueDate>
+		</Document>
+		<AddInfoStatement>
+			<Code>1D23</Code>
+			<Text>11/08/2014 0000</Text>
+		</AddInfoStatement>
+		<GoodsItem>
+			<ItemNumber>1</ItemNumber>
+			<Description>Export Tariff</Description>
+			<OriginCountry>IE</OriginCountry>
+			<NetMass>7.2</NetMass>
+			<GrossMass>8</GrossMass>
+			<CommodityCode>
+				<TarifCode>84099900</TarifCode>
+			</CommodityCode>
+			<CustomsApprovedTreatment>
+				<Declared>10</Declared>
+				<Previous />
+			</CustomsApprovedTreatment>
+			<Statistic>
+				<Value>3100</Value>
+			</Statistic>
+			<Package>
+				<Quantity>1</Quantity>
+				<SequentialNumber>1</SequentialNumber>
+				<Type>PK</Type>
+				<Marks>555911552600</Marks>
+			</Package>
+			<Document>
+				<Type>N380</Type>
+				<Reference>555911552600</Reference>
+				<IssueDate>20140817</IssueDate>
+			</Document>
+			<AddInfoStatement>
+				<Code>1V20</Code>
+				<Text>0</Text>
+			</AddInfoStatement>
+			<Business>
+				<InvoicePrice>3100</InvoicePrice>
+			</Business>
+		</GoodsItem>
+	</GoodsDeclaration>
+</ExportDeclaration>

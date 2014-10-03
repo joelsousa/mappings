@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2011 sp1 (http://www.altova.com) von CK (Kewill GmbH) bearbeitet -->
+<!-- 	Kewill Customs Exchange
+		KIDS Import
+		Version 1.0 September 2011 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="kids_import_types.xsd"/>
+	<xsd:element name="ImportDeclarationDecision">
+		<xsd:annotation>
+			<xsd:documentation>
+				Nachricht Entscheidung der Zollstelle (CURREL)  
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+	<xsd:element name="GoodsDeclaration">
+	<xsd:annotation>
+		<xsd:documentation>Goods Declaration</xsd:documentation>
+	</xsd:annotation>				
+	<xsd:complexType>		       
+	<xsd:sequence>		
+				<xsd:element name="ReferenceNumber" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Bezugsnummer (Local Reference Number)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="TemporaryMRN" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Arbeitsnummer (Work number)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="RegistrationNumber" minOccurs="0"/>
+				<xsd:element name="CustomsClerkName" minOccurs="0"/>
+				<xsd:element name="OrderNumber" minOccurs="0"/>
+				<xsd:element name="GoodsItem" maxOccurs="999">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="ItemNumber" type="xsd:integer" minOccurs="0"/>
+							<xsd:element name="AcceptanceDate" type="ST_Date" minOccurs="0"/>
+							<xsd:element name="ReleaseDate" type="ST_Date" minOccurs="0"/>
+							<xsd:element name="ReleaseTime" type="ST_Time" minOccurs="0"/>
+							<xsd:element name="AcceptanceCode" minOccurs="0"/>
+							<xsd:element name="ReleaseCode" minOccurs="0"/>
+							<xsd:element name="ReturnCode" minOccurs="0"/>
+							<xsd:element name="RulingsCode" minOccurs="0"/>
+							<xsd:element name="Text" minOccurs="0"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+	</xsd:sequence>	
+	</xsd:complexType>
+	</xsd:element>					
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

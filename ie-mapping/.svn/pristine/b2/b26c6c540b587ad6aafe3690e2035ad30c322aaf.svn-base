@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 	Kewill Customs Exchange
+		Kids Export
+		Version 1.0 February 2012 
+
+Changes:
+February 2012 Introduced (KCXSM-18)		
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="kids_export_types.xsd"/>
+	<xsd:element name="Cancellation">
+		<xsd:annotation>
+			<xsd:documentation>IE514	=	EXPort CANcellation	(E_EXP_CAN)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="GoodsDeclaration">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="KindOfDeclaration" minOccurs="0"/>
+							<xsd:element ref="CancellationTime" minOccurs="0"/>
+							<xsd:element ref="CancellationInfo" minOccurs="0"/>
+							<xsd:element ref="DeclarationNumberCustoms" minOccurs="0"/>
+							<xsd:element ref="ReferenceNumber"/>
+							<xsd:element name="Contact" type="CT_ContactPerson" minOccurs="0"/>
+							<!--  added 2012-03-01 Atlas 8.4 Start -->
+							<xsd:element ref="CustomsOfficeExport" minOccurs="0"/>
+							<xsd:element ref="DeclarantTIN" minOccurs="0"/>
+							<xsd:element ref="Declarant" minOccurs="0"/>
+							<xsd:element ref="AgentTIN" minOccurs="0"/>
+							<xsd:element ref="Agent" minOccurs="0"/>
+							<!--  added 2012-03-01 Atlas 8.4 End -->
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

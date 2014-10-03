@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2011 sp1 (http://www.altova.com) von XMLSpy 2011 Professional Ed., Concurrent for 5 users (Kewill GmbH) bearbeitet -->
+<!-- 	Kewill Customs Exchange
+		KIDS Import
+		Version 2.0 December 2012 
+Changes:
+December 2011: added Business/PlaceOfDeclaration/DispatchCountry (KCXSM-3)		
+February 2012: missing TAG <TotalNumberPositions> for import schema (KCXSM-27)
+February 2013: new Tags for Switzerland: BunchNumber, LanguageCode, DeclarationPriorPresentation, DispatchCountryConfirmation,
+	       Reason, InjunctionType, CT_AdministrativeInfos, CT_Warehouse, CT_NonCustomsLawType, VATValue, CT_Refinement
+Juni	 2013: added DeclarantIsConsignee flag
+October 2103: added DestinationCountry (KCXSM83)
+October 2103: added AdditionalInfoStatement as CT_AdditionalInformation (KCXSM82)
+
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="kids_import_types.xsd"/>
+	<xsd:element name="ImportDeclaration">
+		<xsd:annotation>
+			<xsd:documentation>
+				Nachricht Anmeldung zum FreienVerkehr 
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="GoodsDeclaration">
+					<xsd:annotation>
+						<xsd:documentation>Goods Declaration</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="BunchNumber" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>CH: if more than one declaration is send in one KIDS message, this is reference number for the whole message</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="ReferenceNumber" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Bezugsnummer (Local Reference Number)</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="DeclarationNumber" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>unique number for the declaration needed in NL</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="LanguageCode" type="ST_CountryISOCode" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>CH: code of language the daclaration is made</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="DeclarationPriorPresentation" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>CH: has to be filled by declarant, if physical presentation and declaration is not at the same time </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="DeclarationTime" type="ST_DateTime" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Time of the declaration  (added 2014/JUL/22-DH) </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="AgentRepresentationCode" minOccurs="0"/>
+							<xsd:element name="PreTaxDeductionCode" minOccurs="0"/>
+							<xsd:element name="TransportInContainer" minOccurs="0"/>
+							<!-- added 2011-12-16, KCXSM-3 -->
+							<xsd:element name="Business" type="CT_Business" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Business information</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="PaymentType" minOccurs="0"/>
+							<!-- added 2011-12-16, KCXSM-3 -->
+							<xsd:element name="PlaceOfDeclaration" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>City where the import declaration was created </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="CustomsOfficeOfDeclaration" minOccurs="0"/>
+							<xsd:element name="DeclarantIsConsignee" type="xsd:string" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>values:
+1 =  if the declarant and the consigneer are the same person,
+0 or empty = in other cases</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="Traders" type="CT_Traders" minOccurs="0"/>
+							<!-- added 2011-12-16, KCXSM-3 -->
+							<xsd:element name="DispatchCountry" type="ST_CountryISOCode" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Country where the goods was shipped from</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="DispatchCountryConfirmation" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>CH: used for RICO dispatcg countries, values 0 or 1</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="CustomsOfficeEntry" minOccurs="0"/>
+							<xsd:element name="ImporterLocation" minOccurs="0"/>
+							<xsd:element name="GoodsLocation" minOccurs="0"/>
+							<xsd:element name="DestinationCountry" minOccurs="0"/>
+							<xsd:element name="DestinationFederalState" minOccurs="0"/>
+							<xsd:element name="TaxOffice" minOccurs="0"/>
+							<xsd:element name="CustomsStatus" minOccurs="0"/>
+							<xsd:element name="StatisticalStatus" minOccurs="0"/>
+							<!-- added 2012-02-28, KCXSM-27 -->
+							<xsd:element name="TotalNumberPositions" type="xsd:integer" minOccurs="0"/>
+							<xsd:element name="GrossMass" type="xsd:decimal" minOccurs="0"/>
+							<xsd:element name="PreviousDocument" type="CT_PreviousDocument" minOccurs="0"/>
+							<xsd:element name="MeansOfTransportBorder" type="CT_MeansOfTransport" minOccurs="0"/>
+							<xsd:element name="MeansOfTransportInland" type="CT_MeansOfTransport" minOccurs="0"/>
+							<xsd:element name="MeansOfTransportArrival" type="CT_MeansOfTransport" minOccurs="0"/>
+							<xsd:element name="ContactPerson" type="CT_ContactPerson" minOccurs="0"/>
+							<xsd:element name="IncoTerms" type="CT_IncoTerms" minOccurs="0"/>
+							<xsd:element name="Invoice" type="CT_Invoice" minOccurs="0"/>
+							<xsd:element name="WriteOffSumAType" minOccurs="0"/>
+							<xsd:element name="WriteOffBonWarAvuvAuthNum" minOccurs="0"/>
+							<xsd:element name="WriteOffBonWarRefNum" minOccurs="0"/>
+							<xsd:choice>
+								<xsd:element name="ManifestCompletion" minOccurs="0" maxOccurs="999">
+									<xsd:complexType>
+										<xsd:sequence>
+											<xsd:element name="RegistrationNumber" minOccurs="0"/>
+											<xsd:element name="ItemNumber" type="xsd:int" minOccurs="0"/>
+											<xsd:element name="NumberOfPieces" type="xsd:int" minOccurs="0"/>
+											<xsd:element name="Custodian" minOccurs="0">
+												<xsd:complexType>
+													<xsd:sequence>
+														<xsd:element name="CustomerID" minOccurs="0"/>
+														<xsd:element name="TIN" minOccurs="0"/>
+														<xsd:element name="BO" minOccurs="0"/>
+													</xsd:sequence>
+												</xsd:complexType>
+											</xsd:element>
+											<xsd:element name="SpecificKey" minOccurs="0">
+												<xsd:complexType>
+													<xsd:sequence>
+														<xsd:element name="Code" minOccurs="0"/>
+														<xsd:element name="Number" minOccurs="0"/>
+													</xsd:sequence>
+												</xsd:complexType>
+											</xsd:element>
+											<xsd:element name="ATLASAlignment" type="ST_ConfirmationCode" minOccurs="0"/>
+										</xsd:sequence>
+									</xsd:complexType>
+								</xsd:element>
+								<xsd:element name="BondedWarehouseCompletion" minOccurs="0" maxOccurs="999">
+									<xsd:complexType>
+										<xsd:sequence>
+											<xsd:element name="RegistrationNumber" minOccurs="0"/>
+											<xsd:element name="ItemNumber" type="xsd:int" minOccurs="0"/>
+											<xsd:element name="ATLASInFlow" type="ST_ConfirmationCode" minOccurs="0"/>
+											<xsd:element name="CommonUse" type="ST_ConfirmationCode" minOccurs="0"/>
+											<xsd:element name="CommodityCode" minOccurs="0"/>
+											<xsd:element name="Outflow" minOccurs="0">
+												<xsd:complexType>
+													<xsd:sequence>
+														<xsd:element name="Quantity" type="xsd:decimal" minOccurs="0"/>
+														<xsd:element name="UnitOfMeasurement" minOccurs="0"/>
+														<xsd:element name="Qualifier" minOccurs="0"/>
+													</xsd:sequence>
+												</xsd:complexType>
+											</xsd:element>
+											<xsd:element name="TradedVolume" minOccurs="0">
+												<xsd:complexType>
+													<xsd:sequence>
+														<xsd:element name="Quantity" type="xsd:decimal" minOccurs="0"/>
+														<xsd:element name="UnitOfMeasurement" minOccurs="0"/>
+														<xsd:element name="Qualifier" minOccurs="0"/>
+													</xsd:sequence>
+												</xsd:complexType>
+											</xsd:element>
+											<xsd:choice>
+												<xsd:element name="AdditionalInformation" minOccurs="0"/>
+												<xsd:element name="AdditionalInfoStatement" type="CT_AdditionalInformation" minOccurs="0"/>
+											</xsd:choice>
+											<xsd:element name="ATLASAlignment" type="ST_ConfirmationCode" minOccurs="0"/>
+										</xsd:sequence>
+									</xsd:complexType>
+								</xsd:element>
+								<xsd:element name="InwardProcessingCompletion" minOccurs="0" maxOccurs="999">
+									<xsd:complexType>
+										<xsd:sequence>
+											<xsd:element name="RegistrationNumber" minOccurs="0"/>
+											<xsd:element name="ItemNumber" type="xsd:int" minOccurs="0"/>
+											<xsd:element name="ATLASInFlow" type="ST_ConfirmationCode" minOccurs="0"/>
+											<xsd:element name="ComplementOfInformation" minOccurs="0"/>
+											<xsd:element name="ATLASAlignment" type="ST_ConfirmationCode" minOccurs="0"/>
+										</xsd:sequence>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:choice>
+							<xsd:element name="CustomerOrderNumber" minOccurs="0"/>
+							<xsd:element name="Document" type="CT_DocumentHeader" minOccurs="0" maxOccurs="20"/>
+							<xsd:element name="Container" type="CT_Container" minOccurs="0"/>
+							<xsd:element name="Deferment" type="CT_Deferment" minOccurs="0" maxOccurs="5"/>
+							<xsd:element name="AdditionalInformation" type="CT_AdditionalInformation" minOccurs="0"/>
+							<xsd:element name="DV1" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>custom value of the goods - déclaration de la valeur</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="BuyerSellerRelationship" minOccurs="0"/>
+										<xsd:element name="BuyerSellerRelationshipDetails" minOccurs="0"/>
+										<xsd:element name="RestrictionsCode" minOccurs="0"/>
+										<xsd:element name="RestrictionsText" minOccurs="0"/>
+										<xsd:element name="LicenseFeeDueCode" minOccurs="0"/>
+										<xsd:element name="LicenseFeeText" minOccurs="0"/>
+										<xsd:element name="ResaleSurrenderUsageCode" minOccurs="0"/>
+										<xsd:element name="ResaleSurrenderUsageText" minOccurs="0"/>
+										<xsd:element name="AgentRepresentationDV1Code" minOccurs="0"/>
+										<xsd:element name="TermsServicesCode" minOccurs="0"/>
+										<xsd:element name="TermsServicesText" minOccurs="0"/>
+										<xsd:element name="TextPreviousDecisions" minOccurs="0"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="Reason" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>CH:  code to define a reason  for a temporary declaration</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="InjunctionType" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>CH: use to select if additional disposal is available or not</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="AdministrativeInfos" type="CT_AdministrativeInfos" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>CH: use to give some instruction / information to the user in Local Customs Application if KCX is not used as a black box</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="GoodsItem" maxOccurs="99">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="ItemNumber" type="xsd:integer" minOccurs="0"/>
+										<xsd:element name="Text" minOccurs="0"/>
+										<xsd:element name="CommodityCode" type="CT_CommodityCode" minOccurs="0"/>
+										<xsd:element name="ProcedureCode" minOccurs="0"/>
+										<xsd:element name="DutyControlCode" minOccurs="0"/>
+										<xsd:element name="SupplementaryText" minOccurs="0"/>
+										<xsd:element name="Description" minOccurs="0"/>
+										<xsd:element name="EAN" minOccurs="0"/>
+										<xsd:element name="Amount" type="xsd:decimal" minOccurs="0"/>
+										<xsd:element name="UnitOfMeasurementAmount" minOccurs="0"/>
+										<xsd:element name="QualifierAmount" minOccurs="0"/>
+										<xsd:element name="CountryOfOrigin" minOccurs="0"/>
+										<xsd:element name="EUCode" minOccurs="0"/>
+										<xsd:element name="Quota" type="CT_Quota" minOccurs="0"/>
+										<xsd:element name="PlaceOfIntroduction" minOccurs="0"/>
+										<xsd:element name="PlaceOfDeparture" minOccurs="0"/>
+										<xsd:element name="NetMass" type="xsd:decimal" minOccurs="0"/>
+										<xsd:element name="GrossMass" type="xsd:decimal" minOccurs="0"/>
+										<xsd:element name="Package" type="CT_Package" minOccurs="0"/>
+										<xsd:element name="RequestedPrivilege" minOccurs="0"/>
+										<xsd:element name="Condition" minOccurs="0"/>
+										<xsd:element name="CustomsValue" type="xsd:decimal" minOccurs="0"/>
+										<xsd:element name="ImportTurnoverTax" type="xsd:decimal" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>Goods item import VAT costs</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="Invoice" minOccurs="0">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Amount" type="xsd:decimal" minOccurs="0"/>
+													<xsd:element name="ReductionSurcharge" type="xsd:decimal" minOccurs="0"/>
+													<xsd:element name="Discount" type="xsd:decimal" minOccurs="0"/>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="NetPrice" minOccurs="0">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Amount" type="xsd:decimal" minOccurs="0"/>
+													<xsd:element name="Currency" type="ST_Currency" minOccurs="0"/>
+													<xsd:element name="Rate" type="xsd:decimal" minOccurs="0"/>
+													<xsd:element name="Code" minOccurs="0"/>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="IndirectPayment" minOccurs="0">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Amount" type="xsd:decimal" minOccurs="0"/>
+													<xsd:element name="Currency" type="ST_Currency" minOccurs="0"/>
+													<xsd:element name="Rate" type="xsd:decimal" minOccurs="0"/>
+													<xsd:element name="Code" minOccurs="0"/>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="Statistic" minOccurs="0">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Quantity" type="xsd:decimal" minOccurs="0"/>
+													<xsd:element name="MeasuringUnit" minOccurs="0"/>
+													<xsd:element name="QualifierMeasuringUnit" minOccurs="0"/>
+													<xsd:element name="StatisticalValue" type="xsd:decimal" minOccurs="0"/>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="GoodsQuantityCustoms" minOccurs="0">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Quantity" type="xsd:decimal" minOccurs="0"/>
+													<xsd:element name="MeasuringUnit" minOccurs="0"/>
+													<xsd:element name="QualifierMeasuringUnit" minOccurs="0"/>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="GoodsQuantityAgriculturalDuty" minOccurs="0">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Quantity" type="xsd:decimal" minOccurs="0"/>
+													<xsd:element name="MeasuringUnit" minOccurs="0"/>
+													<xsd:element name="QualifierMeasuringUnit" minOccurs="0"/>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="ProcessingFeeValueIncrease" type="xsd:decimal" minOccurs="0"/>
+										<xsd:element name="ExtraCostImportVAT" type="xsd:decimal" minOccurs="0"/>
+										<xsd:element name="TobaccoDutyCodeNumber" minOccurs="0"/>
+										<xsd:element name="Preference" type="CT_Preference" minOccurs="0"/>
+										<xsd:element name="Document" type="CT_Document" minOccurs="0" maxOccurs="99"/>
+										<xsd:element name="Salary" type="CT_Salary" minOccurs="0" maxOccurs="3"/>
+										<xsd:element name="Excise" type="CT_Excise" minOccurs="0" maxOccurs="3"/>
+										<xsd:element name="AdditionsDeductions" type="CT_AdditionalCosts" minOccurs="0" maxOccurs="10"/>
+										<xsd:element name="AdditionsDeductionsDescription" minOccurs="0"/>
+										<xsd:element name="ReductionStatement" type="CT_ReductionStatement" minOccurs="0" maxOccurs="3"/>
+										<xsd:element name="SpecialValueStatement" type="CT_SpecialValueStatement" minOccurs="0" maxOccurs="5"/>
+										<xsd:element name="SpecialCaseStatement" type="CT_SpecialCaseStatement" minOccurs="0" maxOccurs="9"/>
+										<xsd:element name="CountrySpecificValues" type="CT_CountrySpecificValues" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>for CH</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="Warehouse" type="CT_Warehouse" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>for CH</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="Permit" type="CT_PermitType" minOccurs="0"/>
+										<xsd:element name="VATValue" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>for CH</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="NonCustomsLaw" type="CT_NonCustomsLawType" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>for CH</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="Refinement" type="CT_Refinement" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>for CH</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties AppName="IM516" ShowSchemaTypes="1" ShowAnnotations="0" SelectedLanguage="java"/>
+		<structure>
+			<children>
+				<component name="IM516" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="-1" lty="-15" rbx="440" rby="362"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace uid="http://www.ros.ie/schemas/customs/IM516/v1"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ImportDeclarationRejected" outkey="18" expanded="1">
+										<entry name="CustomsReferenceIdentifier" outkey="19"/>
+										<entry name="Ucr" expanded="1">
+											<entry name="TraderReferenceIdentifier" outkey="57"/>
+										</entry>
+										<entry name="IEMessageSendingDate" outkey="54"/>
+										<entry name="AdditionalDocument" expanded="1"/>
+										<entry name="ErrorReference" outkey="22" expanded="1">
+											<entry name="ErrorCode" outkey="23"/>
+											<entry name="SequenceIdentifier" outkey="24"/>
+											<entry name="FieldIdentifier" outkey="25"/>
+											<entry name="ValidationType" outkey="26"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="IM516.xsd" inputinstance="IM516_ImportDeclarationRejected.xml" outputinstance="IM516_ImportDeclarationRejected.xml" instanceroot="{http://www.ros.ie/schemas/customs/IM516/v1}ImportDeclarationRejected"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="ImportDeclarationResponse" library="xml" uid="3" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="754" lty="-15" rbx="1123" rby="401"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ImportDeclarationResponse" inpkey="8" expanded="1">
+										<entry name="GoodsDeclaration" expanded="1">
+											<entry name="ReferenceNumber" inpkey="56"/>
+											<entry name="TemporaryMRN" inpkey="10"/>
+											<entry name="RegistrationDate" inpkey="53"/>
+											<entry name="GoodsItem" inpkey="11" expanded="1">
+												<entry name="ItemNumber" inpkey="12"/>
+												<entry name="ErrorCode" inpkey="14"/>
+												<entry name="KindOfError" inpkey="15"/>
+												<entry name="ErrorText" inpkey="16"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="ImportDeclarationResponse.xsd" outputinstance="ImportDeclarationResponse.xml" instanceroot="{}ImportDeclarationResponse"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="18">
+						<edges>
+							<edge vertexkey="8" edgekey="34"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="19">
+						<edges>
+							<edge vertexkey="10" edgekey="35"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="22">
+						<edges>
+							<edge vertexkey="11" edgekey="39"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="23">
+						<edges>
+							<edge vertexkey="14" edgekey="40"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="24">
+						<edges>
+							<edge vertexkey="12" edgekey="41"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="25">
+						<edges>
+							<edge vertexkey="16" edgekey="42"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="26">
+						<edges>
+							<edge vertexkey="15" edgekey="43"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="54">
+						<edges>
+							<edge vertexkey="53" edgekey="55"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="57">
+						<edges>
+							<edge vertexkey="56" edgekey="58"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

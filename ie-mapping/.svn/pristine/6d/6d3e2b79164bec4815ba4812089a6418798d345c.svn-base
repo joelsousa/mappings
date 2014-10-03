@@ -1,0 +1,986 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2011 sp1 (http://www.altova.com) von XMLSpy 2011 Professional Ed., Concurrent for 5 users (Kewill GmbH) bearbeitet -->
+<!-- 	Kewill Customs Exchange
+		KIDS Import
+		Version 2.0 March 2013 
+Changes:
+2011 December: added Business (KCXSM-3)	`
+2012 February:	added LocationCode in CT_IncoTerms (KCXSM-21)
+2013 February :	added AccountNumber in CT_Deferment (KCXSM-42)
+2013 February: 	new Tags for Switzerland: CT_AdministrativeInfos, CT_CountrySpecificValues, CT_Warehouse, CT_NonCustomsLawType, CT_Refinement 
+2013 March:		added BuyerAddress in CT_Traders (KCXSM-47)
+2013 April:		alphabetical sort of CT-Definitions, set type of WriteOffAmountValue on decimal
+2013 May:			added BO in CT_Deferment
+2013 August:		added IdentificationType in CT_TINType
+2013 October:   AdditionalInformation: change Type from string in CT_AdditionalInformation (KCXSM82)
+2013 November: CommodityCode.TarifCode: change Type from integer to string
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!-- complex types -->
+	<xsd:complexType name="CT_AdditionalCosts">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Deductions/additions </xsd:documentation>
+			<xsd:documentation xml:lang="de">Abzüge / Hinzurechnungen</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Deductions/additions type </xsd:documentation>
+					<xsd:documentation xml:lang="de">Art der Abzüge / Hinzurechnungen </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Amount" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Amount</xsd:documentation>
+					<xsd:documentation xml:lang="de">Betrag</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Currency" type="ST_Currency" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Currency</xsd:documentation>
+					<xsd:documentation xml:lang="de">Währung</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="IATARateCode" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">IATA rate code</xsd:documentation>
+					<xsd:documentation xml:lang="de">KZ IATA-Kurs </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RateAgreedCode" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Rate agreed code</xsd:documentation>
+					<xsd:documentation xml:lang="de">KZ Kurs vereinbart </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Rate" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Rate</xsd:documentation>
+					<xsd:documentation xml:lang="de">Kurs </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Date" type="ST_Date" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Rate date</xsd:documentation>
+					<xsd:documentation xml:lang="de">Kursdatum </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PercentageFreightCost" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Percentage freight cost</xsd:documentation>
+					<xsd:documentation xml:lang="de">Prozentsatz Frachtkosten</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- added 2013-10-28, KCXSM-82 -->
+	<xsd:complexType name="CT_AdditionalInformation">
+		<xsd:sequence>
+			<xsd:element name="StatementCode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="StatementText" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="StatementType" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_AdministrativeInfos">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Use to give some instruction / information to the user in Local Customs Application if KCX is not used as a black box</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Type" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Use to determine on which level the administrative information is valid</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Text" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Free text for administrative information</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Date" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Date if needed for administrative information</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="InternalOnly" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Flag if the administrative information only for internal use</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_Address">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Adress</xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type Adresse</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Name</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Street" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Street</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HouseNumber" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>House number </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="City" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>City</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PostalCode" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Postal Code</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Country" type="ST_CountryISOCode" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Country code</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CountrySubEntity" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Subentity</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- added 2011-12-16, KCXSM-3 -->
+	<xsd:complexType name="CT_Business">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Business</xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type Geschäftsvorgang</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="BusinessTypeCode" type="xsd:int">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Code of nature of the transaction (e.g. sale)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_CommodityCode">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type CommodityCode</xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type Warentarifnummern</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="TarifCode" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Customs tariff number</xsd:documentation>
+					<xsd:documentation xml:lang="de">Warentarifnummer</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TarifAddition1" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Tariff number supplement 1</xsd:documentation>
+					<xsd:documentation xml:lang="de">Tarifnummernzusatz 1</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TarifAddition2" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Tariff number supplement 2</xsd:documentation>
+					<xsd:documentation xml:lang="de">Tarifnummernzusatz 2</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_Completion">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type </xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Checked" type="ST_ConfirmationCode" minOccurs="0"/>
+			<xsd:element name="TotalNumberOfPositions" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="AuthorizationNumber" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ReferenceNumber" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="CompletionItem" type="CT_CompletionItem" maxOccurs="999"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_CompletionItem">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type </xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="SequentialNumber" type="xsd:integer" minOccurs="0"/>
+			<xsd:element name="PositionNumber" type="xsd:integer" minOccurs="0"/>
+			<xsd:element name="UCR" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="NumberOfPieces" minOccurs="0"/>
+			<xsd:element name="EntryInAtlas" type="ST_ConfirmationCode" minOccurs="0"/>
+			<xsd:element name="Text" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Tarifnumber" type="xsd:integer" minOccurs="0"/>
+			<xsd:element name="UsualFormOfHandling" type="ST_ConfirmationCode" minOccurs="0"/>
+			<xsd:element name="WriteDownAmount" type="CT_WriteDownAmount" minOccurs="0"/>
+			<xsd:element name="TradeAmount" type="CT_WriteDownAmount" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_ContactPerson">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Contact person</xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type Sachbearbeiter</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Position" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Position of the contact person</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Clerk" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Name of Clerk</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Identity" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>clerk identity in the application</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Email" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Email address of the person</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="FaxNumber" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Fax number</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PhoneNumber" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Phone number</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Initials" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Title" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_Container">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Container (only numbers)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Number" type="xsd:string" maxOccurs="99">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Number of container</xsd:documentation>
+					<xsd:documentation xml:lang="de">Containernummer</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_CountrySpecificValues">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Country specific values</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="CH" type="CT_CH" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_CH">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Country specific values for CH </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="KindOfArticle" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>to determine if the goods are commercial goods or not</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CustomsNetWeigth" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Net weight of the goods including direct packing materia without any additional transport packing material; used to calculate duties on net weight level</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TaraAddition" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="NetDuty" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="NonRegularDuty" minOccurs="0"/>
+			<xsd:element name="VATCode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ConformationCodes" type="CT_ConfirmationsCodes" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_ConfirmationsCodes">
+		<xsd:sequence>
+			<xsd:element name="TarifCodeConfirmation" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Chross check if HS code is correct, used for some HS codes</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="GrossMassConfirmation" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Chross check if gross mass is correct, used for some HS codes</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="NetMassConfirmation" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Chross check if net mass is correct, used for some HS codes</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="QuantityConfirmation" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Chross check if quantity is correct, used for some HS codes</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="StatisticalValueConfirmation" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Chross check if statistical value is correct, used for some HS codes</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CustomsValueConfirmation" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Chross check if customs value is correct, used for some HS codes</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TaraSupplementConfirmation" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Chross check if tara supplement is correct, used for some HS codes</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="NonRegularCustomsRateConfirmation" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Chross check if non regular customs rate is correct, used for some HS codes</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="VATCodeConfirmation" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Chross check if VAT code is correct, used for some HS codes</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_Deferment">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Deferment</xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type Aufschubkonten</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Type" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Deferral type</xsd:documentation>
+					<xsd:documentation xml:lang="de">Art des Aufschubkontos</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TIN" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Customs ID</xsd:documentation>
+					<xsd:documentation xml:lang="de">Zollnummer</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="BO" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="CustomerID" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Customer ID</xsd:documentation>
+					<xsd:documentation xml:lang="de">Kundennummer</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AccountNumber" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>account number</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_Document">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Document</xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type Unterlagen</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Type" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">document Type</xsd:documentation>
+					<xsd:documentation xml:lang="de">Art der Unterlage</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Number" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">document number</xsd:documentation>
+					<xsd:documentation xml:lang="de">Nummer der Unterlage</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="IssueDate" type="ST_Date" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">document date</xsd:documentation>
+					<xsd:documentation xml:lang="de">Datum der Unterlage</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CodeExists" minOccurs="0"/>
+			<xsd:element name="WriteOffAmountValue" type="xsd:decimal" minOccurs="0"/>
+			<xsd:element name="WriteOffMeasuringUnit" minOccurs="0"/>
+			<xsd:element name="WriteOffQualifierMeasuringUnit" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_DocumentHeader">
+		<xsd:complexContent>
+			<xsd:restriction base="CT_Document">
+				<xsd:sequence>
+					<xsd:element name="Type" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="Number" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="IssueDate" type="ST_Date" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CT_Excise">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Excise</xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type Verbrauchssteuer</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="TaxCode" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Excise tax code </xsd:documentation>
+					<xsd:documentation xml:lang="de">Verbrauchssteuercode </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TaxQuantity" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Excise tax quantity</xsd:documentation>
+					<xsd:documentation xml:lang="de">Verbrauchssteuermenge </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MeasuringUnit" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Excise tax quantity measuring unit</xsd:documentation>
+					<xsd:documentation xml:lang="de">Maßeinheit zur Verbrauchssteuermenge</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="QualifierMeasuringUnit" minOccurs="0"/>
+			<xsd:element name="RateOrPercent" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Rate/percent of excise tax</xsd:documentation>
+					<xsd:documentation xml:lang="de">Grad/Prozent zur Verbrauchssteuer</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TaxValue" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Excise tax value </xsd:documentation>
+					<xsd:documentation xml:lang="de">Verbrauchssteuerwert </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_IncoTerms">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type IncoTerm</xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type Lieferbedingung</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Key" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Incoterm Key</xsd:documentation>
+					<xsd:documentation xml:lang="de">Schlüssel der Lieferbedingung</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Code" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Incoterm Code</xsd:documentation>
+					<xsd:documentation xml:lang="de">Art der Lieferbedingung</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Details" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Details if Code = "XXX"</xsd:documentation>
+					<xsd:documentation xml:lang="de">Detailbeschreibung bei Art "XXX"</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Place" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Place for the incoterm</xsd:documentation>
+					<xsd:documentation xml:lang="de">Lieferbedingung Ort</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!-- added 2012-02-14, KCXSM-21 -->
+			<xsd:element name="LocationCode" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Specification of the Place for the incoterm</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_Invoice">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Invoice</xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type Rechnungsdaten</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Amount" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Amount</xsd:documentation>
+					<xsd:documentation xml:lang="de">Rechnungspreis</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Currency" type="ST_Currency" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Currency</xsd:documentation>
+					<xsd:documentation xml:lang="de">Währung</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ExchangeRate" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">ExchangeRate</xsd:documentation>
+					<xsd:documentation xml:lang="de">Umrechnungskurs</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RelevantTime" type="ST_Date" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">RelevantTime</xsd:documentation>
+					<xsd:documentation xml:lang="de">maßgeblicher Zeitpunkt</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_MeansOfTransport">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type TransportMeansType</xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type Beförderungsmittel</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="TransportMode" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Mode of transport</xsd:documentation>
+					<xsd:documentation xml:lang="de">Verkehrszweig</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TransportationType" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Type of the means of transport</xsd:documentation>
+					<xsd:documentation xml:lang="de">Art</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TransportationNumber" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Licence plate number of the means of transport</xsd:documentation>
+					<xsd:documentation xml:lang="de">Kennzeichen</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TransportationCountry" type="ST_CountryISOCode" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Nationality of the means of transport</xsd:documentation>
+					<xsd:documentation xml:lang="de">Staatszugehörigkeit</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Description" type="ST_CountryISOCode" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Description</xsd:documentation>
+					<xsd:documentation xml:lang="de">Beschreibung Beförderungsmittel</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_NonCustomsLawType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Non Customs Law </xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type NZE-Art</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Code" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>CH: Decree code if NonCustomsLaw/Type is set to 1.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Type" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">CH: Code if due to tarif code a NZE will be necessary. If yes, declarant can declare that even not for this specific declaration</xsd:documentation>
+					<xsd:documentation xml:lang="de">NZE-Arten Code</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_Package">
+		<xsd:sequence>
+			<xsd:element name="Quantity" type="xsd:decimal" minOccurs="0"/>
+			<xsd:element name="Type" minOccurs="0"/>
+			<xsd:element name="Marks" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_PermitType">
+		<xsd:sequence>
+			<xsd:element name="Type" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PermitAuthority" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PermitNumber" minOccurs="0"/>
+			<xsd:element name="PermitObligation" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Code if due to tarif code a permit will be necessary. If yes, declarant can declare that even not for this specific declaration</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="IssueDate" minOccurs="0"/>
+			<xsd:element name="TobaccoPermitType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Free text information of the Party which is handling the business, only needed on tobacco import</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AdditionalInformation" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_Preference">
+		<xsd:sequence>
+			<xsd:element name="PreferenceCertificate" minOccurs="0"/>
+			<xsd:element name="PreferenceCertificateNumber" minOccurs="0"/>
+			<xsd:element name="Date" type="ST_Date" minOccurs="0"/>
+			<xsd:element name="CodeExists" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_PreviousDocument">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Previous Document</xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type Vorpapier</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Type" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">previous document type</xsd:documentation>
+					<xsd:documentation xml:lang="de">Vorpapierart</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Number" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">previous document number</xsd:documentation>
+					<xsd:documentation xml:lang="de">Vorpapiernummer</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AdditionalInformation" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>CH: Additional information on the previous document</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_Quota">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Quota</xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type Kontingentangaben</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Number1" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Tariff quota number</xsd:documentation>
+					<xsd:documentation xml:lang="de">Kontingentnummer</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Number2" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">second tariff quota number</xsd:documentation>
+					<xsd:documentation xml:lang="de">zweite Kontingentnummer</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Quantity" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Privileged quantity</xsd:documentation>
+					<xsd:documentation xml:lang="de">Begünstigungsmenge</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MeasuringUnit" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Privileged measuring unit</xsd:documentation>
+					<xsd:documentation xml:lang="de">Begünstigungsmaßeinheit</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="QualifierMeasuringUnit" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Qualifier privileged measuring unit</xsd:documentation>
+					<xsd:documentation xml:lang="de">Qualifikator zur Begünstigungsmaßeinheit</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_Refinement">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Refinement</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Direction" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="RefinementType" minOccurs="0"/>
+			<xsd:element name="ProcessType" minOccurs="0"/>
+			<xsd:element name="BillingType" minOccurs="0"/>
+			<xsd:element name="TemporaryAdmission" minOccurs="0"/>
+			<xsd:element name="PositionType" minOccurs="0"/>
+			<xsd:element name="FrrePass" minOccurs="0"/>
+			<xsd:element name="OfficeCode" minOccurs="0"/>
+			<xsd:element name="ExportValueAmount" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ExportValueCurrency" minOccurs="0"/>
+			<xsd:element name="ExportExchangeFactor" minOccurs="0"/>
+			<xsd:element name="LabourCostAmount" minOccurs="0"/>
+			<xsd:element name="LabourCostCurrency" minOccurs="0"/>
+			<xsd:element name="LabourCostExchangeRate" minOccurs="0"/>
+			<xsd:element name="LabourCostFactor" minOccurs="0"/>
+			<xsd:element name="FreightToBorderAmount" minOccurs="0"/>
+			<xsd:element name="FreightToBorderCurrency" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="FreightToBorderExchangeRate" minOccurs="0"/>
+			<xsd:element name="FreightToBorderExchangeFactor" minOccurs="0"/>
+			<xsd:element name="NewMaterialValue" minOccurs="0"/>
+			<xsd:element name="NewMaterialCurrency" minOccurs="0"/>
+			<xsd:element name="NewMaterialExchangeRate" minOccurs="0"/>
+			<xsd:element name="NewMaterialFactor" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_ReductionStatement">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Reducting duties</xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type Minderungsangaben</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Group" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Reducting group of duties </xsd:documentation>
+					<xsd:documentation xml:lang="de">mindernde Abgabengruppe  </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Value" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Reduction amount</xsd:documentation>
+					<xsd:documentation xml:lang="de">Minderungsbetrag</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_Salary">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Salary</xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type Gehaltsangaben</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Type" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Salary type</xsd:documentation>
+					<xsd:documentation xml:lang="de">Gehaltsart </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RateOrPercent" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Rate/percent of salary information</xsd:documentation>
+					<xsd:documentation xml:lang="de">Grad/Prozent der Gehaltsangaben </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_SpecialCaseStatement">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type SpecialCaseStatement</xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type Sonderfallangaben</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Group" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Special duties group</xsd:documentation>
+					<xsd:documentation xml:lang="de">Sonderabgabengruppe</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Type" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Special duties group usage type</xsd:documentation>
+					<xsd:documentation xml:lang="de">Anwendungsart zur Sonderabgabengruppe</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Value" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Rate/amount/factor</xsd:documentation>
+					<xsd:documentation xml:lang="de">Satz/Betrag/Faktor</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_SpecialValueStatement">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type SpecialValueStatement</xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type Besondere Wertangaben</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Value" type="xsd:decimal" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Special Value declaration </xsd:documentation>
+					<xsd:documentation xml:lang="de">Besondere Wertangabe</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Type" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Price type</xsd:documentation>
+					<xsd:documentation xml:lang="de">Preisart</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_TINType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type </xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="TIN" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>TIN/EORI</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="BO" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="4"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="IdentificationType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>0=Addressdata, 2=EORI-TIN
+or KCX-Code</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="CustomerID" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Customer identifier</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="VATNumber" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>VAT number</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_Traders">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Traders</xsd:documentation>
+			<xsd:documentation xml:lang="en">Complex Type Zollbeteiligte</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="DeclarantTIN" type="CT_TINType" minOccurs="0"/>
+			<xsd:element name="DeclarantAddress" type="CT_Address" minOccurs="0"/>
+			<xsd:element name="RepresentativeTIN" type="CT_TINType" minOccurs="0"/>
+			<xsd:element name="RepresentativeAddress" type="CT_Address" minOccurs="0"/>
+			<xsd:element name="ConsignorTIN" type="CT_TINType" minOccurs="0"/>
+			<xsd:element name="ConsignorAddress" type="CT_Address" minOccurs="0"/>
+			<xsd:element name="AcquirerTIN" type="CT_TINType" minOccurs="0"/>
+			<xsd:element name="AcquirerAddress" type="CT_Address" minOccurs="0"/>
+			<xsd:element name="ConsigneeTIN" type="CT_TINType" minOccurs="0"/>
+			<xsd:element name="ConsigneeAddress" type="CT_Address" minOccurs="0"/>
+			<xsd:element name="BuyerTIN" type="CT_TINType" minOccurs="0"/>
+			<xsd:element name="BuyerAddress" type="CT_Address" minOccurs="0"/>
+			<xsd:element name="SellerTIN" type="CT_TINType" minOccurs="0"/>
+			<xsd:element name="SellerAddress" type="CT_Address" minOccurs="0"/>
+			<xsd:element name="CustomsValueDeclarantTIN" type="CT_TINType" minOccurs="0"/>
+			<xsd:element name="CustomsValueDeclarantAddress" type="CT_Address" minOccurs="0"/>
+			<xsd:element name="RepresentativeOfCustomsValueDeclarantTIN" type="CT_TINType" minOccurs="0"/>
+			<xsd:element name="RepresentativeOfCustomsValueDeclarantAddress" type="CT_Address" minOccurs="0"/>
+			<xsd:element name="DeclarantForInvoiceTIN" type="CT_TINType" minOccurs="0"/>
+			<xsd:element name="DeclarantForInvoiceAddress" type="CT_Address" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_Warehouse">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type Warehouse</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="WarehouseType" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Type of the warehouse</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="WarehouseIdentification" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Identification of the warehouse</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="WarehouseCountry" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The country of the warehouse</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CT_WriteDownAmount">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">Complex Type </xsd:documentation>
+			<xsd:documentation xml:lang="de">Complex Type </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Qualifier" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="UnitOfMeasurement" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Value" type="xsd:decimal"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- ###############################################################  -->
+	<!-- simple types -->
+	<xsd:simpleType name="ST_ConfirmationCode">
+		<xsd:restriction base="xsd:boolean"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ST_CustomsOffice">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="8"/>
+			<xsd:maxLength value="8"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ST_Currency">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="3"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ST_CountryISOCode">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="2"/>
+			<xsd:maxLength value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ST_Date">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{8}">
+				<xsd:annotation>
+					<xsd:documentation>
+						format:		YYYYMMDD 
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ST_DateTime">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{12}">
+				<xsd:annotation>
+					<xsd:documentation>
+						format:		YYYYMMDDHHMM
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ST_KindOfError">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="ERR">
+				<xsd:annotation>
+					<xsd:documentation>Error</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WRG">
+				<xsd:annotation>
+					<xsd:documentation>Warning</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="INF">
+				<xsd:annotation>
+					<xsd:documentation>Information</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ST_Quantity">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:totalDigits value="15"/>
+			<xsd:fractionDigits value="3"/>
+			<xsd:minInclusive value="0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ST_Time">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="6"/>
+			<xsd:maxLength value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

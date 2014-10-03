@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties AppName="IM529" ShowSchemaTypes="1" ShowAnnotations="0" SelectedLanguage="java"/>
+		<structure>
+			<children>
+				<component name="ImportDeclarationDecision" library="xml" uid="4" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="750" lty="-255" rbx="1078" rby="135"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ImportDeclarationDecision" inpkey="35" expanded="1">
+										<entry name="GoodsDeclaration" expanded="1">
+											<entry name="ReferenceNumber" inpkey="40"/>
+											<entry name="TemporaryMRN" inpkey="4"/>
+											<entry name="RegistrationNumber" inpkey="5"/>
+											<entry name="CustomsClerkName" inpkey="6"/>
+											<entry name="GoodsItem" inpkey="23" expanded="1">
+												<entry name="ItemNumber" inpkey="24"/>
+												<entry name="AcceptanceDate" inpkey="7"/>
+												<entry name="ReleaseDate" inpkey="25"/>
+												<entry name="AcceptanceCode" inpkey="26"/>
+												<entry name="RulingsCode" inpkey="27"/>
+												<entry name="Text" inpkey="28"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="ImportDeclarationDecision.xsd" outputinstance="ImportDeclarationDecision.xml" instanceroot="{}ImportDeclarationDecision"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="IM529" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="-5" lty="-255" rbx="541" rby="135"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace uid="http://www.ros.ie/schemas/customs/IM529/v1"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ImportRelease" outkey="38" expanded="1">
+										<entry name="ImportCustomsDeclaration" expanded="1">
+											<entry name="Declaration" expanded="1">
+												<entry name="TypeCode" outkey="17"/>
+												<entry name="AcceptanceDate" outkey="8"/>
+												<entry name="CustomsReferenceIdentifier" outkey="9"/>
+												<entry name="DeclarationOfficeIdentifier" outkey="10"/>
+												<entry name="GoodsShipment" expanded="1">
+													<entry name="Ucr" expanded="1">
+														<entry name="TraderReferenceIdentifier" outkey="41"/>
+													</entry>
+													<entry name="EntryCustomsOffice" expanded="1">
+														<entry name="CodeIdentifier" outkey="11"/>
+													</entry>
+													<entry name="CustomsGoodsItem" outkey="18" expanded="1">
+														<entry name="SequenceIdentifier" outkey="19"/>
+														<entry name="Commodity" expanded="1">
+															<entry name="DescriptionText" outkey="20"/>
+														</entry>
+														<entry name="CustomsProcedure" expanded="1">
+															<entry name="CurrentCode" outkey="21"/>
+														</entry>
+													</entry>
+												</entry>
+											</entry>
+										</entry>
+										<entry name="ImportReleaseIssueDate" outkey="22"/>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="IM529.xsd" inputinstance="IM529_ReleaseForImport.xml" outputinstance="IM529_ReleaseForImport.xml" instanceroot="{http://www.ros.ie/schemas/customs/IM529/v1}ImportRelease"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="8">
+						<edges>
+							<edge vertexkey="7" edgekey="13"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="9">
+						<edges>
+							<edge vertexkey="4" edgekey="14"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="10">
+						<edges>
+							<edge vertexkey="5" edgekey="15"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="11">
+						<edges>
+							<edge vertexkey="6" edgekey="16"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="17">
+						<edges>
+							<edge vertexkey="26" edgekey="29"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="18">
+						<edges>
+							<edge vertexkey="23" edgekey="30"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="19">
+						<edges>
+							<edge vertexkey="24" edgekey="31"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="20">
+						<edges>
+							<edge vertexkey="28" edgekey="32"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="21">
+						<edges>
+							<edge vertexkey="27" edgekey="33"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="22">
+						<edges>
+							<edge vertexkey="25" edgekey="34"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="38">
+						<edges>
+							<edge vertexkey="35" edgekey="39"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="41">
+						<edges>
+							<edge vertexkey="40" edgekey="42"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

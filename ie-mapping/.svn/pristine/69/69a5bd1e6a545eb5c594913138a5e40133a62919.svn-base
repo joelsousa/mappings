@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 	Kewill Customs Exchange
+		Kids Export
+		Version 1.0 February 2012 
+
+Changes:
+February 2012 Introduced (KCXSM-18)		
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="kids_export_types.xsd"/>
+	<xsd:element name="Confirmation">
+		<xsd:annotation>
+			<xsd:documentation>EXPort RELease	(E_EXP_REL)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="GoodsDeclaration">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="KindOfAnswer" minOccurs="0"/>
+							<xsd:element ref="UCRNumber" minOccurs="0"/>
+							<xsd:element ref="DeclarationTime" minOccurs="0"/>
+							<xsd:element ref="ReceiveTime" minOccurs="0"/>
+							<xsd:element ref="StatusOfCompletion" minOccurs="0"/>
+							<xsd:element ref="StatusOfCompletion2" minOccurs="0"/>
+							<xsd:element ref="StatusOfCompletion3" minOccurs="0"/>
+							<xsd:element ref="ReferenceNumber"/>
+							<xsd:element ref="OrderNumber" minOccurs="0"/>
+							<xsd:element ref="PDFInformation" minOccurs="0" maxOccurs="2"/>
+							<xsd:element ref="CustomsOffice" minOccurs="0"/>
+							<xsd:element ref="LoadingTime" minOccurs="0"/>
+							<!--  added 2012-03-01 Atlas 8.4 Start -->	
+							<xsd:element ref="AuthorizationTrustedExporter" minOccurs="0"/>
+							<xsd:element ref="Procedure" minOccurs="0"/>							
+							<xsd:element ref="RelevantDate" minOccurs="0"/>
+							<xsd:element ref="FlagOfStatistic" minOccurs="0"/>	
+							<xsd:element ref="UCROtherSystem" minOccurs="0"/>																														
+							<xsd:element ref="CustomsOfficeExport" minOccurs="0"/>
+							<xsd:element ref="CustomsOfficeForCompletion" minOccurs="0"/>
+							<xsd:element ref="RealOfficeOfExit" minOccurs="0"/>	
+							<xsd:element ref="Business" minOccurs="0"/>
+							<xsd:element ref="IncoTerms" minOccurs="0"/>
+							<xsd:element ref="ConsignorTIN" minOccurs="0"/>
+							<xsd:element ref="Consignor" minOccurs="0"/>	
+							<xsd:element ref="ConsignorContactPerson" minOccurs="0"/>						
+							<xsd:element ref="DeclarantTIN" minOccurs="0"/>
+							<xsd:element ref="Declarant" minOccurs="0"/>
+							<xsd:element ref="DeclarantContactPerson" minOccurs="0"/>
+							<xsd:element ref="AgentTIN" minOccurs="0"/>
+							<xsd:element ref="Agent" minOccurs="0"/>
+							<xsd:element ref="AgentContactPerson" minOccurs="0"/>
+							<xsd:element ref="SubcontractorTIN" minOccurs="0"/>
+							<xsd:element ref="Subcontractor" minOccurs="0"/>	
+							<xsd:element ref="SubcontractorContactPerson" minOccurs="0"/>
+							<xsd:element ref="AddressCombination" minOccurs="0"/>		
+							<xsd:element ref="ConsigneeTIN" minOccurs="0"/>
+							<xsd:element ref="Consignee" minOccurs="0"/>	
+							<xsd:element ref="FinalRecipientTIN" minOccurs="0"/>
+							<xsd:element ref="FinalRecipient" minOccurs="0"/>	
+							<xsd:element ref="OutwardProcessing" minOccurs="0"/>
+							<xsd:element ref="Reentry" minOccurs="0" maxOccurs="99" />
+							<xsd:element ref="MeansOfIdentification" minOccurs="0" maxOccurs="9" />
+							<xsd:element ref="Product" minOccurs="0" maxOccurs="999" />																
+							<xsd:element ref="DateOfExit" minOccurs="0"/>																								
+							<xsd:element name="GoodsItem" minOccurs="0" maxOccurs="999">
+								<xsd:annotation>
+									<xsd:documentation>Goodsitem</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element ref="ItemNumber"/>
+										<xsd:element ref="OriginalItemNumber"/>	
+										<xsd:element ref="UCROtherSystem" minOccurs="0"/>
+										<xsd:element ref="OriginFederalState" minOccurs="0"/>
+										<xsd:element ref="CommodityCode" minOccurs="0"/>
+										<xsd:element ref="Business" minOccurs="0"/>
+										<xsd:element ref="IncoTerms" minOccurs="0"/>
+										<xsd:element ref="ConsigneeTIN" minOccurs="0"/>
+										<xsd:element ref="Consignee" minOccurs="0"/>	
+										<xsd:element ref="FinalRecipientTIN" minOccurs="0"/>
+										<xsd:element ref="FinalRecipient" minOccurs="0"/>											
+										<xsd:element ref="ExportRefundItem" minOccurs="0"/>
+										<xsd:element ref="CustomsApprovedTreatment" minOccurs="0"/>
+										<xsd:element ref="Package" minOccurs="0" maxOccurs="99"/>
+										<xsd:element ref="Statistic" minOccurs="0"/>
+										<xsd:element ref="Document" minOccurs="0" maxOccurs="99"/>
+										<xsd:element ref="PreviousDocument" minOccurs="0" maxOccurs="9"/>										
+										<xsd:choice>
+											<xsd:element ref="BondedWarehouseCompletion" minOccurs="0"/>
+											<xsd:element ref="InwardProcessingCompletion" minOccurs="0"/>
+										</xsd:choice>										
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<!--  added 2012-03-01 Atlas 8.4 End -->						
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

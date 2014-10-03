@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2011 sp1 (http://www.altova.com) von XMLSpy 2011 Professional Ed., Concurrent for 5 users (Kewill GmbH) bearbeitet -->
+<!-- 	Kewill Customs Exchange
+		Kids Export
+		Version 1.0 February 2012 
+
+Changes:
+February 2012: Introduced (KCXSM-18)		
+August	 2013: NCTSType
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="kids_export_types.xsd"/>
+	<xsd:element name="ExportDeclaration">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">IE515	=	EXPort DATa	(E_EXP_DAT)
+For UK export this schema is also to be used for: 
+- PreNotification 
+- Completion 
+- Amendment 
+- Cancellation 
+- Update 
+- Delete 
+
+Please follow the annotation of kids_header.xsd, element "MessageName"			
+			</xsd:documentation>
+			<xsd:documentation xml:lang="de">Anmeldung</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="GoodsDeclaration">
+					<xsd:annotation>
+						<xsd:documentation>Goods Declaration</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="AreaCode" minOccurs="0"/>
+							<xsd:element ref="TypeOfPermit" minOccurs="0"/>
+							<xsd:element ref="KindOfDeclaration" minOccurs="0"/>
+							<xsd:element name="StatusCode" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Codes for DeclarationType CH: 1-6, 99</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element ref="UCRNumber" minOccurs="0"/>
+							<xsd:element ref="CorrectionReason" minOccurs="0"/>
+							<xsd:element name="NCTSType" minOccurs="0"/>
+							<xsd:element ref="FinalCode" minOccurs="0"/>
+							<xsd:element name="DeclarationTime" type="ST_DateTime" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Time of the declaration  (new in V 1.01 )</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element ref="AcceptanceTime" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>used for UK: Required for SDE, enter acceptance date / time of PSA format YYYYMMDDHHMM</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="DateOfDeparture" type="ST_Date" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>used for UK: Mandatory for Exports SDE only date of departure for PSA format YYYYMMDD</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element ref="DispatchCountry" minOccurs="0"/>
+							<xsd:element ref="DestinationCountry" minOccurs="0"/>
+							<xsd:element ref="SituationCode" minOccurs="0"/>
+							<xsd:element ref="PaymentType" minOccurs="0"/>
+							<xsd:element ref="TransportInContainer" minOccurs="0"/>
+							<xsd:element ref="NetMass" minOccurs="0"/>
+							<xsd:element ref="GrossMass" minOccurs="0"/>
+							<xsd:element ref="UCROtherSystem" minOccurs="0"/>
+							<xsd:element ref="Annotation" minOccurs="0"/>
+							<xsd:element ref="ShipmentNumber" minOccurs="0"/>
+							<xsd:element ref="ReferenceNumber"/>
+							<!--  added type and documentation 2012-04-26, KCXSM-39 -->
+							<xsd:element name="DeclarationNumber" type="xsd:int" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>unique number for the declaration needed in NL</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element ref="OrderNumber" minOccurs="0"/>
+							<xsd:element ref="TotalNumberPositions" minOccurs="0"/>
+							<xsd:element name="TotalNumberOfPackages" type="xsd:integer" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Total number of packages</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element ref="AuthorizationNumber" minOccurs="0"/>
+							<xsd:element ref="PreviousProcedure" minOccurs="0"/>
+							<xsd:element ref="ReceiverCustomerNumber" minOccurs="0"/>
+							<xsd:element ref="DeclarantIsConsignor" minOccurs="0"/>
+							<xsd:element ref="TypeOfRepresentation" minOccurs="0"/>
+							<xsd:element ref="CorrectionCode" minOccurs="0"/>
+							<xsd:element ref="BunchNumber" minOccurs="0"/>
+							<xsd:element ref="Language" minOccurs="0"/>
+							<xsd:element ref="TransferToTransitSystem" minOccurs="0"/>
+							<xsd:element name="Contact" type="CT_ContactPerson" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Data of Contact Person</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element ref="Validity" minOccurs="0"/>
+							<xsd:element ref="Warehouse" minOccurs="0"/>
+							<xsd:element name="MeansOfTransport" type="CT_TransportMeansType" minOccurs="0"/>
+							<xsd:element ref="MeansOfTransportInland" minOccurs="0"/>
+							<xsd:element ref="MeansOfTransportDeparture" minOccurs="0"/>
+							<xsd:element ref="MeansOfTransportBorder" minOccurs="0"/>
+							<xsd:element ref="PlaceOfLoading" minOccurs="0"/>
+							<xsd:element ref="CustomsOfficeExport" minOccurs="0"/>
+							<xsd:element ref="CustomsOfficeForCompletion" minOccurs="0"/>
+							<xsd:element ref="IntendedOfficeOfExit" minOccurs="0"/>
+							<!--  added type and documentation 2012-04-26, KCXSM-29 -->
+							<xsd:element name="SupervisingCustomsOffice" type="CT_Address" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>used for UK: Supervising customs office
+To be completed either: 
+- when a CPC requires details of the Customs Office responsible 
+for supervising the goods or controlling the Customs 
+procedure, or 
+- when otherwise instructed by Customs 
+If a central UK Customs Office is responsible for control of the 
+procedure, then only that office's name need be supplied, e.g. 
+"NIRU". In all other cases the full name and address (Street, City, 
+Postcode and country code) of the relevant supervising office is to 
+be provide									
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="PlaceOfDeclaration" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Place of declaration</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element ref="Business" minOccurs="0"/>
+							<xsd:element ref="TransportationRoute" minOccurs="0"/>
+							<xsd:element ref="Seal" minOccurs="0"/>
+							<xsd:element ref="ExportRefundHeader" minOccurs="0"/>
+							<xsd:element ref="LoadingTime" minOccurs="0"/>
+							<xsd:element ref="ForwarderTIN" minOccurs="0"/>
+							<xsd:element ref="Forwarder" minOccurs="0"/>
+							<xsd:element ref="MessageReceiverTIN" minOccurs="0"/>
+							<xsd:element ref="ConsignorTIN" minOccurs="0"/>
+							<xsd:element ref="Consignor" minOccurs="0"/>
+							<xsd:element ref="ConsignorSecurityTIN" minOccurs="0"/>
+							<xsd:element ref="ConsignorSecurity" minOccurs="0"/>
+							<xsd:element ref="ConsignorContactPerson" minOccurs="0"/>
+							<xsd:element ref="DeclarantTIN" minOccurs="0"/>
+							<xsd:element ref="Declarant" minOccurs="0"/>
+							<xsd:element name="DeclarantNumber" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Used in CH: Deklarantennummer des Mitarbeiters</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element ref="DeclarantContactPerson" minOccurs="0"/>
+							<xsd:element ref="AgentTIN" minOccurs="0"/>
+							<xsd:element ref="Agent" minOccurs="0"/>
+							<xsd:element ref="AgentContactPerson" minOccurs="0"/>
+							<xsd:element ref="SubcontractorTIN" minOccurs="0"/>
+							<xsd:element ref="Subcontractor" minOccurs="0"/>
+							<xsd:element ref="SubcontractorContactPerson" minOccurs="0"/>
+							<xsd:element ref="ConsigneeTIN" minOccurs="0"/>
+							<xsd:element ref="Consignee" minOccurs="0"/>
+							<xsd:element ref="ConsigneeSecurityTIN" minOccurs="0"/>
+							<xsd:element ref="ConsigneeSecurity" minOccurs="0"/>
+							<xsd:element name="ConsigneeContactPerson" type="CT_ContactPerson" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Contact data of consignee</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element ref="CustomsDocumentsReceiverTIN" minOccurs="0"/>
+							<xsd:element ref="CustomsDocumentsReceiver" minOccurs="0"/>
+							<xsd:element name="CustomsDocumentReceiverContactPerson" type="CT_ContactPerson" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Contact data of the  CustomsDocumentReceiver</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element ref="RepresentedTIN" minOccurs="0"/>
+							<xsd:element ref="Represented" minOccurs="0"/>
+							<xsd:element ref="WarehouseKeeperTIN" minOccurs="0"/>
+							<xsd:element ref="WarehouseKeeper" minOccurs="0"/>
+							<xsd:element name="BeneficiaryTIN" type="CT_TINType" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>TIN data of beneficiary</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="Beneficiary" type="CT_AddressType" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>The ultimate recipient of the funds. Normally the
+account owner who is reimbursed by the payor.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="BeneficiaryContactPerson" type="CT_ContactPerson" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Contact data of  Beneficiary</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="InitialSenderTIN" type="CT_TINType" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>TIN data of initial sender</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="InitialSender" type="CT_AddressType" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Initial sender</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="InitialSenderContactPerson" type="CT_ContactPerson" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Contact data of initial sender</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="Carrier" type="CT_AddressType" minOccurs="0"/>
+							<xsd:element name="CarrierTIN" type="CT_TINType" minOccurs="0"/>
+							<xsd:element name="DescriptionLanguage" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Code of description language</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="AccountNumber" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Number of account</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="RepertoriumNumber" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Number of repertorium</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="ControlResultCode" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Code of control result</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element ref="IncoTerms" minOccurs="0"/>
+							<xsd:element ref="Document" minOccurs="0" maxOccurs="99"/>
+							<xsd:element ref="Container" minOccurs="0"/>
+							<xsd:element ref="PreviousDocument" minOccurs="0" maxOccurs="9"/>
+							<xsd:element name="AddInfoStatement" type="CT_AddInfoStatement" minOccurs="0" maxOccurs="40">
+								<xsd:annotation>
+									<xsd:documentation>Additional Info Statement</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="LoadingLists" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Number of loading list</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="SecurityIndicator" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>0=no, 1=yes</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="InjunctionType" minOccurs="0"/>
+							<xsd:element name="CompanyNumberTaxPayer" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Company number for petroleum tax</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element ref="SpecialMention" minOccurs="0" maxOccurs="99"/>
+							<xsd:element name="InvoiceCurrencyType" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>used in CH  1=CHF, 2=EUR, 3=others in EU, 4=USD, 5=others</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<!--  added 2012-03-01 Atlas 8.4 Start -->
+							<xsd:element ref="AuthorizationTrustedExporter" minOccurs="0"/>
+							<xsd:element ref="Procedure" minOccurs="0"/>
+							<xsd:element ref="RelevantDate" minOccurs="0"/>
+							<xsd:element ref="FlagOfStatistic" minOccurs="0"/>
+							<xsd:element ref="RealOfficeOfExit" minOccurs="0"/>
+							<xsd:element ref="AddressCombination" minOccurs="0"/>
+							<xsd:element ref="FinalRecipientTIN" minOccurs="0"/>
+							<xsd:element ref="FinalRecipient" minOccurs="0"/>
+							<xsd:element ref="OutwardProcessing" minOccurs="0"/>
+							<xsd:element ref="Reentry" minOccurs="0" maxOccurs="99"/>
+							<xsd:element ref="MeansOfIdentification" minOccurs="0" maxOccurs="9"/>
+							<xsd:element ref="Product" minOccurs="0" maxOccurs="999"/>
+							<xsd:element ref="DateOfExit" minOccurs="0"/>
+							<!--  added 2012-03-01 Atlas 8.4 End -->
+							<xsd:element name="GoodsItem" minOccurs="0" maxOccurs="999">
+								<xsd:annotation>
+									<xsd:documentation>Goodsitem</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element ref="ItemNumber"/>
+										<xsd:element ref="ArticleNumber" minOccurs="0"/>
+										<xsd:element ref="Description" minOccurs="0"/>
+										<xsd:element ref="UCROtherSystem" minOccurs="0"/>
+										<xsd:element ref="Annotation" minOccurs="0"/>
+										<xsd:element name="Annotation2" type="xsd:string" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>Annotation</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element ref="ShipmentNumber" minOccurs="0"/>
+										<xsd:element name="OriginCountry" type="xsd:string" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>Code of country of origin</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element ref="OriginFederalState" minOccurs="0"/>
+										<xsd:element name="DestinationCountry" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>Country of destination</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element ref="NetMass" minOccurs="0"/>
+										<xsd:element ref="NetMassConfirmation" minOccurs="0"/>
+										<xsd:element ref="GrossMass" minOccurs="0"/>
+										<xsd:element ref="GrossMassConfirmation" minOccurs="0"/>
+										<xsd:element ref="DangerousGoodsNumber" minOccurs="0"/>
+										<xsd:element ref="PaymentType" minOccurs="0"/>
+										<xsd:element ref="KindOfArticle" minOccurs="0"/>
+										<xsd:element ref="TypeOfArticle" minOccurs="0"/>
+										<xsd:element ref="CommodityBoard" minOccurs="0"/>
+										<xsd:element name="ThirdQuantity" minOccurs="0"/>
+										<!--  added type and documentation 2012-04-26, KCXSM-29 -->
+										<xsd:element name="SupervisingCustomsOffice" type="CT_Address" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>used for UK: Supervising customs office
+To be completed either: 
+- when a CPC requires details of the Customs Office responsible 
+for supervising the goods or controlling the Customs 
+procedure, or 
+- when otherwise instructed by Customs 
+If a central UK Customs Office is responsible for control of the 
+procedure, then only that office's name need be supplied, e.g. 
+"NIRU". In all other cases the full name and address (Street, City, 
+Postcode and country code) of the relevant supervising office is to 
+be provide</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element ref="AdditionalCommodityBoardCode" minOccurs="0"/>
+										<xsd:element name="DescriptionLanguage" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>Language of description</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element ref="CommodityCode" minOccurs="0"/>
+										<xsd:element ref="ExportRefundItem" minOccurs="0"/>
+										<xsd:element ref="CustomsApprovedTreatment" minOccurs="0"/>
+										<xsd:element ref="Statistic" minOccurs="0"/>
+										<xsd:element name="GoodsIdentification" type="CT_GoodsIdentification" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>Goods identification </xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element ref="SensitiveGoods" minOccurs="0" maxOccurs="9"/>
+										<xsd:element ref="SpecialMention" minOccurs="0" maxOccurs="99"/>
+										<xsd:element ref="NonCustomsLaw" minOccurs="0"/>
+										<xsd:element name="PermitObligation" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>valid codes CH: 0,1,2</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element ref="Permit" minOccurs="0" maxOccurs="9"/>
+										<xsd:element ref="ConsigneeTIN" minOccurs="0"/>
+										<xsd:element ref="Consignee" minOccurs="0"/>
+										<xsd:element name="ConsignorTIN" type="CT_TINType" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>TIN data of consignor</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="Consignor" type="CT_AddressType" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>Consignor</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="WarehouseKeeperTIN" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>TIN data of WarehouseKeeper</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="WarehouseKeeper" type="CT_AddressType" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>WarehouseKeeper</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element ref="Package" minOccurs="0" maxOccurs="99"/>
+										<xsd:element ref="Container" minOccurs="0"/>
+										<xsd:element ref="Document" minOccurs="0" maxOccurs="99"/>
+										<xsd:element ref="PreviousDocument" minOccurs="0" maxOccurs="9"/>
+										<xsd:element name="AddInfoStatement" type="CT_AddInfoStatement" minOccurs="0" maxOccurs="40">
+											<xsd:annotation>
+												<xsd:documentation>Additional Info Statement</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:choice>
+											<xsd:element ref="BondedWarehouseCompletion" minOccurs="0"/>
+											<xsd:element ref="InwardProcessingCompletion" minOccurs="0"/>
+										</xsd:choice>
+										<xsd:element name="Warehouse" type="CT_Warehouse" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>Warehouse</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="Refinement" type="CT_Refinement" minOccurs="0"/>
+										<xsd:element name="Detail" type="CT_Detail" minOccurs="0"/>
+										<xsd:element name="RefundType" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>Used in CH</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="RefundQuantity" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>Used in CH</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="NotificationCode" minOccurs="0" maxOccurs="99"/>
+										<!--  added 2012-03-01 Atlas 8.4 Start -->
+										<xsd:element ref="Business" minOccurs="0"/>
+										<xsd:element ref="IncoTerms" minOccurs="0"/>
+										<xsd:element ref="AddressCombination" minOccurs="0"/>
+										<xsd:element ref="FinalRecipientTIN" minOccurs="0"/>
+										<xsd:element ref="FinalRecipient" minOccurs="0"/>
+										<!--  added 2012-03-01 Atlas 8.4 End -->
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element ref="Invoice" minOccurs="0"/>
+							<xsd:element name="CAP" type="CT_CAP" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Common agricultural products  </xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="TemporaryReason" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Reason for temporary Declaratin CH: 1-99</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties AppName="IM560" SelectedLanguage="java"/>
+		<structure>
+			<children>
+				<component name="is-not-null" library="db" uid="5" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="1"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="2"/>
+					</targets>
+					<view ltx="440" lty="243" rbx="514" rby="282"/>
+				</component>
+				<component name="{http://www.ros.ie/schema..." library="core" uid="6" kind="3">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="3"/>
+						<datapoint pos="1" key="4"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="5"/>
+						<datapoint/>
+					</targets>
+					<view ltx="562" lty="226" rbx="729" rby="282"/>
+				</component>
+				<component name="constant" library="core" uid="7" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="6"/>
+					</targets>
+					<view ltx="586" lty="177" rbx="624" rby="195"/>
+					<data>
+						<constant value="0" datatype="decimal"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="IM560" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="17" lty="-15" rbx="397" rby="325"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace uid="http://www.ros.ie/schemas/customs/IM560/v1"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ImportControlDecisionNotification" expanded="1">
+										<entry name="CustomsReferenceIdentifier" outkey="7"/>
+										<entry name="Ucr" expanded="1">
+											<entry name="IdentificationIdentifier" outkey="8"/>
+										</entry>
+										<entry name="ControlNotificationDate" outkey="9"/>
+										<entry name="AdditionalDocument" outkey="10" expanded="1">
+											<entry name="TypeCode" outkey="11"/>
+											<entry name="ReferenceIdentifier" outkey="12"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="IM560.xsd" inputinstance="IM560_ImportControlDecisionNotification.xml" outputinstance="IM560_ImportControlDecisionNotification.xml" instanceroot="{http://www.ros.ie/schemas/customs/IM560/v1}ImportControlDecisionNotification"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="ImportDeclarationResponse" library="xml" uid="3" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="773" lty="-15" rbx="1116" rby="284"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ImportDeclarationResponse" expanded="1">
+										<entry name="GoodsDeclaration" expanded="1">
+											<entry name="TemporaryMRN" inpkey="13"/>
+											<entry name="RegistrationNumber" inpkey="14"/>
+											<entry name="RegistrationDate" inpkey="15"/>
+											<entry name="GoodsItem" inpkey="16" expanded="1">
+												<entry name="ItemNumber" inpkey="17"/>
+												<entry name="ErrorCode" inpkey="18"/>
+												<entry name="ErrorText" inpkey="19"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="ImportDeclarationResponse.xsd" outputinstance="ImportDeclarationResponse.xml" instanceroot="{}ImportDeclarationResponse"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="2">
+						<edges>
+							<edge vertexkey="4" edgekey="20"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="5">
+						<edges>
+							<edge vertexkey="16" edgekey="21"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="6">
+						<edges>
+							<edge vertexkey="17" edgekey="22"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="7">
+						<edges>
+							<edge vertexkey="13" edgekey="23"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="8">
+						<edges>
+							<edge vertexkey="14" edgekey="24"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="9">
+						<edges>
+							<edge vertexkey="15" edgekey="25"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="10">
+						<edges>
+							<edge vertexkey="1" edgekey="26"/>
+							<edge vertexkey="3" edgekey="27"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="11">
+						<edges>
+							<edge vertexkey="18" edgekey="28"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="12">
+						<edges>
+							<edge vertexkey="19" edgekey="29"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

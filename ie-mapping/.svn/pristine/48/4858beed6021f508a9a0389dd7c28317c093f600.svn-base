@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties AppName="IE560" ShowSchemaTypes="1" ShowAnnotations="0" SelectedLanguage="java"/>
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="6" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="25"/>
+					</targets>
+					<view ltx="432" lty="107" rbx="472" rby="125"/>
+					<data>
+						<constant datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="7" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="29"/>
+					</targets>
+					<view ltx="434" lty="155" rbx="474" rby="173"/>
+					<data>
+						<constant datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="DeclarationResponse" library="xml" uid="4" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="510" lty="2" rbx="1022" rby="428"/>
+					<data>
+						<root scrollposition="884">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="DeclarationResponse" inpkey="1" expanded="1">
+										<entry name="GoodsDeclaration" expanded="1">
+											<entry name="StatusOfCompletion" inpkey="26"/>
+											<entry name="ReferenceNumber" inpkey="28"/>
+											<entry name="CustomsOffice" expanded="1">
+												<entry name="Address" expanded="1"/>
+											</entry>
+											<entry name="LoadingTime" expanded="1"/>
+											<entry name="Error" expanded="1"/>
+											<entry name="CustomsOfficeExport" inpkey="2"/>
+											<entry name="DeclarantTIN" expanded="1">
+												<entry name="TIN" inpkey="32"/>
+											</entry>
+											<entry name="Declarant" expanded="1">
+												<entry name="Address" expanded="1"/>
+											</entry>
+											<entry name="AgentTIN" expanded="1"/>
+											<entry name="Agent" inpkey="3" expanded="1">
+												<entry name="Address" inpkey="4" expanded="1">
+													<entry name="Name" inpkey="34"/>
+													<entry name="Street" inpkey="5"/>
+													<entry name="City" inpkey="6"/>
+													<entry name="PostalCode" inpkey="7"/>
+													<entry name="Country" inpkey="8"/>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="DeclarationResponse.xsd" outputinstance="DeclarationResponse.xml" instanceroot="{}DeclarationResponse"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="IE560" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="-21" lty="2" rbx="393" rby="428"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace uid="http://www.ros.ie/schemas/ecs/IE560/v1"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ExportControlDecisionNotification" outkey="9" expanded="1">
+										<entry name="DeclarationOfficeIdentifier" outkey="10"/>
+										<entry name="Agent" outkey="11" expanded="1">
+											<entry name="IdentityIdentifier" outkey="31"/>
+											<entry name="NameText" outkey="35"/>
+											<entry name="Address" outkey="12" expanded="1">
+												<entry name="LineText" outkey="13"/>
+												<entry name="CityName" outkey="14"/>
+												<entry name="PostcodeIdentifier" outkey="15"/>
+												<entry name="CountryCode" outkey="16"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="IE560.xsd" inputinstance="IE560_ExportControlNotification.xml" instanceroot="{http://www.ros.ie/schemas/ecs/IE560/v1}ExportControlDecisionNotification"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="9">
+						<edges>
+							<edge vertexkey="1" edgekey="17"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="10">
+						<edges>
+							<edge vertexkey="2" edgekey="18"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="11">
+						<edges>
+							<edge vertexkey="3" edgekey="19"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="12">
+						<edges>
+							<edge vertexkey="4" edgekey="20"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="13">
+						<edges>
+							<edge vertexkey="5" edgekey="21"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="14">
+						<edges>
+							<edge vertexkey="6" edgekey="22"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="15">
+						<edges>
+							<edge vertexkey="7" edgekey="23"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="16">
+						<edges>
+							<edge vertexkey="8" edgekey="24"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="25">
+						<edges>
+							<edge vertexkey="26" edgekey="27"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="29">
+						<edges>
+							<edge vertexkey="28" edgekey="30"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="31">
+						<edges>
+							<edge vertexkey="32" edgekey="33"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="35">
+						<edges>
+							<edge vertexkey="34" edgekey="36"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>
