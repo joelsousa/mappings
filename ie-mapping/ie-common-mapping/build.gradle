@@ -1,0 +1,8 @@
+apply plugin: 'application'
+
+description = 'MapForce generated mapping for common IE messages (localAppResult)'
+version = '0.5-SNAPSHOT'
+
+mainClassName = "com.mapforce.MappingConsole"
+
+

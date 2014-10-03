@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties AppName="Cancellation" ShowSchemaTypes="1" ShowAnnotations="0" SelectedLanguage="xslt"/>
+		<structure>
+			<children>
+				<component name="Cancellation" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view lty="-7" rbx="317" rby="452"/>
+					<data>
+						<root scrollposition="511">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="Cancellation" outkey="2" expanded="1">
+										<entry name="GoodsDeclaration" outkey="39" expanded="1">
+											<entry name="CancellationTime" outkey="40"/>
+											<entry name="CancellationInfo" expanded="1">
+												<entry name="Reason" outkey="41"/>
+											</entry>
+											<entry name="ReferenceNumber" outkey="43"/>
+											<entry name="Contact" expanded="1">
+												<entry name="Clerk" outkey="14"/>
+												<entry name="Name" outkey="50" expanded="1"/>
+												<entry name="Identity" expanded="1"/>
+											</entry>
+											<entry name="CustomsOfficeExport" outkey="15"/>
+											<entry name="DeclarantTIN" expanded="1"/>
+											<entry name="Declarant" outkey="57" expanded="1">
+												<entry name="VATNumber" outkey="16"/>
+												<entry name="ETNAdress" outkey="17"/>
+												<entry name="Address" expanded="1"/>
+											</entry>
+											<entry name="AgentTIN" expanded="1"/>
+											<entry name="Agent" outkey="18" expanded="1">
+												<entry name="Address" outkey="19" expanded="1">
+													<entry name="Street" outkey="20"/>
+													<entry name="HouseNumber" outkey="62"/>
+													<entry name="City" outkey="21"/>
+													<entry name="PostalCode" outkey="22"/>
+													<entry name="Country" outkey="23"/>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="Cancellation.xsd" inputinstance="Cancellation.xml" outputinstance="Cancellation.xml" instanceroot="{}Cancellation"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="IE514" library="xml" uid="3" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="733" lty="-7" rbx="1009" rby="441"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace uid="http://www.ros.ie/schemas/ecs/IE514/v1"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ExportCancellationRequest" inpkey="1" expanded="1">
+										<entry name="CustomsReferenceIdentifier" inpkey="34"/>
+										<entry name="DeclarationOfficeIdentifier" inpkey="35"/>
+										<entry name="Cancellation" inpkey="36" expanded="1">
+											<entry name="CancellationRequestDate" inpkey="37"/>
+											<entry name="CancellationReason" inpkey="38"/>
+										</entry>
+										<entry name="GoodsShipment" expanded="1">
+											<entry name="Consignor" inpkey="4" expanded="1">
+												<entry name="IdentityIdentifier" inpkey="5"/>
+												<entry name="NameText" inpkey="49"/>
+												<entry name="Address" expanded="1"/>
+											</entry>
+										</entry>
+										<entry name="Agent" inpkey="6" expanded="1">
+											<entry name="IdentityIdentifier" inpkey="7"/>
+											<entry name="NameText" inpkey="8"/>
+											<entry name="Address" inpkey="9" expanded="1">
+												<entry name="LineText" inpkey="10"/>
+												<entry name="CityName" inpkey="11"/>
+												<entry name="PostcodeIdentifier" inpkey="12"/>
+												<entry name="CountryCode" inpkey="13"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="IE514.xsd" outputinstance="IE514.xml" instanceroot="{http://www.ros.ie/schemas/ecs/IE514/v1}ExportCancellationRequest"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="5" kind="5" growable="1" growablebasename="value">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="63"/>
+						<datapoint pos="1" key="60"/>
+						<datapoint pos="2" key="64"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="65"/>
+					</targets>
+					<view ltx="588" lty="345" rbx="673" rby="421"/>
+				</component>
+				<component name="constant" library="core" uid="6" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="59"/>
+					</targets>
+					<view ltx="525" lty="308" rbx="568" rby="326"/>
+					<data>
+						<constant value=" " datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="substitute-missing" library="core" uid="8" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="66"/>
+						<datapoint pos="1" key="67"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="68"/>
+					</targets>
+					<view ltx="414" lty="345" rbx="528" rby="401"/>
+				</component>
+				<component name="constant" library="core" uid="9" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="61"/>
+					</targets>
+					<view ltx="358" lty="403" rbx="398" rby="421"/>
+					<data>
+						<constant datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="2">
+						<edges>
+							<edge vertexkey="1" edgekey="3"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="14">
+						<edges>
+							<edge vertexkey="5" edgekey="24"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="15">
+						<edges>
+							<edge vertexkey="35" edgekey="56"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="16">
+						<edges>
+							<edge vertexkey="7" edgekey="26"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="17">
+						<edges>
+							<edge vertexkey="8" edgekey="27"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="18">
+						<edges>
+							<edge vertexkey="6" edgekey="28"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="19">
+						<edges>
+							<edge vertexkey="9" edgekey="29"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="20">
+						<edges>
+							<edge vertexkey="63" edgekey="69"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="21">
+						<edges>
+							<edge vertexkey="11" edgekey="31"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="22">
+						<edges>
+							<edge vertexkey="12" edgekey="32"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="23">
+						<edges>
+							<edge vertexkey="13" edgekey="33"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="39">
+						<edges>
+							<edge vertexkey="36" edgekey="44"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="40">
+						<edges>
+							<edge vertexkey="37" edgekey="45"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="41">
+						<edges>
+							<edge vertexkey="38" edgekey="46"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="43">
+						<edges>
+							<edge vertexkey="34" edgekey="48"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="50">
+						<edges>
+							<edge vertexkey="49" edgekey="51"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="57">
+						<edges>
+							<edge vertexkey="4" edgekey="58"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="59">
+						<edges>
+							<edge vertexkey="60" edgekey="70"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="61">
+						<edges>
+							<edge vertexkey="67" edgekey="71"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="62">
+						<edges>
+							<edge vertexkey="66" edgekey="72"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="65">
+						<edges>
+							<edge vertexkey="10" edgekey="73"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="68">
+						<edges>
+							<edge vertexkey="64" edgekey="74"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

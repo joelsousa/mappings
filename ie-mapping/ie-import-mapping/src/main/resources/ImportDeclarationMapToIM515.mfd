@@ -1,0 +1,1181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties AppName="ImportDeclaration" SelectedLanguage="java"/>
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="11" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="57"/>
+					</targets>
+					<view ltx="464" lty="447" rbx="507" rby="465"/>
+					<data>
+						<constant value=" " datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="14" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="74"/>
+					</targets>
+					<view ltx="464" lty="566" rbx="507" rby="584"/>
+					<data>
+						<constant value=" " datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="13" kind="5" growable="1" growablebasename="value">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="75"/>
+						<datapoint pos="1" key="76"/>
+						<datapoint pos="2" key="77"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="78"/>
+					</targets>
+					<view ltx="548" lty="578" rbx="633" rby="654"/>
+				</component>
+				<component name="constant" library="core" uid="32" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="290"/>
+					</targets>
+					<view ltx="318" lty="636" rbx="358" rby="654"/>
+					<data>
+						<constant datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="substitute-missing" library="core" uid="29" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="279"/>
+						<datapoint pos="1" key="277"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="278"/>
+					</targets>
+					<view ltx="376" lty="486" rbx="490" rby="542"/>
+				</component>
+				<component name="concat" library="core" uid="10" kind="5" growable="1" growablebasename="value">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="58"/>
+						<datapoint pos="1" key="59"/>
+						<datapoint pos="2" key="60"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="61"/>
+					</targets>
+					<view ltx="548" lty="447" rbx="633" rby="523"/>
+				</component>
+				<component name="constant" library="core" uid="30" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="280"/>
+					</targets>
+					<view ltx="318" lty="556" rbx="358" rby="574"/>
+					<data>
+						<constant datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="substitute-missing" library="core" uid="31" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="287"/>
+						<datapoint pos="1" key="289"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="288"/>
+					</targets>
+					<view ltx="376" lty="598" rbx="490" rby="654"/>
+				</component>
+				<component name="substring" library="core" uid="42" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="370"/>
+						<datapoint pos="1" key="371"/>
+						<datapoint pos="2" key="372"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="373"/>
+					</targets>
+					<view ltx="416" lty="363" rbx="488" rby="436"/>
+				</component>
+				<component name="constant" library="core" uid="43" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="374"/>
+					</targets>
+					<view ltx="386" lty="454" rbx="430" rby="472"/>
+					<data>
+						<constant value="80" datatype="decimal"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="44" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="375"/>
+					</targets>
+					<view ltx="355" lty="363" rbx="393" rby="381"/>
+					<data>
+						<constant value="1" datatype="decimal"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="45" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="385"/>
+					</targets>
+					<view ltx="677" lty="363" rbx="715" rby="381"/>
+					<data>
+						<constant value="1" datatype="decimal"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="22" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="255"/>
+					</targets>
+					<view ltx="366" lty="809" rbx="404" rby="827"/>
+					<data>
+						<constant value="2" datatype="decimal"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="21" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="250"/>
+					</targets>
+					<view ltx="366" lty="754" rbx="404" rby="772"/>
+					<data>
+						<constant value="1" datatype="decimal"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="substring" library="core" uid="20" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="251"/>
+						<datapoint pos="1" key="252"/>
+						<datapoint pos="2" key="253"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="254"/>
+					</targets>
+					<view ltx="477" lty="676" rbx="549" rby="749"/>
+				</component>
+				<component name="constant" library="core" uid="25" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="268"/>
+					</targets>
+					<view ltx="490" lty="782" rbx="528" rby="800"/>
+					<data>
+						<constant value="3" datatype="decimal"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="47" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="400"/>
+					</targets>
+					<view ltx="665" lty="727" rbx="703" rby="745"/>
+					<data>
+						<constant value="5" datatype="decimal"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="substring" library="core" uid="46" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="399"/>
+						<datapoint pos="1" key="398"/>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="397"/>
+					</targets>
+					<view ltx="742" lty="699" rbx="814" rby="772"/>
+				</component>
+				<component name="constant" library="core" uid="48" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="407"/>
+					</targets>
+					<view ltx="834" lty="55" rbx="893" rby="73"/>
+					<data>
+						<constant value="X12" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="substring" library="core" uid="24" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="256"/>
+						<datapoint pos="1" key="257"/>
+						<datapoint pos="2" key="258"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="259"/>
+					</targets>
+					<view ltx="578" lty="727" rbx="650" rby="800"/>
+				</component>
+				<component name="constant" library="core" uid="28" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="276"/>
+					</targets>
+					<view ltx="320" lty="271" rbx="360" rby="289"/>
+					<data>
+						<constant datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="34" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="303"/>
+					</targets>
+					<view ltx="438" lty="313" rbx="490" rby="331"/>
+					<data>
+						<constant value="00" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="33" kind="5" growable="1" growablebasename="value">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="301"/>
+						<datapoint pos="1" key="304"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="302"/>
+					</targets>
+					<view ltx="550" lty="252" rbx="625" rby="310"/>
+				</component>
+				<component name="substitute-missing" library="core" uid="27" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="273"/>
+						<datapoint pos="1" key="274"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="275"/>
+					</targets>
+					<view ltx="378" lty="221" rbx="492" rby="277"/>
+				</component>
+				<component name="constant" library="core" uid="8" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="33"/>
+					</targets>
+					<view ltx="449" lty="180" rbx="492" rby="198"/>
+					<data>
+						<constant value=" " datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="7" kind="5" growable="1" growablebasename="value">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="29"/>
+						<datapoint pos="1" key="30"/>
+						<datapoint pos="2" key="31"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="32"/>
+					</targets>
+					<view ltx="567" lty="157" rbx="652" rby="233"/>
+				</component>
+				<component name="IM515" library="xml" uid="5" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="943" lty="17" rbx="1238" rby="700"/>
+					<data>
+						<root scrollposition="209">
+							<header>
+								<namespaces>
+									<namespace uid="http://www.ros.ie/schemas/customs/IM515/v1"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ImportCustomsDeclaration" inpkey="1" expanded="1">
+										<entry name="Declaration" inpkey="351" expanded="1">
+											<entry name="TypeCode" inpkey="326"/>
+											<entry name="IEMessageSendingDate" inpkey="305"/>
+											<entry name="IEMessageType" inpkey="406"/>
+											<entry name="DeclarationOfficeIdentifier" inpkey="10"/>
+											<entry name="GoodsItemQuantity" inpkey="79"/>
+											<entry name="InvoiceAmount" inpkey="119"/>
+											<entry name="GoodsShipment" expanded="1">
+												<entry name="ExportationCountryIdentifier" inpkey="80"/>
+												<entry name="TransactionNatureCode" inpkey="11"/>
+												<entry name="Warehouse">
+													<entry name="IdentificationIdentifier" inpkey="247"/>
+												</entry>
+												<entry name="TradeTerm">
+													<entry name="ConditionCode" inpkey="120"/>
+													<entry name="LocationNameText" inpkey="121"/>
+													<entry name="CountryRelationshipCode" inpkey="122"/>
+												</entry>
+												<entry name="EntryCustomsOffice" expanded="1">
+													<entry name="CodeIdentifier" inpkey="81"/>
+												</entry>
+												<entry name="DeliveryDestination" expanded="1">
+													<entry name="CountryCode" inpkey="327"/>
+													<entry name="CountrySubEntityIdentifier" inpkey="82"/>
+												</entry>
+												<entry name="CustomsGoodsItem" inpkey="185" expanded="1">
+													<entry name="GoodsPackaging">
+														<entry name="MarkNumberText" inpkey="227"/>
+														<entry name="QuantityQuantity" inpkey="228"/>
+														<entry name="TypeCode" inpkey="229"/>
+													</entry>
+													<entry name="IEUniqueLPRef" inpkey="294"/>
+													<entry name="SequenceIdentifier" inpkey="183"/>
+													<entry name="Commodity">
+														<entry name="DescriptionText" inpkey="188"/>
+														<entry name="TariffClassificationCode" inpkey="189"/>
+														<entry name="EUTariffClassificationAdd1Code" inpkey="190"/>
+														<entry name="EUTariffClassificationAdd2Code" inpkey="191"/>
+														<entry name="EUDutyRegimeCode" inpkey="205"/>
+														<entry name="DutyTaxFee" expanded="1">
+															<entry name="Payment" expanded="1"/>
+														</entry>
+														<entry name="EUQuotaIdentifier" inpkey="217"/>
+													</entry>
+													<entry name="Origin">
+														<entry name="OriginCountryIdentifier" inpkey="206"/>
+													</entry>
+													<entry name="GoodsMeasure">
+														<entry name="GrossMassMeasure" inpkey="218"/>
+														<entry name="NetNetWeightMeasure" inpkey="219"/>
+													</entry>
+													<entry name="CustomsProcedure">
+														<entry name="CurrentCode" inpkey="200"/>
+														<entry name="PreviousCode" inpkey="201"/>
+														<entry name="CategoryCode" inpkey="401"/>
+													</entry>
+													<entry name="PreviousCustomsDocument">
+														<entry name="ReferenceIdentifier" inpkey="367"/>
+													</entry>
+													<entry name="EUItemPriceAmount" inpkey="207"/>
+													<entry name="EUCustomsValuation">
+														<entry name="MethodCode" inpkey="384"/>
+													</entry>
+													<entry name="AdditionalInformation" inpkey="440" expanded="1">
+														<entry name="StatementCode" inpkey="441"/>
+														<entry name="ContentText" inpkey="442"/>
+													</entry>
+													<entry name="AdditionalDocument" inpkey="239">
+														<entry name="TypeCode" inpkey="240"/>
+														<entry name="ReferenceIdentifier" inpkey="241"/>
+													</entry>
+													<entry name="StatisticalValueAmount" inpkey="230"/>
+													<entry name="TransportEquipment" inpkey="338">
+														<entry name="EquipmentIdentification" inpkey="161" expanded="1">
+															<entry name="IdentificationIdentifier" inpkey="162"/>
+														</entry>
+													</entry>
+												</entry>
+												<entry name="Consignor">
+													<entry name="IdentityIdentifier" inpkey="38"/>
+													<entry name="NameText" inpkey="39"/>
+													<entry name="Address" expanded="1">
+														<entry name="LineText" inpkey="53"/>
+														<entry name="CityName" inpkey="54"/>
+														<entry name="PostcodeIdentifier" inpkey="55"/>
+														<entry name="CountryCode" inpkey="56"/>
+													</entry>
+												</entry>
+												<entry name="Consignment">
+													<entry name="ArrivalTransportMeans" expanded="1">
+														<entry name="IdentificationText" inpkey="123"/>
+													</entry>
+													<entry name="BorderTransportMeans" expanded="1">
+														<entry name="RegistrationNationalityIdentifier" inpkey="124"/>
+														<entry name="ModeAndTypeCode" inpkey="125"/>
+													</entry>
+													<entry name="IEInlandModeOfTransportCode" inpkey="126"/>
+													<entry name="GoodsLocation">
+														<entry name="LocationIdentifier" inpkey="83"/>
+													</entry>
+												</entry>
+												<entry name="Consignee">
+													<entry name="IdentityIdentifier" inpkey="84"/>
+													<entry name="NameText" inpkey="85"/>
+													<entry name="Address" expanded="1">
+														<entry name="LineText" inpkey="86"/>
+														<entry name="CityName" inpkey="87"/>
+														<entry name="PostcodeIdentifier" inpkey="88"/>
+														<entry name="CountryCode" inpkey="89"/>
+													</entry>
+												</entry>
+												<entry name="IEValueDetailsCode" inpkey="298"/>
+												<entry name="IEMethodOfPaymentCode" inpkey="12"/>
+												<entry name="IEPayer">
+													<entry name="IEPayerIdentifier" inpkey="170"/>
+												</entry>
+												<entry name="AdditionalInformation" inpkey="171" expanded="1">
+													<entry name="StatementCode" inpkey="172"/>
+													<entry name="ContentText" inpkey="173"/>
+												</entry>
+												<entry name="AdditionalDocument" inpkey="128">
+													<entry name="TypeCode" inpkey="129"/>
+													<entry name="ReferenceIdentifier" inpkey="387"/>
+												</entry>
+											</entry>
+											<entry name="CurrencyExchange">
+												<entry name="RateNumeric" inpkey="130"/>
+												<entry name="CurrencyTypeIdentifier" inpkey="131"/>
+											</entry>
+											<entry name="Agent" inpkey="411" expanded="1">
+												<entry name="StatusCode" inpkey="7"/>
+												<entry name="IdentityIdentifier" inpkey="13"/>
+												<entry name="NameText" inpkey="22"/>
+												<entry name="Address" expanded="1">
+													<entry name="LineText" inpkey="23"/>
+													<entry name="CityName" inpkey="40"/>
+													<entry name="PostcodeIdentifier" inpkey="41"/>
+													<entry name="CountryCode" inpkey="42"/>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="IM515.xsd" outputinstance="IM515.xml" instanceroot="{http://www.ros.ie/schemas/customs/IM515/v1}ImportCustomsDeclaration"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="ImportDeclaration" library="xml" uid="4" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="12" rbx="290" rby="713"/>
+					<data>
+						<root scrollposition="3461">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ImportDeclaration" outkey="3" expanded="1">
+										<entry name="GoodsDeclaration" outkey="354" expanded="1">
+											<entry name="ReferenceNumber" outkey="4"/>
+											<entry name="DeclarationTime" outkey="306"/>
+											<entry name="AgentRepresentationCode" outkey="8"/>
+											<entry name="Business" expanded="1">
+												<entry name="BusinessTypeCode" outkey="14"/>
+											</entry>
+											<entry name="PaymentType" outkey="15"/>
+											<entry name="CustomsOfficeOfDeclaration" outkey="16"/>
+											<entry name="Traders" expanded="1">
+												<entry name="DeclarantTIN" expanded="1">
+													<entry name="TIN" outkey="412"/>
+												</entry>
+												<entry name="DeclarantAddress" outkey="413" expanded="1">
+													<entry name="Name" outkey="414"/>
+													<entry name="Street" outkey="415"/>
+													<entry name="HouseNumber" outkey="416"/>
+													<entry name="City" outkey="417"/>
+													<entry name="PostalCode" outkey="418"/>
+													<entry name="Country" outkey="419"/>
+												</entry>
+												<entry name="RepresentativeTIN" expanded="1"/>
+												<entry name="RepresentativeAddress" expanded="1"/>
+												<entry name="ConsignorTIN" expanded="1">
+													<entry name="TIN" outkey="46"/>
+												</entry>
+												<entry name="ConsignorAddress">
+													<entry name="Name" outkey="47"/>
+													<entry name="Street" outkey="62"/>
+													<entry name="HouseNumber" outkey="63"/>
+													<entry name="City" outkey="64"/>
+													<entry name="PostalCode" outkey="65"/>
+													<entry name="Country" outkey="66"/>
+												</entry>
+												<entry name="AcquirerTIN" expanded="1"/>
+												<entry name="ConsigneeTIN">
+													<entry name="TIN" outkey="90"/>
+												</entry>
+												<entry name="ConsigneeAddress" expanded="1">
+													<entry name="Name" outkey="91"/>
+													<entry name="Street" outkey="92"/>
+													<entry name="HouseNumber" outkey="93"/>
+													<entry name="City" outkey="94"/>
+													<entry name="PostalCode" outkey="95"/>
+													<entry name="Country" outkey="96"/>
+													<entry name="CountrySubEntity" outkey="97"/>
+												</entry>
+											</entry>
+											<entry name="DispatchCountry" outkey="98"/>
+											<entry name="CustomsOfficeEntry" outkey="99"/>
+											<entry name="GoodsLocation" outkey="100"/>
+											<entry name="DestinationCountry" outkey="270"/>
+											<entry name="CustomsStatus" outkey="324" expanded="1"/>
+											<entry name="TotalNumberPositions" outkey="101"/>
+											<entry name="PreviousDocument" expanded="1">
+												<entry name="Number" outkey="132"/>
+											</entry>
+											<entry name="MeansOfTransportBorder" expanded="1">
+												<entry name="TransportationType" outkey="134"/>
+												<entry name="TransportationNumber" outkey="325"/>
+												<entry name="TransportationCountry" outkey="430"/>
+											</entry>
+											<entry name="MeansOfTransportInland">
+												<entry name="TransportMode" outkey="136"/>
+											</entry>
+											<entry name="MeansOfTransportArrival" expanded="1"/>
+											<entry name="IncoTerms">
+												<entry name="Code" outkey="138"/>
+												<entry name="Place" outkey="139"/>
+												<entry name="LocationCode" outkey="140"/>
+											</entry>
+											<entry name="Invoice" expanded="1">
+												<entry name="Amount" outkey="141"/>
+												<entry name="Currency" outkey="142"/>
+												<entry name="ExchangeRate" outkey="143"/>
+											</entry>
+											<entry name="BondedWarehouseCompletion" expanded="1">
+												<entry name="AdditionalInfoStatement" expanded="1"/>
+											</entry>
+											<entry name="InwardProcessingCompletion" expanded="1"/>
+											<entry name="Document" outkey="144" expanded="1">
+												<entry name="Type" outkey="145"/>
+												<entry name="Number" outkey="388"/>
+											</entry>
+											<entry name="Container" outkey="165" expanded="1">
+												<entry name="Number" outkey="166"/>
+											</entry>
+											<entry name="Deferment">
+												<entry name="TIN" outkey="174"/>
+											</entry>
+											<entry name="AdditionalInformation" outkey="175" expanded="1">
+												<entry name="StatementCode" outkey="394"/>
+												<entry name="StatementText" outkey="177"/>
+											</entry>
+											<entry name="DV1" expanded="1">
+												<entry name="BuyerSellerRelationship" outkey="299" expanded="1"/>
+											</entry>
+											<entry name="GoodsItem" outkey="186" expanded="1">
+												<entry name="ItemNumber" outkey="182"/>
+												<entry name="CommodityCode">
+													<entry name="TarifCode" outkey="193"/>
+													<entry name="TarifAddition1" outkey="194"/>
+													<entry name="TarifAddition2" outkey="195"/>
+												</entry>
+												<entry name="ProcedureCode" outkey="202" expanded="1"/>
+												<entry name="Description" outkey="369"/>
+												<entry name="CountryOfOrigin" outkey="210"/>
+												<entry name="Quota">
+													<entry name="Number1" outkey="214"/>
+												</entry>
+												<entry name="NetMass" outkey="215"/>
+												<entry name="GrossMass" outkey="216"/>
+												<entry name="Package">
+													<entry name="Quantity" outkey="223"/>
+													<entry name="Type" outkey="224"/>
+													<entry name="Marks" outkey="225"/>
+												</entry>
+												<entry name="Invoice" expanded="1">
+													<entry name="Amount" outkey="409"/>
+												</entry>
+												<entry name="NetPrice" expanded="1"/>
+												<entry name="IndirectPayment" expanded="1"/>
+												<entry name="Statistic">
+													<entry name="StatisticalValue" outkey="226"/>
+												</entry>
+												<entry name="Preference" expanded="1">
+													<entry name="PreferenceCertificate" outkey="380"/>
+												</entry>
+												<entry name="Document" outkey="235" expanded="1">
+													<entry name="Type" outkey="236"/>
+													<entry name="Number" outkey="237"/>
+												</entry>
+												<entry name="AdditionsDeductions" outkey="432" expanded="1">
+													<entry name="Type" outkey="433"/>
+													<entry name="Amount" outkey="238"/>
+												</entry>
+												<entry name="Warehouse" expanded="1">
+													<entry name="WarehouseIdentification" outkey="248"/>
+												</entry>
+												<entry name="Permit" expanded="1"/>
+												<entry name="Refinement" expanded="1"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="ImportDeclaration.xsd" inputinstance="importDeclarationMapToIM515.xml" instanceroot="{}ImportDeclaration"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="3">
+						<edges>
+							<edge vertexkey="1" edgekey="5"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="4">
+						<edges>
+							<edge vertexkey="294" edgekey="295"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="8">
+						<edges>
+							<edge vertexkey="7" edgekey="9"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="14">
+						<edges>
+							<edge vertexkey="11" edgekey="18"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="15">
+						<edges>
+							<edge vertexkey="12" edgekey="19"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="16">
+						<edges>
+							<edge vertexkey="10" edgekey="20"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="32">
+						<edges>
+							<edge vertexkey="23" edgekey="420"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="33">
+						<edges>
+							<edge vertexkey="30" edgekey="37"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="46">
+						<edges>
+							<edge vertexkey="38" edgekey="51"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="47">
+						<edges>
+							<edge vertexkey="39" edgekey="52"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="57">
+						<edges>
+							<edge vertexkey="59" edgekey="67"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="61">
+						<edges>
+							<edge vertexkey="53" edgekey="68"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="62">
+						<edges>
+							<edge vertexkey="58" edgekey="69"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="63">
+						<edges>
+							<edge vertexkey="279" edgekey="282"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="64">
+						<edges>
+							<edge vertexkey="54" edgekey="71"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="65">
+						<edges>
+							<edge vertexkey="55" edgekey="72"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="66">
+						<edges>
+							<edge vertexkey="56" edgekey="73"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="74">
+						<edges>
+							<edge vertexkey="76" edgekey="102"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="78">
+						<edges>
+							<edge vertexkey="86" edgekey="103"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="90">
+						<edges>
+							<edge vertexkey="84" edgekey="104"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="91">
+						<edges>
+							<edge vertexkey="85" edgekey="105"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="92">
+						<edges>
+							<edge vertexkey="75" edgekey="106"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="93">
+						<edges>
+							<edge vertexkey="287" edgekey="291"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="94">
+						<edges>
+							<edge vertexkey="87" edgekey="108"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="95">
+						<edges>
+							<edge vertexkey="88" edgekey="109"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="96">
+						<edges>
+							<edge vertexkey="89" edgekey="110"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="97">
+						<edges>
+							<edge vertexkey="82" edgekey="111"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="98">
+						<edges>
+							<edge vertexkey="80" edgekey="112"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="99">
+						<edges>
+							<edge vertexkey="81" edgekey="113"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="100">
+						<edges>
+							<edge vertexkey="83" edgekey="114"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="101">
+						<edges>
+							<edge vertexkey="79" edgekey="115"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="132">
+						<edges>
+							<edge vertexkey="367" edgekey="368"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="134">
+						<edges>
+							<edge vertexkey="125" edgekey="331"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="136">
+						<edges>
+							<edge vertexkey="126" edgekey="151"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="138">
+						<edges>
+							<edge vertexkey="120" edgekey="153"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="139">
+						<edges>
+							<edge vertexkey="121" edgekey="154"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="140">
+						<edges>
+							<edge vertexkey="122" edgekey="155"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="141">
+						<edges>
+							<edge vertexkey="119" edgekey="156"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="142">
+						<edges>
+							<edge vertexkey="131" edgekey="157"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="143">
+						<edges>
+							<edge vertexkey="130" edgekey="158"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="144">
+						<edges>
+							<edge vertexkey="128" edgekey="159"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="145">
+						<edges>
+							<edge vertexkey="129" edgekey="160"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="165">
+						<edges>
+							<edge vertexkey="161" edgekey="168"/>
+							<edge vertexkey="338" edgekey="339"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="166">
+						<edges>
+							<edge vertexkey="162" edgekey="169"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="174">
+						<edges>
+							<edge vertexkey="170" edgekey="178"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="175">
+						<edges>
+							<edge vertexkey="171" edgekey="179"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="177">
+						<edges>
+							<edge vertexkey="173" edgekey="181"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="182">
+						<edges>
+							<edge vertexkey="183" edgekey="184"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="186">
+						<edges>
+							<edge vertexkey="185" edgekey="187"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="193">
+						<edges>
+							<edge vertexkey="189" edgekey="197"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="194">
+						<edges>
+							<edge vertexkey="190" edgekey="198"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="195">
+						<edges>
+							<edge vertexkey="191" edgekey="199"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="202">
+						<edges>
+							<edge vertexkey="251" edgekey="260"/>
+							<edge vertexkey="256" edgekey="261"/>
+							<edge vertexkey="399" edgekey="402"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="210">
+						<edges>
+							<edge vertexkey="206" edgekey="213"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="214">
+						<edges>
+							<edge vertexkey="217" edgekey="220"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="215">
+						<edges>
+							<edge vertexkey="219" edgekey="221"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="216">
+						<edges>
+							<edge vertexkey="218" edgekey="222"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="223">
+						<edges>
+							<edge vertexkey="228" edgekey="231"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="224">
+						<edges>
+							<edge vertexkey="229" edgekey="232"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="225">
+						<edges>
+							<edge vertexkey="227" edgekey="233"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="226">
+						<edges>
+							<edge vertexkey="230" edgekey="234"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="235">
+						<edges>
+							<edge vertexkey="239" edgekey="243"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="236">
+						<edges>
+							<edge vertexkey="240" edgekey="244"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="237">
+						<edges>
+							<edge vertexkey="241" edgekey="245"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="238">
+						<edges>
+							<edge vertexkey="442" edgekey="443"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="248">
+						<edges>
+							<edge vertexkey="247" edgekey="249"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="250">
+						<edges>
+							<edge vertexkey="252" edgekey="403"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="254">
+						<edges>
+							<edge vertexkey="200" edgekey="263"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="255">
+						<edges>
+							<edge vertexkey="253" edgekey="264"/>
+							<edge vertexkey="258" edgekey="266"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="259">
+						<edges>
+							<edge vertexkey="201" edgekey="267"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="268">
+						<edges>
+							<edge vertexkey="257" edgekey="269"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="270">
+						<edges>
+							<edge vertexkey="327" edgekey="328"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="275">
+						<edges>
+							<edge vertexkey="31" edgekey="283"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="276">
+						<edges>
+							<edge vertexkey="274" edgekey="284"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="278">
+						<edges>
+							<edge vertexkey="60" edgekey="285"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="280">
+						<edges>
+							<edge vertexkey="277" edgekey="286"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="288">
+						<edges>
+							<edge vertexkey="77" edgekey="292"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="290">
+						<edges>
+							<edge vertexkey="289" edgekey="293"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="299">
+						<edges>
+							<edge vertexkey="298" edgekey="300"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="302">
+						<edges>
+							<edge vertexkey="305" edgekey="307"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="303">
+						<edges>
+							<edge vertexkey="304" edgekey="308"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="306">
+						<edges>
+							<edge vertexkey="301" edgekey="309"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="324">
+						<edges>
+							<edge vertexkey="326" edgekey="366"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="325">
+						<edges>
+							<edge vertexkey="123" edgekey="429"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="354">
+						<edges>
+							<edge vertexkey="351" edgekey="356"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="369">
+						<edges>
+							<edge vertexkey="370" edgekey="376"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="373">
+						<edges>
+							<edge vertexkey="188" edgekey="377"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="374">
+						<edges>
+							<edge vertexkey="372" edgekey="378"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="375">
+						<edges>
+							<edge vertexkey="371" edgekey="379"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="380">
+						<edges>
+							<edge vertexkey="205" edgekey="381"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="385">
+						<edges>
+							<edge vertexkey="384" edgekey="386"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="388">
+						<edges>
+							<edge vertexkey="387" edgekey="389"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="394">
+						<edges>
+							<edge vertexkey="172" edgekey="395"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="397">
+						<edges>
+							<edge vertexkey="401" edgekey="404"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="400">
+						<edges>
+							<edge vertexkey="398" edgekey="405"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="407">
+						<edges>
+							<edge vertexkey="406" edgekey="408"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="409">
+						<edges>
+							<edge vertexkey="207" edgekey="410"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="412">
+						<edges>
+							<edge vertexkey="13" edgekey="421"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="413">
+						<edges>
+							<edge vertexkey="411" edgekey="422"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="414">
+						<edges>
+							<edge vertexkey="22" edgekey="423"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="415">
+						<edges>
+							<edge vertexkey="29" edgekey="424"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="416">
+						<edges>
+							<edge vertexkey="273" edgekey="425"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="417">
+						<edges>
+							<edge vertexkey="40" edgekey="426"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="418">
+						<edges>
+							<edge vertexkey="41" edgekey="427"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="419">
+						<edges>
+							<edge vertexkey="42" edgekey="428"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="430">
+						<edges>
+							<edge vertexkey="124" edgekey="431"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="432">
+						<edges>
+							<edge vertexkey="440" edgekey="444"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="433">
+						<edges>
+							<edge vertexkey="441" edgekey="445"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

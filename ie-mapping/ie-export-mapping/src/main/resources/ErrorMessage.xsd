@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 	Kewill Customs Exchange
+		Kids Export
+		Version 1.0 February 2012 
+
+Changes:
+February 2012 Introduced (KCXSM-18)		
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="kids_export_types.xsd"/>
+	<xsd:element name="ErrorMessage">
+		<xsd:annotation>
+			<xsd:documentation>Error message</xsd:documentation>
+			<xsd:documentation xml:lang="de">Fachliche Fehlermeldung	(E_FEHLER)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="GoodsDeclaration">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="UCRNumber" minOccurs="0"/>
+							<xsd:element ref="DeclarationTime" minOccurs="0"/>
+							<xsd:element ref="ReceiveTime" minOccurs="0"/>
+							<xsd:element ref="UCROtherSystem" minOccurs="0"/>
+							<xsd:element ref="ReferenceNumber"/>
+							<xsd:element ref="OrderNumber" minOccurs="0"/>
+							<xsd:element ref="ProcedureType" minOccurs="0"/>
+							<xsd:element ref="CustomsOffice" minOccurs="0"/>
+							<xsd:element ref="Error" minOccurs="0" maxOccurs="99"/>
+							<xsd:element name="GoodsItem" maxOccurs="999">
+								<xsd:annotation>
+									<xsd:documentation>Goodsitem</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element ref="ItemNumber"/>
+										<xsd:element ref="Information" minOccurs="0" maxOccurs="99"/>
+										<xsd:element ref="Document" minOccurs="0" maxOccurs="99"/>
+										<xsd:element ref="PositionError"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

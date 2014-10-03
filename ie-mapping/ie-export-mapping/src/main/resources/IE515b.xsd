@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Acknowledgement - This scheme is based on the World Custom Organisation (WCO) Data Model Version 2.-->
+<!-- 
+	
+Current Version: 1.0
+
+Document History:
+		
+0.1 (Draft)
+=========	
+	01/05/2006:	
+		Document Created
+	
+0.2 (Draft)
+=========	
+	10/05/2006:	
+		(1) Some structure changes made that will not alter the semantics of instance documents
+		(2) Namespaces Updated
+		
+	26/05/2006:	
+		(1) Element renamed - "Unloadinglocation" to "UnloadingLocation"
+		(2) Element renamed - "Deliverydestination" to "DeliveryDestination"
+		(3) Element renamed - "TarifQuantity" to "TariffQuantity"
+		(4) Complex Type sequence re-ordered at /Declaration/GoodsShipment/Consignment/TransportContractDocument/ - TypeCode is first and Sequence ID is second.
+		(5) Element is now optional - "CategoryCode" at /Declaration/GoodsShipment/CustomsGoodsShipment/CustomsProcedure is optional (same as import schema)
+		(6) Element "MessageReferenceNumber" has been removed
+		(7) Element "MessageType" has been removed
+		(8) Element "IEMessageSendingDate" has been added
+		(9) Element "IEMessageType" has been added
+		(10) Element "IEMethodOfPayment" has been added
+		(11) Element "IERegistered" has been added to Consignor, Consignee, and Agent
+		
+	15/06/2006
+		(1) Additonal Document changed from mandatory to optional
+	
+	17/06/2006
+		(1) Element "UnloadingLocation" and its child "NameText" renamed to "GoodsLocation" and "LocationIdentifier" respectively.
+	
+	05/07/2006:
+		(1) Element "CountryCode" child of element "DeliveryDestination" annotation changed to "Box 17a - Country of Destination" from "Country Code". 
+		
+	20/07/2006:
+		(1) Element "IERegistered" removed from Consignor, Consignee, and Agent.
+		
+	31/07/2006:
+		(1) Element "MarkNumberText" annotation has been changed to"Box 31: Marks of the Packages" from "Box 31: Marks and Numbers"
+		(2) Element "IEPcksDescSequenceIdentifier" annotation has been changed to "Box 31: Packages in item" from "Box 31: Item Number where the packages referred to in the current item are described".
+		(3) Element "MethodCode" annotation has been changed from "Box 47.5: Method of Payment" to "Box 47.5: Tax Method of Payment".
+		(4) Element "IESummaryDeclarationIdentifier" annotation has been changed from "Manifest Reference Number Issued By Customs" to "Summary Declaration (Manifest) Reference Number Assigned by Customs".
+		(5) Element "CountryCode" annotation has been changed from "Box 17a - Country of Destination" to "Country Code".
+		(6) Element "DeliveryDestination" annotation has been changed from "Delivery Destination" to "Box 17a - Country of Destination"
+		
+	03/08/2006:
+		(1) Element "AdditionalInformation", order of child elements changed to "StatementCode" and then "ContentText"
+		(2) Element "AdditionalDocument", order of child elements changed to "TypeCode" and then "ReferenceIdentifier".
+		(3) Element "CustomsReferenceIdentifier" annotation changed from "Box A: SAD Number assigned by Customs" to "Customs Declaration (SAD) Number Assigned by Customs".
+
+0.3 (Draft)
+=========
+	22/10/2006:
+		(1) Element "StatusCode" annotation changed from "Box 14: Declarant Status" to "Box 14a: Declarant Status".
+		(2) Element "DeliveryDestination" annotation changed from "Box 17a - Country of Destination" to "Box 17 - Country of Destination".
+		(3) Element "Address", order of child elements changed.
+		(4) Element "CityName" annotation changed from "City" to "Address Line 2"
+		(5) Element "LineText" annotation changed from "StreetandNumber" to "Address Line 1"
+		(6) Element "CountrySubEntityNameName" annotation changed from "County" to "Address Line 3"
+		(7) Element "IEMethodOfPaymentCode" annotation changed from "Box 47.5: Method of Payment code" to "Box 47.5: Preferred Method of Payment code"
+	
+	23/10/2006:
+		(1) Element "AdditonalDocument", child element "ReferenceIdentifier" type has been changed from "Wco003" to "IEReferenceIdentifierList".
+        (2) Changed order of Consignor/Consignee to read Identifier, name and address,  changed order of Declarant to read status, identifier, name and address.
+ 
+0.4 (Draft)
+=========
+	28/11/2006:
+		(1) Amendments made to annotation of export schema.
+
+0.5 (Draft)
+=========
+	08/01/2007
+	(1) Annotation changed throughout schema to be consistent with the SAD BOX numbering format used in the Trader Guide.
+
+0.6 
+=========
+	11/01/2007
+	(1) Revert order of Agent elements to pre 0.5 draft.
+	(2) Removed Draft Status.
+
+1.0
+======
+	16/09/2008: Element Changes for ECS Phase 2:
+	(1) Specific Circumstance Indicator added.
+	(2) 31. Number Of Pieces added.
+	(3) UN Dangerous Goods Code added.
+	(4) Transport Charges Method of Payment added.
+	(5) Type of Transport Crossing Border added.
+	(6) Country of Routing added.
+	(7) Seals Identity added.
+	(8) Number of Seals added.
+	(9) Total Gross Mass added.
+	(10) Control Result Code added.
+	(11) Date Limit added.
+	(12) Transport Document Type and Identifier are removed as they are no longer data elements for themselves
+	(13) Container number now has a structural change and is in goods item.
+	(14) Address Line 3 removed.
+	(15) Consignor/Consignee/Agent identifier changed from an..16 to an.17
+	(16) Box 25: Mode of Transport At the Border changed from n1 to n2.
+	(17) Box 26: Inland Mode of Transport changed from n1 to n2.	
+-->
+<xsd:schema xmlns="http://www.ros.ie/schemas/ecs/IE515b/v1" xmlns:cus="http://www.ros.ie/schemas/customs/customstypes/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ros.ie/schemas/ecs/IE515b/v1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.ros.ie/schemas/customs/customstypes/v1" schemaLocation="types.xsd"/>
+	<xsd:annotation>
+		<xsd:documentation>SAD Customs Declaration Export (IE515b) Message</xsd:documentation>
+	</xsd:annotation>
+	<xsd:element name="ExportCustomsDeclaration">
+		<xsd:annotation>
+			<xsd:documentation>Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Declaration"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Declaration">
+		<xsd:annotation>
+			<xsd:documentation>Declaration</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="TypeCode" minOccurs="0"/>
+				<xsd:element ref="AcceptanceDate" minOccurs="0"/>
+				<xsd:element ref="IEMessageSendingDate" minOccurs="0"/>
+				<xsd:element ref="IEMessageType" minOccurs="0"/>
+				<xsd:element ref="IERiskRouting" minOccurs="0"/>
+				<xsd:element ref="CustomsReferenceIdentifier" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Customs Declaration (SAD) Number Assigned by Customs- MRN</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element ref="DeclarationOfficeIdentifier" minOccurs="0"/>
+				<xsd:element name="SpecificCircumstanceIndicator" type="cus:EUSpecificCircumstanceIndicator" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Specific Circumstance Indicator</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element ref="Issuing" minOccurs="0"/>
+				<xsd:element ref="GoodsItemQuantity" minOccurs="0"/>
+				<xsd:element ref="InvoiceAmount" minOccurs="0"/>
+				<xsd:element ref="GoodsShipment"/>
+				<xsd:element ref="DeclarationPackaging" minOccurs="0"/>
+				<xsd:element ref="CurrencyExchange" minOccurs="0"/>
+				<xsd:element ref="Agent" minOccurs="0"/>
+				<xsd:element ref="TotalGrossMassMeasure" minOccurs="0"/>
+				<xsd:element ref="NumberOfSeals" minOccurs="0"/>
+				<xsd:element ref="ControlResult" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="GoodsShipment">
+		<xsd:annotation>
+			<xsd:documentation>Goods Shipment</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ExportationCountryIdentifier" minOccurs="0"/>
+				<xsd:element ref="TransactionNatureCode" minOccurs="0"/>
+				<xsd:element ref="Warehouse" minOccurs="0"/>
+				<xsd:element ref="Ucr" minOccurs="0"/>
+				<xsd:element ref="TradeTerm" minOccurs="0"/>
+				<xsd:element ref="ExitCustomsOffice" minOccurs="0"/>
+				<xsd:element ref="DeliveryDestination" minOccurs="0"/>
+				<xsd:element ref="CustomsGoodsItem" maxOccurs="100"/>
+				<xsd:element ref="Consignor" minOccurs="0"/>
+				<xsd:element ref="Consignment" minOccurs="0"/>
+				<xsd:element ref="Consignee" minOccurs="0"/>
+				<xsd:element ref="IEMethodOfPaymentCode" minOccurs="0"/>
+				<xsd:element ref="IEPayer" minOccurs="0"/>
+				<xsd:element ref="AdditionalInformation" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="AdditionalDocument" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="TransportMethodOfPaymentCode" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DeclarationPackaging">
+		<xsd:annotation>
+			<xsd:documentation>Declaration Packaging</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="QuantityQuantity" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="CurrencyExchange">
+		<xsd:annotation>
+			<xsd:documentation>Currency Exchange</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="RateNumeric" minOccurs="0"/>
+				<xsd:element ref="CurrencyTypeIdentifier" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Agent">
+		<xsd:annotation>
+			<xsd:documentation>Agent / Declarant</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="StatusCode" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 14/1: Declarant Status</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="IdentityIdentifier" type="cus:Wco061" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 14/2: Declarant ID</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="NameText" type="cus:Wco060" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 14/3: Declarant Name</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element ref="Address" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Warehouse">
+		<xsd:annotation>
+			<xsd:documentation>Warehouse</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="IdentificationIdentifier" type="cus:Wco053" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 49: Warehouse Code</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Ucr">
+		<xsd:annotation>
+			<xsd:documentation>Commercial Reference Number</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="IdentificationIdentifier" type="cus:Wco016" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 7: UCR Possible future Use</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element ref="TraderReferenceIdentifier" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TradeTerm">
+		<xsd:annotation>
+			<xsd:documentation>Trade Term</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ConditionCode" minOccurs="0"/>
+				<xsd:element ref="LocationNameText" minOccurs="0"/>
+				<xsd:element ref="CountryRelationshipCode" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ExitCustomsOffice">
+		<xsd:annotation>
+			<xsd:documentation>Exit Customs Office</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="CodeIdentifier" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DeliveryDestination">
+		<xsd:annotation>
+			<xsd:documentation>Box 17: Country of Destination</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="CountryCode" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Issuing">
+		<xsd:annotation>
+			<xsd:documentation>Declaration Location</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence minOccurs="0">
+				<xsd:element ref="Place" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 54: Declaration Place</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Place" type="cus:Wco082">
+		<xsd:annotation>
+			<xsd:documentation>Declaration Place</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustomsGoodsItem">
+		<xsd:annotation>
+			<xsd:documentation>Customs Goods Item</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="GoodsPackaging" minOccurs="0"/>
+				<xsd:element ref="IEUniqueLPRef" minOccurs="0"/>
+				<xsd:element ref="IEPcksDescSequenceIdentifier" minOccurs="0"/>
+				<xsd:element ref="SequenceIdentifier" minOccurs="0"/>
+				<xsd:element ref="Commodity" minOccurs="0"/>
+				<xsd:element ref="Origin" minOccurs="0"/>
+				<xsd:element ref="GoodsMeasure" minOccurs="0"/>
+				<xsd:element ref="CustomsProcedure" minOccurs="0"/>
+				<xsd:element ref="PreviousCustomsDocument" minOccurs="0"/>
+				<xsd:element ref="AdditionalInformation" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="AdditionalDocument" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="StatisticalValueAmount" minOccurs="0"/>
+				<xsd:element name="TransportEquipment" minOccurs="0" maxOccurs="99">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="EquipmentIdentification"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Consignor">
+		<xsd:annotation>
+			<xsd:documentation>Consignor</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="IdentityIdentifier" type="cus:Wco072" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 2/1: Consignor ID</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="NameText" type="cus:Wco071" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 2/2: Consignor Name</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element ref="Address" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Consignment">
+		<xsd:annotation>
+			<xsd:documentation>Consignment</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="DepartureTransportMeans" minOccurs="0"/>
+				<xsd:element ref="BorderTransportMeans" minOccurs="0"/>
+				<xsd:element ref="IEInlandModeOfTransportCode" minOccurs="0"/>
+				<xsd:element ref="GoodsLocation" minOccurs="0"/>
+				<xsd:element name="TransportEquipment" minOccurs="0" maxOccurs="99">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="SealsIdentity" type="cus:Wco165">
+								<xsd:annotation>
+									<xsd:documentation>Seals Identitiy</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element ref="IESummaryDeclarationIdentifier" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Consignee">
+		<xsd:annotation>
+			<xsd:documentation>Consignee</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="IdentityIdentifier" type="cus:Wco052" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 8/1: Consignee ID</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="NameText" type="cus:Wco051" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 8/2: Consignee Name</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element ref="Address" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="IEPayer">
+		<xsd:annotation>
+			<xsd:documentation>Deferred Payment</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="IEPayerIdentifier" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AdditionalInformation">
+		<xsd:annotation>
+			<xsd:documentation>Additional Information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="StatementCode" minOccurs="0"/>
+				<xsd:element ref="ContentText" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AdditionalDocument">
+		<xsd:annotation>
+			<xsd:documentation>Additional Document</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="TypeCode" type="cus:Wco170" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 44: Additional Document  Code</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="ReferenceIdentifier" type="cus:IEReferenceIdentifierList" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 44: Additional Document Number</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Address">
+		<xsd:annotation>
+			<xsd:documentation>Address</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="LineText" minOccurs="0"/>
+				<xsd:element ref="CityName" minOccurs="0"/>
+				<xsd:element ref="PostcodeIdentifier" minOccurs="0"/>
+				<xsd:element ref="CountryCode" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="CustomsProcedure">
+		<xsd:annotation>
+			<xsd:documentation>Customs Procedure</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="CurrentCode" minOccurs="0"/>
+				<xsd:element ref="PreviousCode" minOccurs="0"/>
+				<xsd:element ref="CategoryCode" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PreviousCustomsDocument">
+		<xsd:annotation>
+			<xsd:documentation>Previous Customs Document</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="ReferenceIdentifier" type="cus:Wco007" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 40: Previous Customs Document Number</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Origin">
+		<xsd:annotation>
+			<xsd:documentation>Origin</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="OriginCountryIdentifier" minOccurs="0"/>
+				<xsd:element ref="OriginRegionIdentifier" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Commodity">
+		<xsd:annotation>
+			<xsd:documentation>Commodity</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="DescriptionText" minOccurs="0"/>
+				<xsd:element ref="TariffClassificationCode" minOccurs="0"/>
+				<xsd:element ref="EUTariffClassificationAdd1Code" minOccurs="0"/>
+				<xsd:element ref="EUTariffClassificationAdd2Code" minOccurs="0"/>
+				<xsd:element ref="EUTariffClassificationNatCode" minOccurs="0"/>
+				<xsd:element ref="DangerousGoodsCodeIdentifier" minOccurs="0"/>
+				<xsd:element ref="EUDutyRegimeCode" minOccurs="0"/>
+				<xsd:element ref="DutyTaxFee" minOccurs="0" maxOccurs="99"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="GoodsPackaging">
+		<xsd:annotation>
+			<xsd:documentation>Goods Packaging</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="MarkNumberText" minOccurs="0"/>
+				<xsd:element name="QuantityQuantity" type="cus:Wco144" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 31: Number of Packages</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="NumberOfPieces" type="cus:EUPiecesNumber" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Number of Pieces</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="TypeCode" type="cus:Wco141" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 31: Type of package</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="GoodsMeasure">
+		<xsd:annotation>
+			<xsd:documentation>Goods Measure</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="GrossMassMeasure" minOccurs="0"/>
+				<xsd:element ref="NetNetWeightMeasure" minOccurs="0"/>
+				<xsd:element ref="TariffQuantity" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="BorderTransportMeans">
+		<xsd:annotation>
+			<xsd:documentation>Border Transport Means</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="IdentityText" minOccurs="0"/>
+				<xsd:element ref="RegistrationNationalityIdentifier" minOccurs="0"/>
+				<xsd:element name="TransportType" type="cus:Wco183" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Type of Transport Crossing Border</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element ref="ModeAndTypeCode" minOccurs="0"/>
+				<xsd:element name="Itinerary" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Itinerary</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="CountryCode" maxOccurs="99"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DepartureTransportMeans">
+		<xsd:annotation>
+			<xsd:documentation>Departure Transport Means</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="IdentificationText" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="GoodsLocation">
+		<xsd:annotation>
+			<xsd:documentation>Goods Location</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="LocationIdentifier" type="cus:Wco079" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 30: Location of Goods</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DutyTaxFee">
+		<xsd:annotation>
+			<xsd:documentation>Duty / Tax / Fee</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="TypeCode" type="cus:Wco113" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 47/1: Tax Type</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element ref="IETaxBase" minOccurs="0"/>
+				<xsd:element ref="TaxText" minOccurs="0"/>
+				<xsd:element ref="Payment" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="EquipmentIdentification">
+		<xsd:annotation>
+			<xsd:documentation>Equipment Identification</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="IdentificationIdentifier" type="cus:Wco159" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 31: Container No</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Payment">
+		<xsd:annotation>
+			<xsd:documentation>Payment Method and Tax Assessed Amount</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="MethodCode" minOccurs="0"/>
+				<xsd:element ref="TaxAssessedAmount" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TypeCode" type="cus:Wco001">
+		<xsd:annotation>
+			<xsd:documentation>Box 1: Declaration type</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AcceptanceDate" type="cus:Wco023">
+		<xsd:annotation>
+			<xsd:documentation>Box A: Date SAD Accepted by Customs</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IEMessageSendingDate" type="cus:IEDateTime">
+		<xsd:annotation>
+			<xsd:documentation>Message Sending Date</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IEMessageType" type="cus:IEMessageType">
+		<xsd:annotation>
+			<xsd:documentation>Message Type Code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CustomsReferenceIdentifier" type="cus:Wco020">
+		<xsd:annotation>
+			<xsd:documentation>Customs Declaration (SAD) Number Assigned by Customs</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DeclarationOfficeIdentifier" type="cus:Wco065">
+		<xsd:annotation>
+			<xsd:documentation>Box A: Office of Export</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IERiskRouting" type="cus:IERiskRouting">
+		<xsd:annotation>
+			<xsd:documentation>Risk Routing</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GoodsItemQuantity" type="cus:Wco228">
+		<xsd:annotation>
+			<xsd:documentation>Box 5: Number of Items </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="InvoiceAmount" type="cus:Wco109">
+		<xsd:annotation>
+			<xsd:documentation>Box 22/2: Total amount invoiced</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="StatusCode" type="cus:Wco102">
+		<xsd:annotation>
+			<xsd:documentation>Box 14/1: Declarant Status</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="QuantityQuantity" type="cus:Wco146">
+		<xsd:annotation>
+			<xsd:documentation>Box 6: Total Packages</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Itinerary">
+		<xsd:annotation>
+			<xsd:documentation>Itinerary</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="CountryCode" maxOccurs="99">
+					<xsd:annotation>
+						<xsd:documentation>Country Code</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="LineText" type="cus:Wco239">
+		<xsd:annotation>
+			<xsd:documentation>Address Line 1</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CityName" type="cus:Wco241">
+		<xsd:annotation>
+			<xsd:documentation>Address Line 2</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CountryCode" type="cus:Wco242">
+		<xsd:annotation>
+			<xsd:documentation>Country Code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PostcodeIdentifier" type="cus:Wco245">
+		<xsd:annotation>
+			<xsd:documentation>Post Code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RateNumeric" type="cus:Wco118">
+		<xsd:annotation>
+			<xsd:documentation>Box 23 : Exchange Rate</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CurrencyTypeIdentifier" type="cus:Wco135">
+		<xsd:annotation>
+			<xsd:documentation>Box 22/1: Currency Code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ExportationCountryIdentifier" type="cus:Wco062">
+		<xsd:annotation>
+			<xsd:documentation>Box 15a: Country of Dispatch/export</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TransactionNatureCode" type="cus:Wco103">
+		<xsd:annotation>
+			<xsd:documentation>Box 24: Nature of transaction</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IEMethodOfPaymentCode" type="cus:IEMethodOfPaymentCode">
+		<xsd:annotation>
+			<xsd:documentation>Box 47/5: Preferred Method of Payment code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TransportMethodOfPaymentCode" type="cus:IEMethodOfPaymentCode">
+		<xsd:annotation>
+			<xsd:documentation>Transport charges - Method of Payment code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TraderReferenceIdentifier" type="cus:Wco009">
+		<xsd:annotation>
+			<xsd:documentation>Box 7: Trader reference</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ConditionCode" type="cus:Wco090">
+		<xsd:annotation>
+			<xsd:documentation>Box 20/1: Delivery Term code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LocationNameText" type="cus:Wco037">
+		<xsd:annotation>
+			<xsd:documentation>Box20/2: Terms of delivery Place</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CountryRelationshipCode" type="cus:Wco106">
+		<xsd:annotation>
+			<xsd:documentation>Box 20/3:Terms of delivery Situation</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="StatementCode" type="cus:Wco226">
+		<xsd:annotation>
+			<xsd:documentation>Box 44: Additional Information Type Code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ContentText" type="cus:Wco105">
+		<xsd:annotation>
+			<xsd:documentation>Box 44: Additional information </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IEInlandModeOfTransportCode" type="cus:IEInlandModeOfTransportCode">
+		<xsd:annotation>
+			<xsd:documentation>Box 26: Inland Mode of Transport</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IESummaryDeclarationIdentifier" type="cus:Wco003">
+		<xsd:annotation>
+			<xsd:documentation>Summary Declaration (Manifest) Reference Number Assigned by Customs</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IEPayerIdentifier" type="cus:IEPayerIdentifier">
+		<xsd:annotation>
+			<xsd:documentation>Box 48: Deferred Payment</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CodeIdentifier" type="cus:Wco047">
+		<xsd:annotation>
+			<xsd:documentation>Box 29: Customs Office of Exit</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IEPcksDescSequenceIdentifier" type="cus:Wco006">
+		<xsd:annotation>
+			<xsd:documentation>Box 31: Packages in item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SequenceIdentifier" type="cus:Wco006">
+		<xsd:annotation>
+			<xsd:documentation>Box 32: Item Number</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="StatisticalValueAmount" type="cus:Wco114">
+		<xsd:annotation>
+			<xsd:documentation>Box 46: Statistical value</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IEUniqueLPRef" type="cus:IEUniqueLPRef">
+		<xsd:annotation>
+			<xsd:documentation>Box 31: Unique LP Reference</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CurrentCode" type="cus:Wco166">
+		<xsd:annotation>
+			<xsd:documentation>Box 37a/1: Customs procedure coded</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PreviousCode" type="cus:Wco161">
+		<xsd:annotation>
+			<xsd:documentation>Box 37a/2: Previous customs procedure, coded</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CategoryCode" type="cus:EUProcedureSubCategory">
+		<xsd:annotation>
+			<xsd:documentation>Box 37b: Procedure SubCategory Code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="OriginCountryIdentifier" type="cus:Wco063">
+		<xsd:annotation>
+			<xsd:documentation>Box 34a: Country of origin code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="OriginRegionIdentifier" type="cus:Wco066">
+		<xsd:annotation>
+			<xsd:documentation>Box 34b: Region of origin code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DescriptionText" type="cus:Wco137">
+		<xsd:annotation>
+			<xsd:documentation>Box 31: Description of the Goods</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TariffClassificationCode" type="cus:Wco145">
+		<xsd:annotation>
+			<xsd:documentation>Box 33/1: Commodity Code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="EUTariffClassificationAdd1Code" type="cus:EUAdditionalCode">
+		<xsd:annotation>
+			<xsd:documentation>Box 33/3: TARIC Additional code 1</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="EUTariffClassificationAdd2Code" type="cus:EUAdditionalCode">
+		<xsd:annotation>
+			<xsd:documentation>Box 33/4: TARIC Additional code 2</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="EUTariffClassificationNatCode" type="cus:EUAdditionalCode">
+		<xsd:annotation>
+			<xsd:documentation>Box 33/5: National Additional code </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DangerousGoodsCodeIdentifier" type="cus:Wco143">
+		<xsd:annotation>
+			<xsd:documentation>UN Dangerous Goods Code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="EUDutyRegimeCode" type="cus:Wco164">
+		<xsd:annotation>
+			<xsd:documentation>Box 36: Possible Future Use</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IETaxBase" type="cus:IETaxBase">
+		<xsd:annotation>
+			<xsd:documentation>Box 47/2: Quantity for Specific Duty </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TaxText" type="cus:Wco115">
+		<xsd:annotation>
+			<xsd:documentation>Box 47/3: Rate of Duty</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MethodCode" type="cus:Wco107">
+		<xsd:annotation>
+			<xsd:documentation>Box 47/5: Tax Method of Payment</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TaxAssessedAmount" type="cus:Wco120">
+		<xsd:annotation>
+			<xsd:documentation>Box 47/4: Duty Payable</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MarkNumberText" type="cus:Wco142">
+		<xsd:annotation>
+			<xsd:documentation>Box 31: Marks of the Packages</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GrossMassMeasure" type="cus:Wco126">
+		<xsd:annotation>
+			<xsd:documentation>Box 35: Gross mass</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NetNetWeightMeasure" type="cus:Wco128">
+		<xsd:annotation>
+			<xsd:documentation>Box 38: Net Mass</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TariffQuantity" type="cus:Wco130">
+		<xsd:annotation>
+			<xsd:documentation>Box 41: Supplementary Units</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IdentityText" type="cus:Wco160">
+		<xsd:annotation>
+			<xsd:documentation>Box 21/1: Identity of Transport Crossing the border</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RegistrationNationalityIdentifier" type="cus:Wco175">
+		<xsd:annotation>
+			<xsd:documentation>Box 21/2: Nationality of Transport Crossing the border</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ModeAndTypeCode" type="cus:Wco183">
+		<xsd:annotation>
+			<xsd:documentation>Box 25: Mode of Transport At the Border</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IdentificationText" type="cus:Wco158">
+		<xsd:annotation>
+			<xsd:documentation>Box 18/1: Identity of means of transport at departure</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TotalGrossMassMeasure" type="cus:Wco131">
+		<xsd:annotation>
+			<xsd:documentation>Total Gross Mass</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NumberOfSeals">
+		<xsd:annotation>
+			<xsd:documentation>Number of Seals</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="QuantityQuantity" type="cus:Wco227">
+					<xsd:annotation>
+						<xsd:documentation>Number of Seals</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ControlResult">
+		<xsd:annotation>
+			<xsd:documentation>Control Result (Box D)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="ControlResultCode" type="cus:Wco235" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Control Result Code</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="DateLimit" type="cus:Wco264" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Date Limit </xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

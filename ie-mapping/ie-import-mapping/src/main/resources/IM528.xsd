@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 sp1 (http://www.altova.com) by Dave Flood (Revenue) -->
+<!-- Acknowledgement - This scheme is based on the World Custom Organisation (WCO) Data Model Version 2.-->
+<!-- Box 14/1: Declarant Status is in this message as it is part of the Agent group. But Revenue will not populate this field, in this message returned to Trade.-->
+<!-- 
+	
+Current Version: 1.0
+
+Document History:
+		
+1.0 
+===	
+16/09/2008:	Document Created
+
+========================
+
+22/04/09
+
+Changed CityText, PostcodeIdentifier and CountryCode to optional
+-->
+<xsd:schema xmlns="http://www.ros.ie/schemas/customs/IM528/v1" xmlns:cus="http://www.ros.ie/schemas/customs/customstypes/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ros.ie/schemas/customs/IM528/v1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.ros.ie/schemas/customs/customstypes/v1" schemaLocation="types.xsd"/>
+	<xsd:annotation>
+		<xsd:documentation>Import MRN Allocated (IM528) Message</xsd:documentation>
+	</xsd:annotation>
+	<xsd:element name="ImportMRNAllocated">
+		<xsd:annotation>
+			<xsd:documentation>Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="CustomsReferenceIdentifier"/>
+				<xsd:element ref="AcceptanceDate"/>
+				<xsd:element ref="Ucr" minOccurs="0"/>
+				<xsd:element ref="AdditionalDocument"/>
+				<xsd:element ref="CalculationOfTaxes" minOccurs="0"/>
+				<xsd:element ref="DeclarationOfficeIdentifier"/>
+				<xsd:element ref="Agent"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Ucr">
+		<xsd:annotation>
+			<xsd:documentation>Commercial Reference Number</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="TraderReferenceIdentifier">
+					<xsd:annotation>
+						<xsd:documentation>SAD - Box 7: Trader reference</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AdditionalDocument">
+		<xsd:annotation>
+			<xsd:documentation>Additional Document</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="TypeCode" type="cus:Wco170">
+					<xsd:annotation>
+						<xsd:documentation>Box 44: Additional Document  Code</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="ReferenceIdentifier" type="cus:IEReferenceIdentifierList">
+					<xsd:annotation>
+						<xsd:documentation>Box 44: Additional Document Number</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TraderReferenceIdentifier" type="cus:Wco009">
+		<xsd:annotation>
+			<xsd:documentation>SAD - Box 7: Trader reference</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AcceptanceDate" type="cus:Wco023">
+		<xsd:annotation>
+			<xsd:documentation>Box A: Date SAD Accepted by Customs</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Agent">
+		<xsd:annotation>
+			<xsd:documentation>Agent / Declarant</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="StatusCode" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Box 14/1: Declarant Status</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="IdentityIdentifier" type="cus:Wco061">
+					<xsd:annotation>
+						<xsd:documentation>Box 14/2: Declarant Id</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="NameText" type="cus:Wco060">
+					<xsd:annotation>
+						<xsd:documentation>Box 14/3: Declarant Name</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element ref="Address"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Address">
+		<xsd:annotation>
+			<xsd:documentation>Address</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="LineText"/>
+				<xsd:element ref="CityName" minOccurs="0"/>
+				<xsd:element ref="PostcodeIdentifier" minOccurs="0"/>
+				<xsd:element ref="CountryCode" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="CustomsReferenceIdentifier" type="cus:Wco020">
+		<xsd:annotation>
+			<xsd:documentation>Customs Declaration (SAD) Number Assigned by Customs</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DeclarationOfficeIdentifier" type="cus:Wco065">
+		<xsd:annotation>
+			<xsd:documentation>Box A: Office of Import</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="StatusCode" type="cus:Wco102">
+		<xsd:annotation>
+			<xsd:documentation>Box 14a: Declarant Status</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CityName" type="cus:Wco241">
+		<xsd:annotation>
+			<xsd:documentation>Address Line 2</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CountryCode" type="cus:Wco242">
+		<xsd:annotation>
+			<xsd:documentation>Country Code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LineText" type="cus:Wco239">
+		<xsd:annotation>
+			<xsd:documentation>Address Line 1</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PostcodeIdentifier" type="cus:Wco245">
+		<xsd:annotation>
+			<xsd:documentation>Post Code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CalculationOfTaxes">
+		<xsd:annotation>
+			<xsd:documentation>Duty Tax Fee</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="TypeCode" type="cus:Wco113" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation> SAD - Box 47/1: Tax Type EDE - Tax Type (EDE DTI only required, not shown on form, see Tax Type Codes for excise and vat)
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element ref="MethodCode" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>SAD - Box 47/5: Tax Method of Payment</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element ref="TaxAssessedAmount" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>SAD - Box 47/4: Duty Payable EDE - Box 23: Duty Payable EDE - Item VAT Payable </xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="MethodCode" type="cus:Wco107">
+		<xsd:annotation>
+			<xsd:documentation>SAD - 47/5: Tax Method of Payment</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TaxAssessedAmount" type="cus:Wco120">
+		<xsd:annotation>
+			<xsd:documentation>SAD - Box 47/4: Duty Payable EDE - Box 23: Duty Payable EDE - Item VAT Payable</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>

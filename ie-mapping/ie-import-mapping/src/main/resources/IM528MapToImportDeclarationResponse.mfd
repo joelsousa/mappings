@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties AppName="IM528" SelectedLanguage="java"/>
+		<structure>
+			<children>
+				<component name="IM528" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view rbx="370" rby="430"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace uid="http://www.ros.ie/schemas/customs/IM528/v1"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ImportMRNAllocated" outkey="1" expanded="1">
+										<entry name="CustomsReferenceIdentifier" outkey="2"/>
+										<entry name="AcceptanceDate" outkey="3"/>
+										<entry name="Ucr" expanded="1">
+											<entry name="TraderReferenceIdentifier" outkey="4"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="IM528.xsd" inputinstance="IM528_ImportMRNAllocated.xml" outputinstance="IM528_ImportMRNAllocated.xml" instanceroot="{http://www.ros.ie/schemas/customs/IM528/v1}ImportMRNAllocated"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="ImportDeclarationResponse" library="xml" uid="3" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="480" rbx="776" rby="391"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ImportDeclarationResponse" inpkey="5" expanded="1">
+										<entry name="GoodsDeclaration" expanded="1">
+											<entry name="ReferenceNumber" inpkey="6" expanded="1"/>
+											<entry name="TemporaryMRN" inpkey="7" expanded="1"/>
+											<entry name="RegistrationDate" inpkey="8"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="ImportDeclarationResponse.xsd" outputinstance="ImportDeclarationResponse.xml" instanceroot="{}ImportDeclarationResponse"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="1">
+						<edges>
+							<edge vertexkey="5" edgekey="9"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="2">
+						<edges>
+							<edge vertexkey="7" edgekey="10"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="3">
+						<edges>
+							<edge vertexkey="8" edgekey="11"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="4">
+						<edges>
+							<edge vertexkey="6" edgekey="12"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

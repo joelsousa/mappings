@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomsTechnicalError xsi:schemaLocation="http://www.ros.ie/schemas/customs/technicalerror/v1 TechnicalError.xsd" xmlns="http://www.ros.ie/schemas/customs/technicalerror/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ErrorReference>
+		<ErrorCode>aaaaaaaaaa</ErrorCode>
+		<ErrorText>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</ErrorText>
+	</ErrorReference>
+</CustomsTechnicalError>

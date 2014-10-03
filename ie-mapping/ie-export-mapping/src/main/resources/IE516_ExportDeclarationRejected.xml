@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExportDeclarationRejected xsi:schemaLocation="http://www.ros.ie/schemas/ecs/IE516/v1 IE516.xsd" xmlns="http://www.ros.ie/schemas/ecs/IE516/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<CustomsReferenceIdentifier>aaaaaaaaaaaaaaaaaa</CustomsReferenceIdentifier>
+	<Ucr>
+		<TraderReferenceIdentifier>12345678aaaa</TraderReferenceIdentifier>
+	</Ucr>
+	<IEMessageSendingDate>10001030200000</IEMessageSendingDate>
+	<CommentsText>MAL FUNCT</CommentsText>
+	<AdditionalDocument>
+		<TypeCode>0001</TypeCode>
+		<ReferenceIdentifier>REF001</ReferenceIdentifier>
+	</AdditionalDocument>
+	<ErrorReference>
+		<ErrorCode>ERROR001</ErrorCode>
+		<SequenceIdentifier>1</SequenceIdentifier>
+		<FieldIdentifier>ERROR 404 - TIMEOUT</FieldIdentifier>
+		<ValidationType>TYPE01</ValidationType>
+	</ErrorReference>
+</ExportDeclarationRejected>

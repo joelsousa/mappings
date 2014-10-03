@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+Current Version: 0.4
+
+Document History:
+
+0.1 (Draft)	01/08/2006:	Document Created.
+	
+0.2 (Draft)	25/10/2006:	Element "ErrorText" has been removed.
+
+0.3		01/02/2007:	Removed Draft Status.
+
+0.4		09/07/2008: Addition of status element and child elements for use in Reliable Messaging Service
+
+ -->
+<xsd:schema xmlns="http://www.ros.ie/schemas/customs/messageacknowledgement/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cus="http://www.ros.ie/schemas/customs/customstypes/v1" targetNamespace="http://www.ros.ie/schemas/customs/messageacknowledgement/v1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.ros.ie/schemas/customs/customstypes/v1" schemaLocation="types.xsd"/>
+	<xsd:element name="MessageAcknowledgement">
+		<xsd:annotation>
+			<xsd:documentation>Customs Web Service Acknowledgment</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="TransactionId" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Unique transaction ID for successfully acknowledged messages</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element ref="Status" minOccurs="0"/>
+				<xsd:element ref="ErrorReference" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TransactionId" type="cus:IETransactionId">
+		<xsd:annotation>
+			<xsd:documentation>Unique transaction ID for successfully acknowledged messages</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Status">
+		<xsd:annotation>
+			<xsd:documentation>Status of the message and transaction Id</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="MessageStatus"/>
+				<xsd:element ref="TransactionIdStatus"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="MessageStatus">
+		<xsd:annotation>
+			<xsd:documentation>Status of the message sent</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="ACCEPTED"/>
+				<xsd:enumeration value="REJECTED"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="TransactionIdStatus">
+		<xsd:annotation>
+			<xsd:documentation>Status of the transaction ID</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="ACCEPTED"/>
+				<xsd:enumeration value="ALREADY ACCEPTED"/>
+				<xsd:enumeration value="INVALID"/>
+				<xsd:enumeration value="EXPIRED"/>
+				<xsd:enumeration value="ERROR"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="ErrorReference">
+		<xsd:annotation>
+			<xsd:documentation>Error reference containing details of an error for unsuccessfully acknowledged messages</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ErrorCode"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ErrorCode" type="cus:IEErrorCode">
+		<xsd:annotation>
+			<xsd:documentation>Error code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>

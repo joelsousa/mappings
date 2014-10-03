@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Acknowledgement - This scheme is based on the World Custom Organisation (WCO) Data Model Version 2.-->
+<!-- 
+	
+Current Version: 1.1
+
+Document History:
+		
+1.0 (Draft)
+=========	
+	22/09/2008:	Document Created
+
+1.1
+=========	
+	09/12/2008:	MRN Added.
+-->
+<xsd:schema xmlns="http://www.ros.ie/schemas/ecs/IE516/v1" xmlns:cus="http://www.ros.ie/schemas/customs/customstypes/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ros.ie/schemas/ecs/IE516/v1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.ros.ie/schemas/customs/customstypes/v1" schemaLocation="types.xsd"/>
+	<xsd:element name="ExportDeclarationRejected">
+		<xsd:annotation>
+			<xsd:documentation>Export Declaration Rejected (IE516) Message</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="CustomsReferenceIdentifier" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Customs Declaration (SAD) Number Assigned by Customs</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element ref="Ucr" minOccurs="0"/>
+				<xsd:element ref="IEMessageSendingDate"/>
+				<xsd:element ref="CommentsText" minOccurs="0"/>
+				<xsd:element ref="AdditionalDocument" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="ErrorReference" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Ucr">
+		<xsd:annotation>
+			<xsd:documentation>Commercial Reference Number</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="TraderReferenceIdentifier" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TraderReferenceIdentifier" type="cus:Wco009">
+		<xsd:annotation>
+			<xsd:documentation>Box 7: Trader reference</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IEMessageSendingDate" type="cus:IEDateTime">
+		<xsd:annotation>
+			<xsd:documentation>Message Sending Date</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TransportContractDocument">
+		<xsd:annotation>
+			<xsd:documentation>Transport Contract Document</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType/>
+	</xsd:element>
+	<xsd:element name="CustomsReferenceIdentifier" type="cus:Wco020">
+		<xsd:annotation>
+			<xsd:documentation>Reference Number</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CommentsText" type="cus:Wco105">
+		<xsd:annotation>
+			<xsd:documentation>Comments - Reasons for Rejection</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AdditionalDocument">
+		<xsd:annotation>
+			<xsd:documentation>Additional Document</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="TypeCode" type="cus:Wco170">
+					<xsd:annotation>
+						<xsd:documentation>Box 44: Additional Document  Code</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="ReferenceIdentifier" type="cus:IEReferenceIdentifierList">
+					<xsd:annotation>
+						<xsd:documentation>Box 44: Additional Document Number</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ErrorReference">
+		<xsd:annotation>
+			<xsd:documentation>Error Reference</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ErrorCode"/>
+				<xsd:element ref="SequenceIdentifier" minOccurs="0"/>
+				<xsd:element ref="FieldIdentifier" minOccurs="0"/>
+				<xsd:element ref="ValidationType"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ErrorCode" type="cus:IEErrorCode">
+		<xsd:annotation>
+			<xsd:documentation>Error Code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SequenceIdentifier" type="cus:Wco006">
+		<xsd:annotation>
+			<xsd:documentation>Item Number</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FieldIdentifier" type="cus:IEFieldIdentifier">
+		<xsd:annotation>
+			<xsd:documentation>Field Name</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ValidationType" type="cus:IEValidationType">
+		<xsd:annotation>
+			<xsd:documentation>Validation Error Type Code</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2011 sp1 (http://www.altova.com) von CK (Kewill GmbH) bearbeitet -->
+<!-- 	Kewill Customs Exchange
+		KIDS Import
+		Version 1.0 September 2011 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="kids_import_types.xsd"/>
+	<xsd:element name="ImportDeclarationResponse">
+		<xsd:annotation>
+			<xsd:documentation>Nachricht Rückmeldung/Fehlermeldung (CUSREC)
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+	<xsd:element name="GoodsDeclaration">
+	<xsd:annotation>
+		<xsd:documentation>Goods Declaration</xsd:documentation>
+	</xsd:annotation>				
+	<xsd:complexType>		       
+	<xsd:sequence>
+		
+				<xsd:element name="ReferenceNumber" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Bezugsnummer (Local Reference Number)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="TemporaryMRN" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Arbeitsnummer (Work number)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="RegistrationNumber" minOccurs="0"/>
+				<xsd:element name="RegistrationDate" type="ST_Date" minOccurs="0"/>
+				<xsd:element name="GoodsItem" maxOccurs="99999">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="ItemNumber" type="xsd:integer" minOccurs="0"/>
+							<xsd:element name="ErrorCode" minOccurs="0"/>
+							<xsd:element name="KindOfError" type="ST_KindOfError" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation>Indicator if PositionError list warnings (WRG), information (INF) or errors (ERR)</xsd:documentation>
+									<xsd:documentation>the original message referred to is not sent to customs because of errors if there is at least one appearance of the code "ERR" in the tag ErrorCode
+INF / WRG can be used in case of "confirm" and also in case of "failure" 
+
+</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="ReportingPrefix" minOccurs="0"/>
+							<xsd:element name="ErrorText" minOccurs="0"/>
+							<xsd:element name="RegistrationNumberWriteOffAmounts" minOccurs="0"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+	</xsd:sequence>	
+	</xsd:complexType>
+	</xsd:element>					
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

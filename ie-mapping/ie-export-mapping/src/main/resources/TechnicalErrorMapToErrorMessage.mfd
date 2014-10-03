@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties AppName="TechnicalError" ShowSchemaTypes="1" ShowAnnotations="0" SelectedLanguage="java"/>
+		<structure>
+			<children>
+				<component name="TechnicalError" library="xml" uid="2" kind="14">
+					<properties/>
+					<view rbx="315" rby="201"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace uid="http://www.ros.ie/schemas/customs/technicalerror/v1"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="CustomsTechnicalError" outkey="1" expanded="1">
+										<entry name="ErrorReference" outkey="2" expanded="1">
+											<entry name="ErrorCode" outkey="3"/>
+											<entry name="ErrorText" outkey="4"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="TechnicalError.xsd" inputinstance="Export_TechnicalError.xml" outputinstance="Export_TechnicalError.xml" instanceroot="{http://www.ros.ie/schemas/customs/technicalerror/v1}CustomsTechnicalError"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="ErrorMessage" library="xml" uid="3" kind="14">
+					<properties XSLTDefaultOutput="1"/>
+					<view ltx="410" rbx="779" rby="338"/>
+					<data>
+						<root scrollposition="229">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ErrorMessage" inpkey="5" expanded="1">
+										<entry name="GoodsDeclaration" expanded="1">
+											<entry name="CustomsOffice" expanded="1">
+												<entry name="Address" expanded="1"/>
+											</entry>
+											<entry name="Error" inpkey="6" expanded="1">
+												<entry name="Code" inpkey="7"/>
+												<entry name="Text" inpkey="8"/>
+											</entry>
+											<entry name="GoodsItem" expanded="1">
+												<entry name="Information" expanded="1"/>
+												<entry name="Document" expanded="1">
+													<entry name="WritedownAmount" expanded="1"/>
+													<entry name="WritedownQuantity" expanded="1"/>
+													<entry name="Office" expanded="1"/>
+													<entry name="Present" expanded="1"/>
+													<entry name="PresentLocation" expanded="1"/>
+												</entry>
+												<entry name="PositionError" expanded="1"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="ErrorMessage.xsd" outputinstance="ErrorMessage.xml" instanceroot="{}ErrorMessage"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="1">
+						<edges>
+							<edge vertexkey="5" edgekey="9"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="2">
+						<edges>
+							<edge vertexkey="6" edgekey="10"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="3">
+						<edges>
+							<edge vertexkey="7" edgekey="11"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="4">
+						<edges>
+							<edge vertexkey="8" edgekey="12"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>
